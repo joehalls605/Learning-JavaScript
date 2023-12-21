@@ -1,0 +1,125 @@
+<!-- DOM MANIPULATION-->
+
+<!-- SELECTING-->
+
+<button id="myButton">Click me</button>
+
+<script>
+    document.getElementById("myButton").addEventListener().addEventListener("click", function(){
+        alert("Button clicked!");
+    });
+</script>
+
+<!-- Using getElementById-->
+<script>
+    var element = document.getElementById("exampleId");
+    element.textContent = "Hello, World!";
+</script>
+
+
+<!-- Using querySelector-->
+<div id="container">
+    <p class="info">Information</p>
+    <p class="info">More Information</p>
+  </div>
+  
+  <script>
+    // Selecting the first <p> element with class "info"
+    let firstInfoParagraph = document.querySelector("#container .info");
+  
+    // Changing the text content
+    firstInfoParagraph.textContent = "Updated Information";
+  </script>
+
+<!-- Using querySelectorAll-->
+<ul>
+    <li class="item">Item 1</li>
+    <li class="item">Item 2</li>
+    <li class="item">Item 3</li>
+  </ul>
+  
+  <script>
+    // Selecting all <li> elements with class "item"
+    let listItemsTwo = document.querySelectorAll("ul li.item");
+  
+    // Adding a class to each selected <li> element
+    listItemsTwo.forEach(function(item) {
+      item.classList.add("selected");
+    });
+  </script>
+
+<!-- Selecting Elements by Tag Name:-->
+
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  
+  <script>
+    // Selecting all <li> elements
+    let listItems = document.getElementsByTagName("li");
+  
+    // Adding a class to each <li> element
+    for (let i = 0; i < listItems.length; i++) {
+      listItems[i].classList.add("highlight");
+    }
+  </script>
+
+
+<!-- Selecting Elements by Class Name:-->
+
+<div class="box red">Red Box</div>
+<div class="box blue">Blue Box</div>
+<div class="box green">Green Box</div>
+
+<script>
+  // Selecting all elements with class "box"
+  let boxes = document.getElementsByClassName("box");
+
+  // Changing the text content of each element
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].textContent = "Updated Box";
+  }
+</script>
+
+<!-- Creating Elements and Appending to the DOM 
+
+
+Note:
+appendChild() method:
+
+This method is specifically used to append a node as the last child of a node.
+It takes a single argument, which is the node to be appended.
+-->
+
+
+<div id="parentContainer"></div>
+
+<script>
+  // Creating a new <p> element
+  let newParagraph = document.createElement("p");
+
+  // Setting the text content
+  newParagraph.textContent = "Newly Created Paragraph";
+
+  // Appending the new <p> element to an existing container
+  document.getElementById("parentContainer").appendChild(newParagraph);
+</script>
+
+<!--
+Note:
+append() method:
+The append() method is more versatile. It can accept multiple arguments, including strings and nodes, and appends all of them to the parent node.
+It appends the specified content or nodes in the order they are provided.
+-->
+
+<script>
+    var parentContainer = document.getElementById("parentContainer");
+    var newParagraph = document.createElement("p");
+    // Assume newParagraph has some content or attributes defined here
+    parentContainer.append(newParagraph, "Some text", document.createElement("span"));
+    
+</script>
+
+
