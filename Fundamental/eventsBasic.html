@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event Example</title>
+</head>
+<body>
+
+<button id="myButton">Click me</button>
+
+<script>
+    // Get the button element
+    const button = document.getElementById('myButton');
+
+    // Add a click event listener
+    button.addEventListener('click', function() {
+        alert('Button clicked!');
+    });
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Event Example</title>
+</head>
+<body>
+
+<input type="text" id="myInput" placeholder="Type something">
+
+<script>
+    // Get the input element
+    const input = document.getElementById('myInput');
+
+    // Add a keyup event listener
+    input.addEventListener('keyup', function(event) {
+        console.log('Key pressed:', event.key);
+    });
+</script>
+
+</body>
+</html>
+
