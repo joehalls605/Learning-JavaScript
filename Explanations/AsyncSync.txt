@@ -1,0 +1,10 @@
+Synchronous vs. Asynchronous:
+
+Synchronous:
+
+Synchronous operations happen one after the other in a sequential order. Each operation must complete before the next one starts.
+It's like following a recipe step by step – you complete one step before moving on to the next.
+Asynchronous:
+
+Asynchronous operations can overlap or happen independently of each other. One operation doesn't necessarily wait for the previous one to complete.
+It's like cooking multiple dishes at the same time – you can work on one while another is baking in the oven.
