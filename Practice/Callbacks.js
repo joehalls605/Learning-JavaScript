@@ -56,7 +56,7 @@ function calculateWithCallback(num1, num2, successCallback, errorCallback) {
     }
     else{
         const result = num1 + num2;
-        successCallback();
+        successCallback(result);
     }
 }
 
