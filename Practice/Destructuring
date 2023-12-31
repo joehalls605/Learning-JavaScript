@@ -1,0 +1,73 @@
+// Array Destructuring:
+
+// Question 1:
+const numbers = [1, 2, 3, 4, 5];
+// Destructure the array and assign variables to the first and third elements.
+const [variable1, variable3] = numbers;
+
+// Question 2:
+const colors = ['red', 'green', 'blue', 'yellow'];
+// Destructure the array and assign variables to the first and last elements.
+const [variableFirst, variableLast] = colors;
+
+// Question 3:
+const fruits = ['apple', 'orange'];
+// Destructure the array and assign variables to the first and second elements, with a default value of 'banana' for the second element.
+const [variableOne, variableTwo = "banana"] = fruits
+
+// Object Destructuring:
+
+// Question 4:
+const person = { name: 'Bob', age: 25, city: 'Cityville' };
+// Destructure the object and assign variables to age and city.
+
+const {age, city} = person;
+
+// Question 5:
+const student = { name: 'Alice', details: { grade: 'B', subject: 'History' } };
+// Destructure the object and assign variables to name and subject.
+const {name, details:{subject}} = student;
+
+// Question 6:
+const book = { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' };
+// Destructure the object and use aliases for title and author.
+
+const {title="bla", author="blonk"} = book;
+
+// Function Parameter Destructuring:
+
+// Question 7:
+// Write a function called `printDetails` that takes an object parameter and logs the values of 'name' and 'age'.
+
+function printDetails({name, age}){
+    console.log(name, age);
+}
+
+// Question 8:
+// Modify the `printDetails` function to set default values for 'name' and 'age' in case they are not provided.
+
+function printDetails({name = "Joe", age = 26}){
+    console.log(name, age)
+}
+
+// Question 9:
+// Write a function called `sumNumbers` that takes an array parameter and returns the sum of the first two elements.
+
+function sumNumbers({one = 0, two = 0}){
+    const sum = one + two;
+    return sum;
+}
+
+// Advanced Destructuring:
+
+// Question 10:
+const numbersArray = [1, 2, 3, 4, 5];
+// Use the rest operator to capture the remaining elements in a new array.
+
+// const [One, Two, ...rest] = numbersArray;
+
+// Question 11:
+const detailsObject = { title: 'JavaScript', author: 'John Doe', year: 2022, publisher: 'Tech Books' };
+// Use the rest operator to capture the remaining properties in a new object.
+
+const {prop1, prop2, ...rest} = detailsObject;
