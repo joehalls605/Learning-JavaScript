@@ -71,3 +71,5 @@ const detailsObject = { title: 'JavaScript', author: 'John Doe', year: 2022, pub
 // Use the rest operator to capture the remaining properties in a new object.
 
 const {prop1, prop2, ...rest} = detailsObject;
+
+

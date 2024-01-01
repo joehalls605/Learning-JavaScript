@@ -91,3 +91,43 @@ for (const color of colors) {
         console.log(color);
     }
 }
+
+// Question 1:
+// Use a while loop to print numbers from 1 to 5.
+
+const i = 1;
+while(i < 5){
+console.log(i);
+}
+
+// Question 2:
+// Use a do-while loop to prompt the user for a number until they enter a number greater than 10.
+
+let userInput;
+do{
+    userInput = prompt("Enter a number greater than 10");
+}
+while(userInput <= 10);
+
+
+// Question 3:
+// Use a while loop to find and log the first occurrence of the letter "a" in the string `word`.
+
+const Word = "jackson";
+let index = 0;
+
+while (index < word.length && word[index] !== "a"){
+    index++;
+}
+console.log("First occurrence of 'a' at index:", index);
+
+// Question 4:
+// Use a while loop to iterate through an array of numbers and log each number until a negative number is encountered.
+
+let Index = 0;
+const Numbers = [1, 2, 5, -3, 2];
+
+while (i < numbers.length && numbers[i] >= 0) {
+    console.log(numbers[i]);
+    i++;
+}
