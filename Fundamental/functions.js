@@ -38,3 +38,18 @@ let triple = createMultiplier(3);
 console.log(double(5));
 console.log(triple(5));
 
+
+//Passing function as arguments
+
+function performOperation(a, b, operation){
+    return operation(a,b);
+}
+
+function add(x,y){
+    return x + y;
+}
+
+let calculated = performOperation(5, 3, add);
+console.log(calculated);
+
+
