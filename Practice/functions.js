@@ -45,3 +45,4 @@ function modifyArray(arr, modificationFunction){
 const numbers = [1, 2, 3, 4];
 const doubleArray = modifyArray(numbers, (num) => num * 2);
 console.log(doubleArray);
+
