@@ -16,14 +16,20 @@ function countDown(n){
 }
 
 // Recursive version:
-function countDownRecursive(n){
-    if(n <= 0){
+function countDownRecursive(n) {
+    // Base case: If n is less than or equal to 0, print "Horray" and return.
+    if (n <= 0) {
         console.log("Horray");
-        return 
+        return;
     }
-    console.log(n)
+
+    // Print the current value of n.
+    console.log(n);
+
+    // Recursive call: Call countDownRecursive with n - 1 as the argument.
     countDownRecursive(n - 1);
 }
+
 // What happens:
 countDownRecursive(3)
     countDownRecursive(2)
