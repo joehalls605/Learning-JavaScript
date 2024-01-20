@@ -35,13 +35,12 @@ class ToDo {
   function addTodo() {
     const inputElement = document.getElementById("todo-input");
     const task = inputElement.value.trim();
-  
-    try {
+   
+    try{
       todoApp.addTask(task);
       todoApp.displayTasks();
-      inputElement.value = "";
-    } catch (error) {
-      alert(error.message);
+    } catch(error){
+      alert("task could not be added");
     }
   }
   
