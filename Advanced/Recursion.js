@@ -31,6 +31,7 @@ function countDownRecursive(n) {
 }
 
 // What happens:
+// n = 3 for example
 countDownRecursive(3)
     countDownRecursive(2)
         countDownRecursive(1)
