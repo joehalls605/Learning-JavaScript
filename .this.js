@@ -1,42 +1,43 @@
 /*
-.This
-In Javascript, this .refers to the current execution context.
- The value of this is determinted by how a function is called and it can behave differently depending on how the function is invoked.
+this Keyword in JavaScript
+In JavaScript, the keyword 'this' refers to the current execution context. 
+The value of 'this' is determined by how a function is called, and it can behave differently depending on how the function is invoked.
 */
 
-//Global context:
+// Global Context:
 
+// In the global context, 'this' refers to the global object, which in browsers is the window object.
 console.log(this === window);
 
-//Function context:
+// Function Context:
 
-function myFunction(){
+// When a function is called without any context, 'this' refers to the global object (window in browsers).
+function myFunction() {
     console.log(this);
 }
 
-myFunction();
+myFunction(); // Logs the window object in a browser environment.
 
-// Object contenxt:
+// Object Context:
 
+// In an object method, 'this' refers to the object that owns the method.
 const obj = {
     name: "Joe",
-    greet: function(){
+    greet: function() {
         console.log(this.name);
     }
 }
 
-obj.greet();
+obj.greet(); // Logs 'Joe'.
 
-function Person(name){
+// Constructor Context:
+
+// Inside a constructor function, 'this' refers to the newly created object.
+function Person(name) {
     this.name = name;
 }
 
-/*
-Setting Properties:
+// 'person1' is an instance of the Person constructor.
+const person1 = new Person('Alice');
 
-Inside the constructor function, this.name = name; assigns the name parameter passed to the constructor to 
-the name property of the newly created object (person1).
-*/
-
-const person1 = new Person();
-console.log(person1.name);
+console.log(person1.name); // Logs 'Alice'.
