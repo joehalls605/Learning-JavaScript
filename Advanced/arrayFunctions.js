@@ -50,3 +50,49 @@ const result2 = users.find((user, index, array) => {
 });
 
 console.log(result2); // Output: { id: 3, name: 'Charlie' }
+
+
+//Map()
+
+/*
+Transforms each element of an array according to a provided function and returns a new array with the results.
+It's used to perform operations on each element of an array, without mutating the original array.
+*/
+
+const numbers1 = [1, 2, 3, 4, 5];
+const doubledNumbers = numbers1.map(number => number * 2);
+console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+
+
+//forEach()
+/*
+forEach, doesn't return a new array, but iterates over each element of the array and executes a provided function for each element.
+*/
+
+const names = ['Alice', 'Bob', 'Charlie'];
+names.forEach(name => console.log(name));
+// Output:
+// Alice
+// Bob
+// Charlie
+
+
+//Reduce()
+/*
+This method is like having a running tally while you go through a list of numbers.
+It uses an accumulator(a starting value) which is often set to 0.
+It then goes through each number in the array and performs an action
+Then after each operation, the result is stored into the accumulator
+By the edn of the operation you're left with a single value which is the result of the reduce() function
+*/
+
+const numbers3 = [1, 2, 3, 4, 5];
+
+// Starting with an accumulator (sum) set to 0
+const sum = numbers3.reduce((accumulator, currentValue) => {
+    // Adding the current number to the accumulator
+    return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // Output: 15 (result of adding all the numbers together)
+
