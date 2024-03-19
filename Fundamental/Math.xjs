@@ -1,0 +1,43 @@
+/*
+Math.random generates a random floating point number between 0 and 1.
+0.8
+0.5
+0.9
+*/
+
+const num = 2;
+const randomisedNumber = num * Math.random();
+
+/*
+Math.floor rounds down a number to nearest integer
+*/
+
+const min = 1;
+const max = 10;
+
+const randomNumber = Math.floor(Math.random() * (max -  min + 1)) + min;
+
+/*
+(max - min + 1): This expression calculates the size of the range. For example, if min is 1 and max is 10, the range size would be 10 - 1 + 1 = 10.
+
+Math.random() * (max - min + 1): This generates a random decimal number between 0 and the size of the range. 
+Multiplying by the range size effectively scales the random number to fit within the desired range.
+
+Math.floor(): This rounds down the scaled random number to the nearest integer.
+
+Finally, we add min to ensure that the generated random number falls within the specified range (min to max). 
+If min is not 0, we need to adjust the range by adding min to the result of the Math.floor() expression.
+
+*/
+
+/*
+Math.max() returns the largest of zero or more numbers
+*/
+console.log(Math.max(10, 5, 20));
+// Output would be 20
+
+/*
+Math.max() returns the smallest of zero or more numbers
+*/
+console.log(Math.min(10, 5, 20));
+// Output would be 5
