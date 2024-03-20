@@ -1,0 +1,13 @@
+The DOM stands for Document Object Model. 
+
+Document: It refers to the HTML document loaded in the browser. 
+This document is structured like a tree, with elements nested inside each other.
+
+Object: Each HTML element in the document is represented as an object in the DOM. 
+These objects can be accessed, manipulated, and modified using JavaScript.
+
+Model: The DOM provides a model or interface that allows JavaScript to interact with the document. 
+This means you can change the content, structure, and styling of a webpage dynamically using JavaScript.
+
+In short, the DOM is a way for JavaScript to understand and interact with the structure of a webpage, 
+treating it as a collection of objects that can be manipulated. It's like a tree made up of objects representing each element on a webpage, and JavaScript can climb, modify, or rearrange this tree as needed.

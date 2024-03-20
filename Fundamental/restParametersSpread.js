@@ -1,7 +1,17 @@
-/* The spread syntax in JavaScript allows for the representation of an indefinite set of elements in an array. 
-It can be employed to pass multiple values as individual arguments to a function,
- making it a flexible and concise way to work with arrays. */
+/* The spread syntax in JavaScript is a way to work with arrays more flexibly. 
+It lets you take an array and break it into individual elements. 
+You can use it to pass multiple values as separate arguments to a function, 
+which is handy because functions usually expect arguments one by one. So, instead of passing an entire array to a function, 
+you can use spread syntax to pass each element of the array as a separate argument. 
+This makes your code more concise and easier to work with. */
 
+const numbers = [1,2,3];
+console.log(...numbers);
+
+const array1 = [1,2,3];
+const array2 = [4,5,6];
+
+const conactenatedArray = [...arr1, ...arr2];
 
 function sum(...numbers){
     return numbers.reduce((total, num) => total + num, 0);
