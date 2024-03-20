@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing the DOM</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    
+    <script>
+        // Starting point: Get the ul element
+        const myList = document.getElementById('myList');
+        
+        // Traverse through child nodes
+        for (let i = 0; i < myList.childNodes.length; i++) {
+            const listItem = myList.childNodes[i];
+            if (listItem.nodeType === 1) { // Check if it's an element node (type 1)
+                console.log(listItem.textContent); // Output the text content of each list item
+            }
+        }
+    </script>
+</body>
+</html>
