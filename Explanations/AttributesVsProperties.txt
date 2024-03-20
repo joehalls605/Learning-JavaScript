@@ -1,0 +1,29 @@
+Attributes and properties are closely related concepts in HTML and JavaScript, but they have distinct meanings and purposes.
+
+Attributes are part of HTML elements and provide additional information about an element. 
+They are defined in the HTML markup using key-value pairs, such as class="container" or id="myElement".
+Attributes are static; they are set in the HTML code and generally do not change during runtime.
+Attributes are accessed using JavaScript through the getAttribute() method and can be modified using the setAttribute() method.
+
+<img src="example.jpg" alt="Example Image">
+
+Properties are part of JavaScript objects that represent HTML elements in the Document Object Model (DOM).
+Properties are dynamic. They can change during runtime as a result of user interaction, script execution, or other events.
+Properties provide access to the current state or value of an element. For example, the innerHTML property gives access to the content of an element, and the value property gives access to the value of form elements like <input> or <textarea>.
+Properties are accessed and modified directly through JavaScript object properties. For example, element.value accesses the value property of an HTML input element.
+Here's a simple analogy to differentiate between attributes and properties:
+
+Think of an attribute as the label on a box (HTML element). 
+It provides information about the box but doesn't change its contents. 
+You can see the label, but it's not what's inside the box.
+Think of a property as the contents of the box (JavaScript object representing the HTML element).
+It represents the current state or value of the box, and it can change over time. 
+You interact with the actual contents of the box, not just the label.
+
+.textContent is a property.
+
+const button = document.getElementById('myButton');
+console.log(button.textContent); // Output: "Click Me"
+button.textContent = "Press Me";
+
+In summary, attributes are part of the HTML markup and provide static information about elements, while properties are part of the JavaScript representation of HTML elements in the DOM and provide dynamic access to the current state or value of elements.
