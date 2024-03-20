@@ -11,6 +11,10 @@ for(let i= 0; i <=5; i++){
     const x = 1;
 }
 
+for(let u = 0; u > 5; u++){
+
+}
+
 let j = 1;
 
 // WHILE
