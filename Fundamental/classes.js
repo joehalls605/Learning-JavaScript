@@ -25,6 +25,7 @@ Once you have a class, you can create objects (instances) based on that class us
 
 const cat = new Animal("Cat", "Meow");
 const dog = new Animal("Dog", "Woof");
+const sheep = new Animal("Sheep", "Baa")
 
 
 class Person {
@@ -55,3 +56,4 @@ class Person {
 
 const person1 = new Person("John Jacks", "25", "john@gmail.com")
 person1.setEmail("johnjacks@gmail.com")
+person1.setEmail("emailchanged@gmail.com")

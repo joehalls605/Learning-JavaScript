@@ -13,8 +13,6 @@ Description: Variables declared inside a block (e.g., within curly braces of an 
 Accessibility: Accessible only within the block where they are declared.
 */
 
-
-
 // Global scope
 let globalVariable = 'I am global';
 
