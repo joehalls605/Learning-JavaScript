@@ -1,0 +1,24 @@
+// Javascript ProtoTypes and inheritance.
+// Prototypes allow us to define methods and properties shared among all isntances of the constructor function.
+
+// Step 1: Define a constructor function for the cars
+function Car(make, model, year) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+}
+
+// Step 2: Add a method to the Car prototype
+Car.prototype.start = function() {
+    console.log("Starting the " + this.make + " " + this.model);
+};
+
+// Step 3: Create instances of cars
+let car1 = new Car("Toyota", "Camry", 2020);
+let car2 = new Car("Honda", "Civic", 2018);
+
+// Step 4: Use the method
+car1.start(); // Output: Starting the Toyota Camry
+car2.start(); // Output: Starting the Honda Civic
+
+
