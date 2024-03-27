@@ -1,3 +1,36 @@
+// Parent constructor function
+function Animal(name) {
+    this.name = name;
+  }
+  
+  // Method for parent constructor function
+  Animal.prototype.sayName = function() {
+    console.log("My name is " + this.name);
+  }
+  
+  // Child constructor function inheriting from Animal
+  function Dog(name, breed) {
+    Animal.call(this, name); // Call the parent constructor function with the current context
+    this.breed = breed;
+  }
+  
+  // Set up inheritance
+  Dog.prototype = Object.create(Animal.prototype);
+  Dog.prototype.constructor = Dog;
+  
+  // Method for child constructor function
+  Dog.prototype.bark = function() {
+    console.log("Woof!");
+  }
+  
+  // Create an instance of Dog
+  var myDog = new Dog("Buddy", "Labrador");
+  
+  // Call methods
+  myDog.sayName(); // Output: My name is Buddy
+  myDog.bark();    // Output: Woof!
+
+
 // Step 1: Define a constructor function for vehicles
 function Vehicle(make, model, year) {
     // Define properties for the Vehicle object
