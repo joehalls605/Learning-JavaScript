@@ -1,3 +1,64 @@
+class User {
+  constructor(username) {
+    this.username = username;
+    this.loggedIn = false;
+    this.score = 0;
+  }
+
+  login() {
+    if (!this.loggedIn) {
+      this.loggedIn = true;
+      console.log(`${this.username} logged in.`);
+    } else {
+      console.log(`${this.username} is already logged in.`);
+    }
+  }
+
+  logout() {
+    if (this.loggedIn) {
+      this.loggedIn = false;
+      console.log(`${this.username} logged out.`);
+    } else {
+      console.log(`${this.username} is already logged out.`);
+    }
+  }
+
+  updateScore(points) {
+    if (this.loggedIn) {
+      this.score += points;
+      console.log(`${this.username}'s score updated to ${this.score}.`);
+    } else {
+      console.log(`${this.username} needs to log in first.`);
+    }
+  }
+}
+
+
+class Admin extends User{
+// Inherits all functionality from User
+// By default uses User constructor
+
+deleteUser(user){
+  users = users.filter(u => {
+    return u.email != user.email; // returns true, keeps user in the array or returns false, filters it out of the arry
+  });
+}
+}
+
+var userOne = new User("ryan@gmail.com", "Ryu")
+var userTwo = new User("yoshi@mariokorp.com", "Yoshi")
+var admin = new Admin("jackson@gmail.com", "Jackson");
+
+var users = [userOne, userTwo];
+
+admin.deleteUser(userTwo);
+
+
+
+
+// pre ES6 way of setting up inheritance:
+
+
 // Parent constructor function
 function Animal(name) {
     this.name = name;
