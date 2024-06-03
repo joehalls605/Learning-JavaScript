@@ -1,10 +1,11 @@
 /*
 A class is like a template or a blueprint that describes how an object should be created.
 It encapsulates properties (attributes) and methods (functions) that the objects created from the class will have.
-*/
 
-/*
 The constructor method is a special method that gets called when an object is created from the class. It initializes the object's properties.
+
+Additional note - instance methods are functions are are defined within a class and can be called on instances (objects of that class).
+They are operate on the instance they are called on using the this. keyword.
 */
 
 class Animal {
@@ -14,6 +15,7 @@ class Animal {
         this.sound = sound;
     }
 
+    // This is an instance method.
     makeSound(){
         console.log(this.sound);
     }
