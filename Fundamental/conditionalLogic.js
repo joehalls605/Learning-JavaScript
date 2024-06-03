@@ -1,4 +1,18 @@
-// CONDITIONAL LOGIC
+/*
+Conditional logic
+
+if
+Purpose: Used to check a specific condition.
+Execution: Runs the block of code if the condition is true.
+
+else if
+Purpose: Used to check another condition if the previous if (or else if) condition was false.
+Execution: Runs the block of code if its condition is true, but only if all previous conditions were false.
+
+else
+Purpose: Provides an alternative block of code that runs if none of the preceding if or else if conditions are true.
+Execution: Runs when the if and any else if conditions are false.
+*/
 
 const number = 10;
 
