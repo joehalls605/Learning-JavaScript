@@ -30,8 +30,21 @@ const fullNames = people.map(function (person) {
     return `${person.firstName} ${person.lastName}`;
 });
 
+const lastNameOnly = people.map(function(person){ // person represents the object in the array.
+    return `${person.lastName}`
+})
+
+
 const fruits = ['apple', 'pear', 'orange']
 
 const capitalisedFruits = fruits.map(function(fruit){
     return fruit.charAt(0).toUpperCase() + fruit.slice(1);
 })
+
+/* The .map method is a built in function in JavaScript for arrays. It creates a new array by applying a callback function to each element of the original array.
+The new array contains the results of the callback function for each element.
+
+Reminder of callback functions:
+A callback function is a function that is passed to another function as an arguement and is executed after
+some operation has been completed. In the context of .map(), the callback function is applied to each element of the array.
+*/
