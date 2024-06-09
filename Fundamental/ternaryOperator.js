@@ -17,5 +17,9 @@ var message = (age >= 18) ? "You are an adult" : "You are not an adult";
 var name = "Joe";
 var message2 = (name === "Joe") ? "You are Joe!" : "You are not Joe!";
 
+var name = "Elena";
+var message3 = (name === "Elena") ? "You are Elena" : "You are not Elena";
+
+
 
 
