@@ -4,6 +4,7 @@ In JavaScript, type conversion is the process of converting a value from one typ
 Implicit (Automatic) Type Conversion
 Explicit (Manual) Type Conversion
 
+
 Implicit Type Conversion
 Implicit type conversion, also known as type coercion, occurs automatically when JavaScript tries to perform an operation involving different types.
 
@@ -34,6 +35,9 @@ let str2 = "456";
 let num = Number(str2);
 console.log(num); // 456
 
+let str3 = "748";
+let num2 = Number(str3);
+
 
 /*
 Differences and Use Cases
@@ -42,6 +46,7 @@ Implicit Conversion:
 Useful for quick operations.
 Can lead to unexpected results if not careful.
 Common in comparisons and arithmetic operations.
+
 Explicit Conversion:
 
 More predictable and controlled.

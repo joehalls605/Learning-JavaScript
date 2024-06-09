@@ -37,6 +37,14 @@ console.log(personTwo.name)
 console.log(personTwo.address.city);
 personTwo.greet();
 
+let dog = {
+    sound: function(){
+        console.log("woof!");
+    },
+    name: "Phil",
+    age: 5
+}
+
 // Object with Arrays
 
 let student = {
