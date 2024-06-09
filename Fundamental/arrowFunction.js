@@ -1,7 +1,33 @@
-// ARROW FUNCTION
-
-/* Arrow functions have a concise syntax, especially when the function body contains a single expression. 
+/* 
+An Arrow function is a shorthand syntax for writing functions in JavaScript.
+Arrow functions have a concise syntax, especially when the function body contains a single expression. 
 This can make the code more readable and reduces the need for boilerplate code. */
+
+
+// regular function
+function add(a, b) {
+    return a + b;
+  }
+  
+// arrow function
+const add = (a, b) => a + b;
+
+/*
+Arrow functions do not have their own this context.
+Instead they inherit this from the parent scope at the time they are defined
+*/
+
+function Person() {
+    this.age = 0;
+  
+    setInterval(() => {
+      this.age++; // 'this' refers to the Person instance
+    }, 1000);
+  }
+  
+  const p = new Person();
+  
+// More examples of function usage:
 
 // Regular function
 const regularFunction = function() {
