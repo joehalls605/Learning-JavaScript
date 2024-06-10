@@ -94,3 +94,12 @@ const regularAdd = function(x, y) {
 
 // Arrow function with implicit return
 const arrowAdd = (x, y) => x + y;
+
+
+// Concise line. 
+// Arrow function named isPositive. number is the parameter, => number > 0 is the function body.
+// When the function is called it will return the value of number.
+// This arrow function takes an input number and returns it without any modifications. 
+// It's essentially an identity function that returns its input as output.
+
+const isPositive = number => number > 0;
