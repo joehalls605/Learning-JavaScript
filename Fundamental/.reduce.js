@@ -35,3 +35,39 @@ const numbers2 = [1,4,5,7,8];
 const sumReducer2 = (accumulator, currentValue) => accumulator + currentValue;
 
 const sum2 = numbers2.reduce(sumReducer2, 0);
+
+
+// Example
+
+const items = [
+    {name: "Rice", price: 5},
+    {name: "Book", price: 8},
+    {name: "Chicken", price: 10}
+]
+
+// let totalPrice = 0
+// items.forEach(item => {
+//     totalPrice += item.price;
+// })
+
+// loops through each item, every time it brings back the total from previous iteration and adds the item.price to it. 
+const totalPrice = items.reduce((total, item)=>{
+ return total + item.price;
+}, 0)
+
+
+const people = [
+    {name: "Joe", age: 26},
+    {name: "Jack", age: 32},
+    {name: "Jeff", age: 21}
+]
+
+people.reduce((groupedPeople, person)=>{
+    const age = person.age;
+    // if we already have a value for that age
+    if(groupedPeople[age] == null) groupedPeople[age] = []
+    groupedPeople[age].push(person)
+
+    // returns grouped object
+    return groupedPeople
+}, {}) 
