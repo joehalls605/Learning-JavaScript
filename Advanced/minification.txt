@@ -1,0 +1,21 @@
+Minification is the process of reducing the size of files by removing unnecessary characters such as whitespace, comments, and formatting, without changing their functionality.
+
+
+Original HTML:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example Page</title>
+</head>
+<body>
+    <h1>Welcome to my website!</h1>
+    <!-- This is a comment -->
+    <p>This is some text.</p>
+</body>
+</html>
+
+Minified HTML:
+<!DOCTYPE html><html><head><title>Example Page</title></head><body><h1>Welcome to my website!</h1><p>This is some text.</p></body></html>
+
+Same applies for CSS.
