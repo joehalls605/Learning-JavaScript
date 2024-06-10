@@ -21,5 +21,8 @@ var name = "Elena";
 var message3 = (name === "Elena") ? "You are Elena" : "You are not Elena";
 
 
+var name = "Phil";
+var message4 = (name === "Phil") ? "You are phil" : "You are not phil";
+
 
 

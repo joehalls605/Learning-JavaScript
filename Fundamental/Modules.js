@@ -1,7 +1,7 @@
-// MODULES
+/* MODULES
+JavaScript modules are reusable pieces of code that can be exported from one file and imported into another. They help organize code into smaller, manageable chunks, making it easier to maintain and reuse.
 
-
-/* say we have two JavaScript files, main.js and module.js.
+Modules export functionality using the export keyword. You can export variables, functions, classes, or even entire objects.
 */
 
 // module.js
