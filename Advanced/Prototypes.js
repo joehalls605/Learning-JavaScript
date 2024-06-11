@@ -1,49 +1,44 @@
-// Javascript ProtoTypes and inheritance.
-// Prototypes allow us to define methods and properties shared among all instances of the constructor function.
-
 /*
-Attaching methods to a prototype property instead of objects.
+What is a Prototype?
+In JavaScript, a prototype is a mechanism by which objects inherit features from one another. Every JavaScript object has a prototype, which is another object that the first object inherits properties and methods from.
 
-Any custom object we try to emulate has a prototype.
+How Does it Work?
+Object Creation: When you create an object in JavaScript (using a constructor function, object literal, or class), it has a hidden link to another object, called its prototype.
 
-This protoype is like a map of that object type, contains the different methods for that object type.
-For any object created of that type, the proto property points to that prototype and how to use those methods
-so that the methods are not being repeated in each instance
-We are defining them once in a single prototype ready to be used
+Prototype Chain: If you try to access a property or method on an object and it doesn't exist on that object, JavaScript will look for it on the object's prototype. If it's not found there, it will keep looking up the prototype chain until it finds it or reaches the end of the chain (null).
+
+How Does it Work?
+Object Creation: When you create an object in JavaScript (using a constructor function, object literal, or class), it has a hidden link to another object, called its prototype.
+
+Prototype Chain: If you try to access a property or method on an object and it doesn't exist on that object, JavaScript will look for it on the object's prototype. If it's not found there, it will keep looking up the prototype chain until it finds it or reaches the end of the chain (null).
+
+Why Use Prototypes?
+Memory Efficiency: Methods and properties defined on the prototype are shared among all instances. This reduces memory usage because they are not duplicated for each instance.
+Dynamic Behavior: You can add properties and methods to the prototype at any time, and all instances will have access to them.
+
+Prototype vs proto
+prototype: A property of constructor functions. It's used to define properties and methods that should be shared by all instances of a constructor.
+proto: A property of objects that points to their prototype. It forms the prototype chain.
+
+Visualizing Prototypes
+Here's a simple visualization:
+
+rabbit object looks for walk()
+rabbit doesn't have walk(), so it looks at rabbit.__proto__ (which is animal in the first example or Animal.prototype in the second example)
+animal or Animal.prototype has walk(), so it is called.
 */
- 
-User.prototype
 
-class User{
-    constructor(email, name) {
-        this.email = email;
-        this. name = name;
+class Animal{
+    constructor(name){
+        this.name = name;
+        this.eats = true;
+    }
+
+    walk(){
+        console.log(this.name = "walks");
     }
 }
 
-
-
-
-
-
-// Step 1: Define a constructor function for the cars
-function Car(make, model, year) {
-    this.make = make;
-    this.model = model;
-    this.year = year;
-}
-
-// Step 2: Add a method to the Car prototype
-Car.prototype.start = function() {
-    console.log("Starting the " + this.make + " " + this.model);
-};
-
-// Step 3: Create instances of cars
-let car1 = new Car("Toyota", "Camry", 2020);
-let car2 = new Car("Honda", "Civic", 2018);
-
-// Step 4: Use the method
-car1.start(); // Output: Starting the Toyota Camry
-car2.start(); // Output: Starting the Honda Civic
-
-
+let rabbit = new Animal("Rabbit");
+console.log(rabbit.eats);
+rabbit.walk();
