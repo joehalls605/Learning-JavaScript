@@ -20,6 +20,14 @@ class User{
 
 }
 
+class Admin extends User{
+    deleteUser(user){
+        users = users.filter(u =>{
+            return u.email != user.email; // if user email is not equal to user.email, returns true. If false filters it out.
+        });
+    }
+}
+
 /*
 the 'new' keyword
 - creates a new empty object {}
@@ -29,6 +37,9 @@ the 'new' keyword
 
 var userOne = new User("joeh@gmail.com", "joe"); // the 'this' is this object.
 var userTwo = new User("billh@gmail.com", "bil"); // the 'this' is this object.
+var admin = new Admin("shaun@ninjas.com", "shaun");
+
+
 
 userOne.login();
 userTwo.logout();
@@ -38,4 +49,8 @@ userOne.updateScore();
 userTwo.updateScore();
 
 userTwo.updateScore().login();
+
+var users = [userOne, userTwo];
+admin.deleteUser(userTwo);
+console.log(users);
 
