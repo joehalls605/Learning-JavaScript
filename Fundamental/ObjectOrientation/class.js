@@ -1,3 +1,6 @@
+/* These classes are actually pretend classes. Built into the language to emulate how classes behave.
+Classes are a thin layer of abstraction built onto the js prototype model. Syntatic sugar.
+*/
 class User{
     constructor(email, name){
         this.email = email;
