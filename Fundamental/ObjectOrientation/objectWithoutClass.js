@@ -20,7 +20,15 @@ User.prototype.logout = function(){ // going to the prototype (blueprint) and cr
 
 function Admin(...args){ // ... takes the parameters and puts them into an array
     User.apply(this, args);  // runs the User constructor above, grabbing the args and applying.
-    
+    this.role = "super admin" // adding a new property
+}
+
+// Admin also has it's own prototype property.
+// We to create a new object for the admin prototype based on the user prototype
+Admin.prototype = Object.create(User.prototype);
+
+Admin.prototype.deleteUser = function(){
+    // delete user functionality
 }
 
 var userOne = new User("joeh@gmail.com", "joe"); // creates an empty, binding context of this to the object, and passing it into the constructor function.
