@@ -35,3 +35,23 @@ sortedPassingStudents.forEach(student => {
 
 // Log the updated studentlistElement after appending list items
 console.log(studentlistElement);
+
+/*
+How functional programming is used:
+
+Functional Approach: The code uses functions (isPassing, sum, compareScores) to perform specific tasks:
+
+Filtering: isPassing determines which students passed based on their score (filter function).
+Summation: sum accumulates scores (reduce function) to calculate the total score of passing students.
+Sorting: compareScores defines how to sort students (sort function) based on their scores in descending order.
+Pure Functions: These functions are pure because:
+
+They do not modify the original students array or any external state.
+They produce deterministic results based only on their inputs (arguments).
+Immutability: The use of filter, reduce, and sort functions ensures that operations are performed on copies or derived values (passingStudents and sortedPassingStudents), maintaining the immutability of the original students array.
+
+Clarity and Reusability: Functional programming promotes clear, modular code where each function has a single responsibility and can be reused in different contexts. This approach enhances code maintainability and reduces bugs by minimizing side effects and mutable state.
+
+This explanation highlights how functional programming concepts are applied in your JavaScript code to filter, transform, and manipulate data effectively while adhering to principles of immutability and purity.
+
+*/
