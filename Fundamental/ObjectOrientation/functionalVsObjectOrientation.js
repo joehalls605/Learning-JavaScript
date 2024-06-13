@@ -88,6 +88,19 @@ myDog.bark(); // Rex barks
 
 
 /*
+When deciding whether to use functional programming (FP) or object-oriented programming (OOP) in JavaScript, several factors come into play, including the nature of the project, team expertise, and specific requirements of the application.
 
+Use Cases for FP:
 
+Data Transformation: FP excels in scenarios where data transformation is critical. Examples include working with arrays, lists, and streams of data.
+Concurrency: FP's immutability and stateless functions make it easier to write concurrent and parallel code.
+Mathematical Computations: FP is well-suited for applications involving mathematical computations or algorithms due to its pure functions and composition.
+React and Redux: Many modern JavaScript frameworks and libraries, such as React and Redux, encourage functional programming principles for state management and component design.
+
+Use Cases for OOP:
+
+Complex Data Models: OOP is beneficial for applications with complex data models and relationships, such as those in enterprise systems.
+UI Components: Designing interactive UI components, such as in graphical user interfaces or games, often benefits from OOP's encapsulation and inheritance.
+Maintainability: Large codebases with many developers might find OOP's structured approach easier to manage and maintain.
+Frameworks and Libraries: Many JavaScript frameworks and libraries, such as Angular, are built with OOP principles.
 */
