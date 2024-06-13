@@ -9,6 +9,9 @@ const greet = function() {
   greet(); // Output: Hello, World!
 
   /*
+
+  They're often used where a function is needed temporarily, or as a callback function.
+
 Benefits of Anonymous Functions
 Encapsulation: Keeps code that is only needed in a specific context local to that context.
 Cleaner Code: Reduces the number of named functions, making the code less cluttered.

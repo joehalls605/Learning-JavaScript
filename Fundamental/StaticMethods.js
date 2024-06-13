@@ -29,3 +29,9 @@ class MathUtil{
 
 console.log(MathUtil.add(2,3));
 console.log(MathUtil.multiply(6,3));
+
+/*
+Instance vs. Static Methods:
+Instance methods are methods that are defined on the prototype of the class and are called on instances of the class (objects created with new).
+Static methods, on the other hand, are defined directly on the class itself using the static keyword and are called on the class directly (ClassName.method()).
+*/
