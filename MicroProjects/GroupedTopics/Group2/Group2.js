@@ -111,4 +111,64 @@ return dayName;
     }
     
 // Functions: Declaration and invocation, Parameters and arguments, Return statements
+function addNumber(num1, num2){
+    const total = num1 + num2;
+    return total;
+}
 
+addNumber(1,5);
+
+// Advanced Functions: Arrow Functions, Rest and spread operators, default parameters
+
+
+// Default parameters
+const subtractNumber = (num1 = 10, num2) => {
+    const total = num1 - num2;
+    return total;
+}
+
+subtractNumber(undefined, 7);
+
+// Spread operator usage
+const evenNumbers = [2,4,6,8];
+
+const multiplyEvenNumbers = (...numbers) => {
+    return numbers.map(number => number * 10);
+}
+
+const multipliedNumbers = multiplyEvenNumbers(...evenNumbers);
+
+//Anonymous function
+const greet = function(){
+    console.log("Hell, world!")
+}
+
+greet();
+
+//Anonymous function used as a callback
+const numbers = [1,4,5,6];
+const doubled = numbers.map(function(num){
+    return num * 2;
+})
+
+// Closures
+
+
+function createCounter(){
+
+    let count = 0; // this variable is in outer scope
+
+    return function(){
+        count++; // this inner function has access to count
+    }
+}
+
+const counter = createCounter();
+
+/*
+An IIFE is a function that is executed immediately after it is defined. It is a common JavaScript pattern used to create a new scope and avoid polluting the global scope.
+*/
+
+(function(){
+    const message = "I'm defined straight away!"
+})(); // The parentheses at the end invoke the function immediately
