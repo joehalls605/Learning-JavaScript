@@ -1,0 +1,15 @@
+Prototype as a Blueprint:
+
+In JavaScript, a prototype is like a blueprint or template for objects. Every JavaScript object has a prototype, which is also an object.
+Methods and Properties:
+
+The prototype can contain methods (functions) and properties that can be shared among all instances of that object type. When you create a new object, it inherits properties and methods from its prototype.
+Prototype Chain:
+
+When you attempt to access a property or method on an object, JavaScript will first look for that property or method directly on the object itself. If it doesn’t find it there, it then looks at the object’s prototype. This continues up the prototype chain until the property or method is found or the end of the chain is reached (typically Object.prototype).
+proto Property:
+
+Each object has an internal link to its prototype, accessible via the __proto__ property (though it's recommended to use Object.getPrototypeOf instead of directly accessing __proto__).
+Constructor Functions and Prototypes:
+
+When you create an object using a constructor function, the prototype property of the constructor function is assigned as the prototype of the new object. This means methods defined on the constructor’s prototype property are available to all instances created by that constructor.

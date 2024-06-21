@@ -2,6 +2,12 @@
 What is Inheritance?
 Inheritance allows one object to inherit properties and methods from another object. This helps in reusing code and creating a more organized and modular structure.
 
+Prototype Inheritance:
+Prototype inheritance is the original inheritance model in JavaScript where objects inherit directly from other objects.
+
+Class Inheritance:
+Class inheritance, introduced in ES6, provides a more familiar and declarative syntax for creating and managing constructor functions and handling inheritance. It is syntactic sugar over prototype-based inheritance, making the code more readable and easier to manage.
+
 How Does Inheritance Work with Prototypes?
 In JavaScript, inheritance is implemented through prototypes. When you create a new object, you can set its prototype to another object, allowing it to inherit properties and methods from that object.
 */
@@ -17,9 +23,9 @@ Animal.prototype.walk = function() {
     console.log(this.name + " walks");
 };
 
-
 /*
-This part of the code sets up instance properties. When you create a new Rabbit instance, Animal.call(this, name) initializes name and eats properties on the new instance, and this.jumps = true adds the jumps property.
+This part of the code sets up instance properties. 
+When you create a new Rabbit instance, Animal.call(this, name) initializes name and eats properties on the new instance, and this.jumps = true adds the jumps property.
 */
 
 // Creating a Subclass for creating Rabbit objects.
@@ -28,7 +34,7 @@ This part of the code sets up instance properties. When you create a new Rabbit 
 
 function Rabbit(name) {
     Animal.call(this, name); // Call the parent constructor. In JS, the call method is used to call a function with a specific this value and arguments.
-    this.jumps = true;
+    this.jumps = true; // Add the jumps property to the Rabbit instance
 }
 
 /* This part sets up the prototype chain so that Rabbit instances inherit methods from Animal.prototype. */
@@ -73,3 +79,41 @@ console.log(rabbit.jumps); // true (own property)
 
 rabbit.walk(); // "Bunny walks" (inherited from Animal.prototype)
 rabbit.jump(); // "Bunny jumps" (defined in Rabbit.prototype)
+
+/*
+Class Inheritance Example:
+
+Class inheritance provides a more modern and intuitive way to create and manage inheritance hierarchies.
+Here’s how you can achieve the same inheritance using class syntax:
+*/
+
+class AnimalClass {
+    constructor(name) {
+        this.name = name;
+        this.eats = true;
+    }
+
+    walk() {
+        console.log(this.name + " walks");
+    }
+}
+
+class RabbitClass extends AnimalClass {
+    constructor(name) {
+        super(name); // Call the parent constructor. Runs the parent class's setup code. t helps the new RabbitClass object get properties from AnimalClass (like name and eats).
+        this.jumps = true;
+    }
+
+    jump() {
+        console.log(this.name + " jumps");
+    }
+}
+
+let rabbitClass = new RabbitClass("Bunny");
+
+console.log(rabbitClass.name); // "Bunny" (own property)
+console.log(rabbitClass.eats); // true (inherited from AnimalClass)
+console.log(rabbitClass.jumps); // true (own property)
+
+rabbitClass.walk(); // "Bunny walks" (inherited from AnimalClass.prototype)
+rabbitClass.jump(); // "Bunny jumps" (defined in RabbitClass.prototype)

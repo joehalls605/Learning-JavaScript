@@ -1,16 +1,18 @@
 /*
 What is a Prototype?
-In JavaScript, a prototype is a mechanism by which objects inherit features from one another. Every JavaScript object has a prototype, which is another object that the first object inherits properties and methods from.
+In JavaScript, a prototype is a mechanism by which objects inherit features from one another. 
+Every JavaScript object has a prototype, which is another object that the first object inherits properties and methods from.
 
 How Does it Work?
 Object Creation: When you create an object in JavaScript (using a constructor function, object literal, or class), it has a hidden link to another object, called its prototype.
 
-Prototype Chain: If you try to access a property or method on an object and it doesn't exist on that object, JavaScript will look for it on the object's prototype. If it's not found there, it will keep looking up the prototype chain until it finds it or reaches the end of the chain (null).
+Prototype Chain: If you try to access a property or method on an object and it doesn't exist on that object, JavaScript will look for it on the object's prototype. 
+If it's not found there, it will keep looking up the prototype chain until it finds it or reaches the end of the chain (null).
 
 How Does it Work?
 Object Creation: When you create an object in JavaScript (using a constructor function, object literal, or class), it has a hidden link to another object, called its prototype.
-
-Prototype Chain: If you try to access a property or method on an object and it doesn't exist on that object, JavaScript will look for it on the object's prototype. If it's not found there, it will keep looking up the prototype chain until it finds it or reaches the end of the chain (null).
+Prototype Chain: If you try to access a property or method on an object and it doesn't exist on that object, JavaScript will look for it on the object's prototype. 
+If it's not found there, it will keep looking up the prototype chain until it finds it or reaches the end of the chain (null).
 
 Why Use Prototypes?
 Memory Efficiency: Methods and properties defined on the prototype are shared among all instances. This reduces memory usage because they are not duplicated for each instance.

@@ -10,7 +10,7 @@ When you try to access a property or method on an object, JavaScript will first 
 If it doesn't find it, JavaScript will look at the object's __proto__ (its prototype) to see if the property or method exists there.
 This process continues up the chain until the property is found or the chain ends (typically at Object.prototype).
 
-rototype
+Prototype
 What is prototype?
 
 prototype is a property of functions in JavaScript (specifically constructor functions).
