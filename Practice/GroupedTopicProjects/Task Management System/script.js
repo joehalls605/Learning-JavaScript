@@ -30,6 +30,7 @@ function addTask(){
 
     if(description && !isNaN(priority)){
         tasks.push({description, priority});
+        console.log(tasks)
         renderTaskList();
         document.getElementById("taskDescription").value = "";
         document.getElementById("taskPriority").value = "";
@@ -51,7 +52,7 @@ function doublePriorities(){
     renderTaskList();
 }
 
-function filterHigherPriorityTasks(){
+function filterHighPriorityTasks(){
     const highPriorityTasks = tasks.filter(task => task.priority > 4);
     console.log("High Priority Tasks:", highPriorityTasks);
 }
