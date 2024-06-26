@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+</head>
+<body>
+    <h1>Task Management System</h1>
+    <div>
+        <input type="text" id="taskDescription" placeholder="Task Description">
+        <input type="number" id="taskPriority" placeholder="Task Priority">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+    <ul id="task-list"></ul>
+    <div>
+        <button onclick="doublePriorities()">Double Priorities</button>
+        <button onclick="filterHighPriorityTasks()">Filter High Priority Tasks</button>
+        <button onclick="calculateAveragePriority()">Calculate Average Priority</button>
+    </div>
+    <p>Average Priority: <span id="averagePriority"></span></p>
+    <script src="taskManagement.js"></script>
+</body>
+</html>
