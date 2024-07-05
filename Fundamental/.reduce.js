@@ -2,6 +2,8 @@
 The .reduce method is used to reduce an array to a single value by applying a function to each element in the array.
 It processes each element of the array (from left to right) and accumulates a result.
 
+Used for Summing numbers, calculating averages, find the maximum or minimum value.
+
 How reduce Works:
 Accumulator: This is the accumulated result of the reduction. It starts with an initial value if provided.
 Current Value: This is the current element being processed in the array
@@ -71,3 +73,22 @@ people.reduce((groupedPeople, person)=>{
     // returns grouped object
     return groupedPeople
 }, {}) 
+
+const sales = [
+    { product: 'Apple', amount: 50 },
+    { product: 'Banana', amount: 30 },
+    { product: 'Apple', amount: 25 },
+    { product: 'Orange', amount: 40 },
+    { product: 'Banana', amount: 20 }
+  ];
+
+  const salesByProduct = sales.reduce((acc, sale) =>{
+    // Check if this product doesn't exist in the accumulator object yet
+    if(!acc[sale.product]){
+        // If it doesn't exist, initialise it with 0
+        acc[sale.product] = 0;
+    }
+    // Add the current sale amount to the total for this product
+    acc[sale.product] += sale.amount;
+    return acc;
+  }, {})
