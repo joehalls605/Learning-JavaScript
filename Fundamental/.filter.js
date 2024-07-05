@@ -44,9 +44,13 @@ const products = [
   ];
 
   const filterByCategory = (category) =>{
-    return products.filter(product => product === category);
+    return products.filter(product => product.category === category);
   }
 
   const filterByPrice = (minPrice, maxPrice) => {
     return products.filter(product => product.price >= minPrice && product.price <= maxPrice);
+  }
+
+  const filterByProductName = (productName) => {
+    return products.filter(product => product.name === productName);
   }
