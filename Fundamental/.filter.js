@@ -28,3 +28,25 @@ const isEight = number => number === 8;
 const numberEight = numbers2.filter(isEight);
 
 console.log(numberEight); // Output: [8]
+
+const numbers3 = [1,4,3,5,7,8];
+
+const isOdd = numbers3.filter(num => num % 2 !== 0);
+
+
+const products = [
+    { id: 1, name: "Laptop", price: 999, category: "Electronics" },
+    { id: 2, name: "Book", price: 15, category: "Books" },
+    { id: 3, name: "Smartphone", price: 599, category: "Electronics" },
+    { id: 4, name: "Desk Chair", price: 250, category: "Furniture" },
+    { id: 5, name: "Headphones", price: 100, category: "Electronics" },
+    { id: 6, name: "Novel", price: 8, category: "Books" },
+  ];
+
+  const filterByCategory = (category) =>{
+    return products.filter(product => product === category);
+  }
+
+  const filterByPrice = (minPrice, maxPrice) => {
+    return products.filter(product => product.price >= minPrice && product.price <= maxPrice);
+  }
