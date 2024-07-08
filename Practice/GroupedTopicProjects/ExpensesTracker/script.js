@@ -10,7 +10,7 @@ let expenses = [];
 // Function to add an expense to the array
 const addExpense = () => {
     const amount = prompt("Enter expense amount");
-    if (amount !== null && amount !== "") { // Changed '&' to '&&'
+    if (amount !== null && amount !== "") {
         expenses.push(parseFloat(amount));
         renderExpenses();
     }
@@ -23,7 +23,7 @@ const deleteExpense = () => {
 };
 
 // Function to calculate the total of all expenses
-const calculateExpenses = () => { // Renamed from 'totalExpenses' to 'calculateExpenses'
+const calculateExpenses = () => { 
     const total = expenses.reduce((acc, expense) => acc + expense, 0);
     alert(`Total expenses: £${total.toFixed(2)}`);
 };
@@ -43,7 +43,7 @@ const renderExpenses = () => {
 // Set event listeners for buttons
 document.getElementById('addExpenseBtn').addEventListener("click", addExpense);
 document.getElementById('deleteExpenseBtn').addEventListener('click', deleteExpense);
-document.getElementById('totalExpensesBtn').addEventListener('click', calculateExpenses); // Changed to 'calculateExpenses'
+document.getElementById('totalExpensesBtn').addEventListener('click', calculateExpenses); 
 
 // Immediately Invoked Function Expression (IIFE) to initialize the UI with some initial expenses
 (() => {
