@@ -48,3 +48,10 @@ Reminder of callback functions:
 A callback function is a function that is passed to another function as an arguement and is executed after
 some operation has been completed. In the context of .map(), the callback function is applied to each element of the array.
 */
+
+
+const numbers2 = [2,4,6,7,8];
+
+const evenNumbers = numbers2.map(function(number){
+    return number % 2 === 0;
+});
