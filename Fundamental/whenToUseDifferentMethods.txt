@@ -1,0 +1,18 @@
+Filter:
+
+Use when you want to create a new array with elements that pass a certain condition.
+Map:
+
+Use when you want to transform each element of an array based on a function and get a new array of the same length.
+Find:
+
+Use when you want to find the first element in an array that satisfies a condition.
+Reduce:
+
+Use when you want to reduce an array to a single value (e.g., summing all elements, concatenating strings).
+Includes:
+
+Use when you want to check if an array includes a certain element and get a boolean result.
+Slice:
+
+Use when you want to extract a portion of an array into a new array without modifying the original array.

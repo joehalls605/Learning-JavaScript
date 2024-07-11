@@ -25,4 +25,27 @@ var name = "Phil";
 var message4 = (name === "Phil") ? "You are phil" : "You are not phil";
 
 
+var name = "Joe";
+var isJoe = (name === "Joe") ? "You are Joe!" : "You are not Joe!";
+
+
+var age = "20";
+var canVote = (age => 20) ? "You can vote!" : "You cannot vote!";
+
+var number = 7;
+var isEven = (number % 2 === 0) ? "The number is even": "The number is odd";
+
+// setting a default value;
+
+var input = "";
+var defaultText = input ? input: "Default text";
+
+var num = -5;
+var checkNumber = (num > 0) ? "Positive" : (num < 0) ? "Negative" : "Zero";
+
+var isActive = true;
+var className = isActive? "active" : "inactive";
+
+
+
 

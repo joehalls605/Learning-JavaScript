@@ -30,15 +30,30 @@ switch(fruit){
         console.log("Unknown fruit colour");
 }
 
+let day = "Monday";
+switch (day){
+    case "Monday":
+        console.log("today is monday!");
+        break;
+    case "Tuesday":
+        console.log("today is tuesday");
+        break;
+    case "Wednesday":
+        console.log("today is wednesday");
+        break;
+    default:
+        console.log("it's another day in the week!");
+}
+
 /*
 
 When to Use Switch Statements
 
-Multiple Discrete Values: Use a switch statement when you have one variable that needs to be compared against many specific values, and you want to execute different code based on each value.
-Readability: Use switch statements to improve code readability when handling multiple conditions, as they can make the code cleaner compared to a long series of if-else if statements.
+Use a switch statement when you have one variable that needs to be compared against many specific values, 
+and you want to execute different code based on each value.
 
 When Not to Use Switch Statements
-Complex Conditions: Avoid using switch statements when your conditions involve ranges, logical operations, or multiple variables, as switch statements only handle equality checks.
+Avoid using switch statements when your conditions involve ranges, logical operations, or multiple variables, as switch statements only handle equality checks.
 Few Conditions: Avoid switch statements for a small number of conditions, as if-else might be simpler and more straightforward.
 Polymorphic Behavior: Avoid using switch statements when different object types need to execute different behavior, as using polymorphism is more appropriate in object-oriented programming.
 */
