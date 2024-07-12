@@ -1,31 +1,37 @@
 /*
- A 2D array, like a spreadsheet, expands this to having rows and columns, allowing you to organize items in a grid.
+2D Array
+A 2D array in JavaScript is an array of arrays. It's like a table with rows and columns.
+*/
 
-A 3D array takes this one step further. Instead of just a flat grid, imagine a box of these grids stacked on top of each other.  
-This box has three dimensions:
+let twoDArray = [
+    [1, 2, 3],  // Row 0
+    [4, 5, 6],  // Row 1
+    [7, 8, 9]   // Row 2
+];
 
-Depth: The number of grids (layers) in the box.
-Height: The number of rows in each grid.
-Width: The number of columns in each grid.
+// Accessing elements in a 2D array
+console.log(twoDArray[0][1]); // Outputs: 2 (first row, second column)
+console.log(twoDArray[2][0]); // Outputs: 7 (third row, first column)
 
+/*
+A 3D array in JavaScript is an array of arrays of arrays. You can think of it as a stack of 2D grids.
 */
 
 let threeDArray = [
     [ // First layer (index 0)
-        [1, 2, 3],
-        [4, 5, 6]
+        [1, 2, 3],  // Row 0
+        [4, 5, 6]   // Row 1
     ],
     [ // Second layer (index 1)
-        [7, 8, 9],
-        [10, 11, 12]
+        [7, 8, 9],  // Row 0
+        [10, 11, 12] // Row 1
     ],
     [ // Third layer (index 2)
-        [13, 14, 15],
-        [16, 17, 18]
+        [13, 14, 15], // Row 0
+        [16, 17, 18]  // Row 1
     ]
 ];
 
-//[layer][row][column]
-
-let element = threeDArray[1][0][2];
-console.log(element); // Outputs: 9
+// Accessing elements in a 3D array
+console.log(threeDArray[1][0][2]); // Outputs: 9 (second layer, first row, third column)
+console.log(threeDArray[2][1][1]); // Outputs: 17 (third layer, second row, second column)

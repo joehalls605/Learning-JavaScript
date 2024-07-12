@@ -55,3 +55,8 @@ const numbers2 = [2,4,6,7,8];
 const evenNumbers = numbers2.map(function(number){
     return number % 2 === 0;
 });
+
+
+const oddNumbers = numbers2.map(function(number){
+    return number % 2 !== 0;
+})

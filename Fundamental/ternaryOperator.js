@@ -47,5 +47,13 @@ var isActive = true;
 var className = isActive? "active" : "inactive";
 
 
+var name = "Boris";
+var isJoe = (name == "Joe") ? "It's Joe!" : "You have not found Joe";
+
+
+var dayofWeek = "Saturday";
+var isSaturday = (dayofWeek) ? "Yes it's saturday" : "It's not saturday!";
+
+
 
 

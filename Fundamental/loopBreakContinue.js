@@ -12,3 +12,12 @@ for (let i = 1; i <= 5; i++) {
     }
     console.log(i); // Outputs: 1, 2, 4, 5
 }
+
+for(let i = 1; i <= 9; i++){
+    if(i === 5){
+        continue // Move to the next iteration 
+    }
+    if( i === 8){
+        break; // Exit the loop
+    }
+}

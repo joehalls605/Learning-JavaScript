@@ -1,0 +1,4 @@
+/*
+undefined is a primitive value that is automatically assigned to variables that have been declared but have not been assigned a value. 
+It also represents the return value of functions that do not explicitly return anything.
+*/

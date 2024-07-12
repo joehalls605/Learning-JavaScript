@@ -16,3 +16,7 @@ Purpose of IIFE
 Avoid Global Variables: IIFEs create a new scope, which helps to avoid polluting the global scope with variables and functions.
 Encapsulation: Variables and functions defined inside an IIFE cannot be accessed from outside, providing encapsulation and reducing potential conflicts.
   */
+
+(function(){
+  console.log("This function runs straight away!");
+})();
