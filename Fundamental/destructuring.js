@@ -1,16 +1,20 @@
-// DESTRUCTURING
-
 /*
-Destructuring in javascript is a way to extract values from objects or arrays and assign them to variables.
+Destructuring in JavaScript allows you to extract values from objects or arrays into variables using a concise syntax.
 */
 
 
 // Object with some data
 const person = {
-    firstName: 'John',
-    lastName: 'Doe',
-    age: 30
-  };
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30
+};
 
-  // Destructuring the array, these variables are being created based on that data.
-  const {firstName, lastName, age} = person;
+// Destructuring assignment
+const { firstName, lastName, age } = person;
+
+console.log(firstName); // Output: 'John'
+console.log(lastName); // Output: 'Doe'
+console.log(age); // Output: 30
+
+const ageMultipliedByTwo = age * 2;

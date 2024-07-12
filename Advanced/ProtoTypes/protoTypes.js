@@ -25,22 +25,27 @@ proto: A property of objects that points to their prototype. It forms the protot
 Visualizing Prototypes
 Here's a simple visualization:
 
+
 rabbit object looks for walk()
 rabbit doesn't have walk(), so it looks at rabbit.__proto__ (which is animal in the first example or Animal.prototype in the second example)
 animal or Animal.prototype has walk(), so it is called.
 */
 
-class Animal{
-    constructor(name){
+// Animal class definition
+class Animal {
+    constructor(name) {
         this.name = name;
-        this.eats = true;
+        this.eats = true; // Every animal eats by default
     }
 
-    walk(){
-        console.log(this.name = "walks");
+    walk() {
+        console.log(`${this.name} walks`); // Method to make the animal walk
     }
 }
 
+// Creating an instance (object) of the Animal class
 let rabbit = new Animal("Rabbit");
-console.log(rabbit.eats);
-rabbit.walk();
+
+// Accessing properties and methods of the rabbit object
+console.log(rabbit.eats); // Output: true (because all animals eat)
+rabbit.walk(); // Output: Rabbit walks
