@@ -4,6 +4,10 @@ filter Method.
 What it does:
 filter creates a new array with all elements that pass the test implemented by the provided function.
 In other words, it filters out elements that do not meet the condition.
+
+What is the difference betwen filter and find?
+Find locates the first element in an array that satisfies a testing function
+Filter creates a new array with all the elements that pass the test implemented by the function
 */
 
 const numbers = [1, 2, 3, 4, 5, 6];
@@ -53,4 +57,8 @@ const products = [
 
   const filterByProductName = (productName) => {
     return products.filter(product => product.name === productName);
+  }
+
+  const filterByLaptop = () =>{
+      return products.filter(product => product.name === "Laptop");
   }

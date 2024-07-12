@@ -92,3 +92,14 @@ const sales = [
     acc[sale.product] += sale.amount;
     return acc;
   }, {})
+
+
+  const salesByFruit = sales.reduce((acc, sale)=>{
+    // checking if this fruit doesn't exist in the accumulator object yet
+    if(!acc[sale.product]){
+      // if it doesn't exist, initialise with 0
+      acc[sale.product] = 0;
+    }
+    // Add the current sale amount to the total for this fruit
+    acc[sale.product] += sale.amount;
+  }, {})

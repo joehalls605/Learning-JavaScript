@@ -1,37 +1,29 @@
 /*
-In JavaScript, a static method is a method that is defined in the class itself, rather than an instance of the class.
-Static methods are called on the class itself and not on an isntance of the class. They are often used for utlity frunctions that are related to the class
-but do not operate on individual instances.
+A static method in JavaScript is a method that belongs to a class itself rather than to instances (objects) of that class. 
+This means you can call a static method directly on the class itself, without needing to create an instance of the class first.
 
-Characteristics of Static Methods
-Defined on the Class: Static methods are defined on the class itself and are called directly on the class.
+Key Points about Static Methods:
+Belongs to the Class: Static methods are defined on the class itself using the static keyword.
 
-No Access to Instance Data: Static methods cannot access instance properties or instance methods using this. They can only access other static properties and static methods.
+Direct Class Access: They can be called directly on the class, without needing to instantiate an object of the class.
 
-Utility Functions: Static methods are typically used for utility or helper functions that perform tasks related to the class but do not require data from an instance.
+Cannot Access Instance Properties: Static methods cannot access instance-specific properties (this keyword points to the class itself, not to an instance).
+
+Typically Utility Methods: They are often used for utility functions that are related to the class but do not require any instance-specific data.
 */
 
-
-//Example:
-
-class MathUtil{
-
-    // Static method
-    static add(a,b){
-        return a + b;
+class MyClass {
+    constructor() {
+        // Constructor of MyClass
     }
 
-    // Static method
-    static multiply(a,b){
-        return a*b;
+    static myStaticMethod() {
+        // Static method definition
+        console.log("This is a static method.");
     }
 }
 
-console.log(MathUtil.add(2,3));
-console.log(MathUtil.multiply(6,3));
+// Calling the static method directly on the class
+MyClass.myStaticMethod(); // Output: "This is a static method."
 
-/*
-Instance vs. Static Methods:
-Instance methods are methods that are defined on the prototype of the class and are called on instances of the class (objects created with new).
-Static methods, on the other hand, are defined directly on the class itself using the static keyword and are called on the class directly (ClassName.method()).
-*/
+
