@@ -49,3 +49,18 @@ let rabbit = new Animal("Rabbit");
 // Accessing properties and methods of the rabbit object
 console.log(rabbit.eats); // Output: true (because all animals eat)
 rabbit.walk(); // Output: Rabbit walks
+
+
+class Fish{
+    constructor(name){
+        this.name = name;
+        this.eats = true;
+    }
+
+    swim(){
+        console.log(`This ${this.name} swims`);
+    }
+}
+
+let cod = new Fish("Cod");
+cod.swim();

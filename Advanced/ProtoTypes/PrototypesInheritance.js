@@ -83,3 +83,34 @@ console.log(rabbitClass.jumps); // Output: true
 
 rabbitClass.walk(); // Output: "Bunny walks"
 rabbitClass.jump(); // Output: "Bunny jumps"
+
+
+class FishClass {
+    // Constructor for FishClass
+    constructor(name) {
+        this.name = name; // Initialise name property with the provided name
+        this.swims = true; // Set swims property to true by default
+    }
+
+    // Method to simulate swimming
+    swim() {
+        console.log("I'm swimming");
+    }   
+}
+
+class CodClass extends FishClass {
+    // Constructor for CodClass, which extends FishClass
+    constructor(name) {
+        super(name); // Calls the constructor of the parent class (FishClass) with the 'name' parameter
+        this.splash = true; // Adds a splash property to CodClass instances
+    }
+
+    // Method to simulate diving
+    dive() {
+        console.log("I'm diving");
+    }
+}
+
+let codClass = new CodClass("Cod"); // Create a new instance of CodClass with name "Cod"
+codClass.swim(); // Output: "I'm swimming" - Calls the swim() method inherited from FishClass
+codClass.dive(); // Output: "I'm diving" - Calls the dive() method defined in CodClass

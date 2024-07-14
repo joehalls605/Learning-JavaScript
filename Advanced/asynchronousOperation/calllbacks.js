@@ -1,4 +1,5 @@
-/* A callback is a function that is passed as an argument to another function and is executed after some operation has been completed. Callbacks are a way to ensure that certain code runs only after a specific task has finished, 
+/* A callback is a function that is passed as an argument to another function and is executed after some operation has been completed. 
+Callbacks are a way to ensure that certain code runs only after a specific task has finished, 
 which is especially useful in asynchronous operations like reading files, making network requests, or handling events.
 
 
@@ -36,6 +37,14 @@ function sayGoodbye() {
 
 // Using the greet function with a callback
 greet("John", sayGoodbye);
+
+
+function speakToJohn(){
+    greet("John", sayGoodbye);
+}
+
+speakToJohn();
+
 
 // other callback examples (synchronous)
 
