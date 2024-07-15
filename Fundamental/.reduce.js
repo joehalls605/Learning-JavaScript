@@ -103,3 +103,12 @@ const sales = [
     // Add the current sale amount to the total for this fruit
     acc[sale.product] += sale.amount;
   }, {})
+
+
+  const days = [1,5,6,2,4];
+
+  days.reduce((acc, day) => {
+    return acc + day;
+  }, 0);
+
+  console.log(total);
