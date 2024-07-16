@@ -1,0 +1,42 @@
+Problem 1: You have an array of numbers and you want to add a new number to the end of the array.
+
+Array Method: push()
+
+Problem 2: You need to remove the last element from an array.
+
+Array Method: pop()
+
+Problem 3: You want to find the index of a specific element in an array.
+
+Array Method: indexOf()
+
+Problem 4: You have an array of strings and you want to check if a specific string is included in the array.
+
+Array Method: includes()
+
+Problem 5: You need to iterate over an array and perform a transformation on each element, creating a new array with the transformed values.
+
+Array Method: map()
+
+Problem 6: You want to filter out elements from an array based on a condition.
+
+Array Method: filter()
+
+Problem 7: You have an array of numbers and you want to find the sum of all elements.
+
+Array Method: reduce()
+
+Problem 8: You have an array of objects and you need to sort them based on a specific property of the objects.
+
+Array Method: sort()
+
+Problem 9: You want to check if all elements in an array satisfy a specific condition.
+
+Array Method: every()
+
+Problem 10:
+You have an array of numbers and you want to remove elements starting from a specific index and optionally add new elements in their place.
+
+Array Method: splice()
+
+
