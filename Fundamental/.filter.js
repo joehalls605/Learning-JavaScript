@@ -10,6 +10,20 @@ Find locates the first element in an array that satisfies a testing function
 Filter creates a new array with all the elements that pass the test implemented by the function
 */
 
+
+const users = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' },
+  { id: 3, name: 'Charlie' }
+];
+
+const filteredUsers = users.filter(function(user) {
+  return user.id > 1;
+});
+
+console.log(filteredUsers); // Output: [{ id: 2, name: 'Bob' }, { id: 3, name: 'Charlie' }]
+
+
 const numbers = [1, 2, 3, 4, 5, 6];
 
 // Function to test if a number is even
