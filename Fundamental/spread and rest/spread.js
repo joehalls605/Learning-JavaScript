@@ -6,7 +6,16 @@ you can use spread syntax to pass each element of the array as a separate argume
 This makes your code more concise and easier to work with. 
 
 Essentially, it allows an iterable to be expanded into separate elements / unpack the elements.
+
+Note, difference between Rest and Spread:
+Rest Operator (...): Gathers multiple elements into an array. Used in function parameter lists to collect remaining arguments.
+Spread Operator (...): Spreads the elements of an iterable (like an array or object) into individual elements. Used in array literals, object literals, and function calls.
 */
+
+
+const arr = [1, 2, 3];
+const arrTwo = [...arr, 4, 5, 6];
+console.log(arr2); // Outputs: [1, 2, 3, 4, 5, 6]
 
 let nums = [1, 3, 4, 5];
 // let maximum = Math.max(nums); // this would output NaN.
