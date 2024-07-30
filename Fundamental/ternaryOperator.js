@@ -54,6 +54,9 @@ var isJoe = (name == "Joe") ? "It's Joe!" : "You have not found Joe";
 var dayofWeek = "Saturday";
 var isSaturday = (dayofWeek) ? "Yes it's saturday" : "It's not saturday!";
 
+var dayofTheWeek2 = "Sunday";
+var isSunday = (dayofTheWeek2) ? "Yes it's sunday" : "It's not sunday!";
+
 
 
 

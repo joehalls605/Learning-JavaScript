@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Event Bubbling and Capturing</title>
+    </head>
+    <body>
+        <div class="container">
+            <ul>
+                <li>Coding</li>
+                <li>Event bubbling and capturing</li>
+            </ul>
+        </div>
+        <script>
+            const container = document.querySelector(".container");
+            const ul = document.querySelector("ul");
+            const li = document.querySelector("li");
+
+            li.addEventListener("click", () => {
+                console.log("li clicked"); // This logs during the bubbling phase, after the event has propagated through its ancestors.
+            });
+
+            ul.addEventListener("click", () => {
+                console.log("ul clicked");
+            }, {capture: true}); // This listener is set to fire during the capturing phase.
+
+            container.addEventListener("click", (event) => {
+                console.log("container clicked");
+                event.stopPropagation(); // Stops the event from propagating further, preventing ancestors from receiving the event.
+            }, true); // This listener fires first in the capturing phase before any bubbling listeners.
+        </script>
+    </body>
+</html>
