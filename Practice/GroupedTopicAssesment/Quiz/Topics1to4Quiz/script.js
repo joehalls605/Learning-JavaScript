@@ -192,14 +192,44 @@ getDayName(8); // Outputs: Invalid day number. Please enter a number between 1 a
 // Answer:
 
 
+const canVote = (age >= 18) ? true : false; // (CONDITION) ? OUTPUT : OUTPUT
+
 
 // 17. Loops (for, while, do-while)
 // Question: Write examples of a for loop, while loop, and do-while loop that each print numbers from 1 to 5.
 // Answer:
 
+for(i = 1; i <= 5; i++){
+    console.log(i);
+}
+
+let i = 1;
+while(i <= 5){
+    console.log(i);
+    i++;
+}
+
+let x = 1;
+do{
+    console.log(x);
+    x++;
+}
+while(x <= 5);
+
 // 18. Loop control statements (break, continue)
 // Question: Write a loop that prints numbers from 1 to 10 but skips the number 5 and stops the loop when it reaches 8.
 // Answer:
+
+for(let i = 1; i <= 10; i++){
+    if( i === 5){
+        continue;
+    }
+    if(i === 8){
+        break;
+    }
+    console.log(i);
+}
+
 
 // Functions
 
@@ -207,22 +237,54 @@ getDayName(8); // Outputs: Invalid day number. Please enter a number between 1 a
 // Question: Declare a function named greet and invoke it.
 // Answer:
 
+function greet(){
+    console.log("Hi!");
+}
+
+greet();
+
 // 20. Parameters and arguments
 // Question: Write a function that takes two parameters and returns their sum. Invoke the function with arguments 5 and 3.
 // Answer:
+
+function sum(a, b){
+    const total = a + b;
+    return total;
+}
+
+sum(5, 3);
 
 // 21. Return statements
 // Question: Write a function that returns the square of a number.
 // Answer:
 
+function square(number){
+    return number * number;
+}
+
+const result2 = square(5);
+console.log(result);
+
 // 22. Anonymous functions (function expressions)
 // Question: Assign an anonymous function to a variable that multiplies two numbers and returns the result. Invoke this function.
 // Answer:
+
+const anonymous = function(a,b){
+    const total = a  * b;
+    return total;
+}
+
+anonymous();
 
 // 23. Immediately Invoked Function Expressions (IIFE)
 // Question: Write an IIFE that logs "Hello, World!" to the console.
 // Answer:
 
+(
+    function helloWorld() {
+        console.log("Hello, World!");
+    }
+)();
 // Advanced Functions
 
 // 24. Arrow functions
@@ -234,25 +296,79 @@ getDayName(8); // Outputs: Invalid day number. Please enter a number between 1 a
 // ```
 // Answer:
 
+const add = (a, b) => {
+    return a + b;
+}
+
+// Simplified further:
+
+const add2 = (a,b) => a + b;
+
 // 25. Rest operators
 // Question: Write a function that uses the rest operator to accept any number of arguments and returns their sum.
 // Answer:
+
+function sumAll(...args){
+    const sum = args.reduce((total, num) => total + num, 0);
+    return sum;
+}
+
+console.log(sumAll(1, 2, 3, 4, 5));
 
 // 26. Spread operator
 // Question: Use the spread operator to combine two arrays into one.
 // Answer:
 
-// 27. Default parameters
-// Question: Write a function with a default parameter that returns a greeting message. If no name is provided, it should default to "Guest".
-// Answer:
+let arrayOne = [1,2,3];
+let arrayTwo = [3,4,5];
+
+const combined = [...arrayOne, ...arrayTwo]
+
+function greeting(name = "Guest") {
+    return `Hello ${name}`;
+}
+
+// Example usage
+console.log(greeting("Joe")); 
+console.log(greeting());       
+
 
 // 28. Higher-order functions
 // Question: Write a higher-order function that takes a function as an argument and invokes it.
 // Answer:
 
+function invokeFunction(fn){
+    fn();
+}
+
+invokeFunction(sayHello);
+
+
 // 29. .bind()
 // Question: Explain what the .bind() method does and provide an example of its use.
 // Answer:
+
+/*
+.bind() in JavaScript creates a new function, that when called has its this keyword set to a specific value.
+and optionally pre-defined arguments, this is useful for ensuring that a function retains the correct this context when invoked later.
+
+Key points:
+The bind method sets the this value for the function
+Predefines arguments that the function will use.
+*/
+
+const person = {
+    name: "Alice",
+    greet: function(){
+        console.log(`Hello my name is${this.name}`);
+    }
+};
+
+// Create a new function with `this` bound to the `person`
+const greetAlice = person.greet.bind(person);
+
+// The reason .bind is used, is that when you pass a method as a callback, the this context might be lost.
+// .bind() ensure that this is correctly bound to the original object/
 
 // Data Structures
 
@@ -260,37 +376,77 @@ getDayName(8); // Outputs: Invalid day number. Please enter a number between 1 a
 // Question: Given an array of numbers, which method would you use to find the largest number? Provide an example.
 // Answer:
 
+const numbers = [1,2,3,4];
+
+const largestNumber = Math.max(...numbers);
+
+console.log(largestNumber);
+
 // 31. Arrays (declaration, manipulation, methods)
-// Question: Declare an array of numbers, add a number to the end, and remove a number from the beginning. Show the final array.
+// Question: Declare an array of numbers, add a number to the end, and remove a number from the beginning. 
+// Show the final array.
 // Answer:
+
+const numbers3 = [1,6,7,8];
+
+numbers3.push(7);
+numbers3.unshift();
+
+console.log(numbers3);
 
 // 32. Multidimensional and 3D arrays
 // Question: Create a 2D array (3x3 matrix) and a 3D array (2x2x2 matrix). Access an element from each.
 // Answer:
 
+// IGNORED FOR TIME BEING.
+
 // 33. map
 // Question: Use the map method to create a new array that contains the squares of all elements in the original array [1, 2, 3, 4].
 // Answer:
+
+const squaredNumbers = numbers3.map(function(num){
+    return num * num;
+})
 
 // 34. reduce
 // Question: Use the reduce method to sum all elements in the array [1, 2, 3, 4].
 // Answer:
 
+const sumNumbers = numbers3.reduce((total, num) => total + num, 0);
+
 // 35. slice
 // Question: Use the slice method to create a new array from the first three elements of the array [1, 2, 3, 4, 5].
 // Answer:
+
+const newArray = numbers3.slice(0,3);
 
 // 36. includes
 // Question: Use the includes method to check if the array [1, 2, 3, 4, 5] contains the number 3.
 // Answer:
 
+const includesNum = numbers3.includes(3);
+
 // 37. valueOf
 // Question: Explain what the valueOf method does in JavaScript with an example.
 // Answer:
 
+/*
+The valueOf method in JavaScript returns the primitive value of an object. It is a method that can be used on objects to retrieve their underlying primitive value.
+*/
+
+const numObj = new Number(42); // Create a Number object
+
+console.log(numObj.valueOf()); // Outputs: 42
+console.log(numObj + 8);        // Outputs: 50 (numObj is converted to its primitive value 42 for the addition)
+
+
 // 38. filter
 // Question: Use the filter method to create a new array with only even numbers from the array [1, 2, 3, 4, 5].
 // Answer:
+
+const filteredArray = numbers.filter(function(num) {
+    return num % 2 === 0; // Return true for even numbers
+});
 
 // 39. find
 // Question: Use the find method to locate the first even number in the array [1, 2, 3, 4, 5].
