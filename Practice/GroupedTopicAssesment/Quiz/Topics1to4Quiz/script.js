@@ -452,25 +452,43 @@ const filteredArray = numbers.filter(function(num) {
 // Question: Use the find method to locate the first even number in the array [1, 2, 3, 4, 5].
 // Answer:
 
+const firstEvenNumber = numbers.find(function(num){
+    return num % 2 === 0;
+});
+
 // 40. forEach
 // Question: Use the forEach method to print each element of the array [1, 2, 3, 4, 5].
 // Answer:
+
+numbers.forEach(num => {
+    console.log(num);
+});
 
 // 41. pop
 // Question: Demonstrate the use of the pop method by removing the last element from the array [1, 2, 3, 4, 5].
 // Answer:
 
+const lastElementPopped = numbers.pop();
+
 // 42. push
 // Question: Demonstrate the use of the push method by adding an element to the array [1, 2, 3, 4, 5].
 // Answer:
+
+const pushElement = numbers.push(6);
 
 // 43. sort
 // Question: Use the sort method to sort the array [5, 2, 4, 1, 3] in ascending order.
 // Answer:
 
+const sortArray = numbers.sort();
+
 // 44. comparator function
 // Question: Write a comparator function to sort the array of objects [{name: 'John', age: 25}, {name: 'Jane', age: 22}, {name: 'Doe', age: 28}] by age.
 // Answer:
 
+// STUCK
+
 // 45. shift
 // Question: Demonstrate the use of the shift method by removing the first element from the array [1, 2, 3
+
+const removeFirstElement = numbers.shift();
