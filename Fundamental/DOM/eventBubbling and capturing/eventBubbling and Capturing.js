@@ -2,10 +2,11 @@
 Event Phases
 When an event happens in the DOM, it goes through three phases:
 
-Capturing Phase: The event travels from the root (the window) down to the target element.
-Target Phase: The event reaches the target element.
+1. Capturing Phase: The event travels from the root (the window) down to the target element.
 
-Bubbling Phase: The event bubbles up from the target element back to the root.
+2. Target Phase: The event reaches the target element.
+
+3. 0Bubbling Phase: The event bubbles up from the target element back to the root.
 Event Bubbling
 
 Definition: In event bubbling, the event starts from the target element and bubbles up to the top (the window).
