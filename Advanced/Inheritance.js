@@ -54,8 +54,6 @@ var users = [userOne, userTwo];
 admin.deleteUser(userTwo);
 
 
-
-
 // pre ES6 way of setting up inheritance:
 
 
