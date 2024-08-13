@@ -3,7 +3,7 @@ Purpose:
 .bind() is used to set the value of this explicitly inside a function when the function is called.
 
 Why Use .bind()?:
-In JavaScript, the value of this depends on how a function is invoked. 
+In JavaScript, the value of this. depends on how a function is invoked. 
 Sometimes, you want to ensure that this inside a function always refers to a specific object, regardless of how or where the function is called.
 
 How It Works:
