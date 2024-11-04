@@ -1,6 +1,7 @@
 
 /*
-In JavaScript, an object is a collection of key-value pairs. These key-value pairs are often called properties or attributes.
+In JavaScript, an object is a collection of key-value pairs. 
+These key-value pairs are often called properties or attributes.
 Objects allow you to group related data and functions together, making it easier to organise and manage code.
 
 An object in JavaScript can be created using curly braces {} and consists of properties.

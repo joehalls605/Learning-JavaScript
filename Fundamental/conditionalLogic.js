@@ -18,7 +18,7 @@ const number = 10;
 
 if (number > 0) {
     console.log("The number is positive.");
-} else if (number < 0) {
+} else if (number < 0) { // else if only runs if the previous condition was false.
     console.log("The number is negative.");
 } else {
     console.log("The number is zero.");
@@ -32,7 +32,6 @@ if (age >= 18) {
 } else {
     console.log("You are not eligible to vote yet.");
 }
-
 
 const dayOfWeek = "Monday";
 

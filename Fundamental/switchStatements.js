@@ -1,7 +1,7 @@
 /* Switch statements
-
-A switch statement in programming is a control structure that allows you to execute one block of code from multiple options based on the value of a given expression. 
-It's often used when you have a single variable that you need to compare against many possible values, and it makes the code more readable and concise compared to a series of if-else if statements. You should use a switch statement when you have a clear set of discrete values to compare against and you want a cleaner, more organized way to handle multiple conditions.
+A switch statement lets you execute different blocks of code based on the value of a single variable. 
+It's helpful when you want to check one variable against multiple possible values. 
+Making the code cleaner than a series of if...else if statements.
 */
 
 //Simple outline
@@ -43,6 +43,20 @@ switch (day){
         break;
     default:
         console.log("it's another day in the week!");
+}
+
+let letter = "A";
+
+switch (letter){
+    case "B":
+        console.log("My letter is B");
+        break;
+    case "A":
+        console.log("My letter is A");
+        break;
+    case "C":
+        console.log("My letter is C");
+    default: console.log("None of the letters matched the letter");
 }
 
 /*
