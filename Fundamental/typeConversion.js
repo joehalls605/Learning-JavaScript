@@ -1,5 +1,7 @@
 /*
-In JavaScript, type conversion is the process of converting a value from one type to another. There are two types of type conversions:
+In JavaScript, type conversion is the process of converting a value from one type to another. 
+
+There are two types of type conversions:
 
 Implicit (Automatic) Type Conversion
 Explicit (Manual) Type Conversion
@@ -39,6 +41,13 @@ let str3 = "748";
 let num2 = Number(str3);
 
 
+let str4 = "718";
+let num3 = Number(str4);
+
+let year = 1997;
+let stringYear = String(year);
+
+
 /*
 Differences and Use Cases
 Implicit Conversion:
@@ -52,7 +61,5 @@ Explicit Conversion:
 More predictable and controlled.
 Essential for clarity in code, especially in larger projects.
 Prevents bugs due to unexpected type coercion.
-
-
 
 */
