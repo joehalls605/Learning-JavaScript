@@ -1,3 +1,8 @@
+/*
+An array is a data structure that enables you to store multiple values in a single variable.
+It can be thought of as a collection of items, where each item is accesible by its position, or index in the array.
+Arrays are widely used because they provide an organised way to handle lists of data
+*/
 
 //Arrays
 

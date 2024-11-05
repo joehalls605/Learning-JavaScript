@@ -1,5 +1,6 @@
 /*
-The .map() method is a higher-order function in JavaScript that is used to transform each element of an array and create a new array with the results.
+The .map() method is a high-order function in JavaScript that is used to transform each element of an array
+and create a new array with the results.
 The callback function is applied to each element in the array.
 
 It can take three parameters. 
@@ -13,6 +14,10 @@ const numbers = [1,2,3,4,5];
 const squaredNumbers = numbers.map(function (num){
     return num * num;
 })
+
+const deductedNumbers = numbers.map(function(num){
+    return num - num;
+});
 
 // Output the original and the new array
 console.log("Original numbers:", numbers); // contains [1, 2, 3, 4, 5].
@@ -30,6 +35,10 @@ const fullNames = people.map(function (person) {
     return `${person.firstName} ${person.lastName}`;
 });
 
+const fullNamesAndFullStop = people.map(function(person){
+    return `${person.firstName} ${person.lastName} .`
+});
+
 const lastNameOnly = people.map(function(person){ // person represents the object in the array.
     return `${person.lastName}`
 })
@@ -40,6 +49,12 @@ const fruits = ['apple', 'pear', 'orange']
 const capitalisedFruits = fruits.map(function(fruit){
     return fruit.charAt(0).toUpperCase() + fruit.slice(1);
 })
+
+const upperCaseLastLetterFruits = fruits.map(function(fruit){
+    const lastChar = fruit.charAt(fruit.length - 1).toUpperCase();
+    const restOfFruit = fruit.slice(0, -1); // this retrieves all characters from the start of the string, but not the last one.
+    return restOfFruit + lastChar;
+});
 
 /* The .map method is a built in function in JavaScript for arrays. It creates a new array by applying a callback function to each element of the original array.
 The new array contains the results of the callback function for each element.
