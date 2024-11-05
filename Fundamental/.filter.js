@@ -21,6 +21,12 @@ const filteredUsers = users.filter(function(user) {
   return user.id > 1;
 });
 
+const filteredUsersTwo = users.filter(user => user.id === 1);
+
+const filteredUsersThree = users.filter(function(user){
+  return user.id < 3 || user.name === "Alice";
+})
+
 console.log(filteredUsers); // Output: [{ id: 2, name: 'Bob' }, { id: 3, name: 'Charlie' }]
 
 

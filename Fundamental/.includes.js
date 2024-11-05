@@ -1,4 +1,5 @@
-/* .includes is useful in JavaScript for checking if an array or a string contains a specific element or substring.
+/* .includes is useful in JavaScript for checking if an array 
+or a string contains a specific element or substring.
 It returns true if the element is found, and false otherwise.
 */
 

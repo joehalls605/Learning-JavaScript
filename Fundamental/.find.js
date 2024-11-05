@@ -1,5 +1,6 @@
 /*
-.find() is a JavaScript array method that helps you locate the first element in an array that meets a specific condition. It returns the value of that element if found, or undefined if no such element exists.
+.find() is a JavaScript array method that helps you locate the first element in an array that meets a specific condition.
+ It returns the value of that element if found, or undefined if no such element exists.
 */
 
 const numbers = [10, 20, 39, 54];
@@ -7,6 +8,9 @@ const numbers = [10, 20, 39, 54];
 const result = numbers.find(function(number) {
     return number > 25;
 });
+
+
+
 
 console.log(result); // Output: 39
 
@@ -22,3 +26,6 @@ const result2 = users.find(function(user) {
 });
 
 console.log(result2); // Output: { id: 2, name: 'Bob' }
+
+
+const result3 = numbers.find(user => user.id > 5);
