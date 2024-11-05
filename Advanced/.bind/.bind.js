@@ -1,75 +1,40 @@
 /*
-Purpose:
-.bind() is used to set the value of this explicitly inside a function when the function is called.
+.bind() in JavaScript is a method used to "lock in" a specific value of this for a function, 
+no matter how or where that function is later called.
 
-Why Use .bind()?:
-In JavaScript, the value of this. depends on how a function is invoked. 
-Sometimes, you want to ensure that this inside a function always refers to a specific object, regardless of how or where the function is called.
-
-How It Works:
-When you call .bind() on a function and pass an object as an argument, it creates a new function. 
-This new function, when called, will have this set to the object you passed to .bind().
-The original function remains unchanged; .bind() creates a new function with a fixed this value.
-
+Think of it Like Setting a Permanent Context
+When you use .bind(), you’re setting a permanent this context for that function. 
+So, no matter where or when the function is called, it will always use the this value you set with .bind().
 */
 
 const person = {
-  name: 'Alice',
-  greet: function() {
-    console.log('Hello, my name is ' + this.name);
-  }
+  name: "Alice",
+  greet() {
+    console.log("Hello, " + this.name);
+  },
 };
 
-const friend = {
-  name: 'Bob'
-};
+const greetFunction = person.greet;
+greetFunction(); // Without .bind()< this will be undefined, so no name.
 
-// Using .bind() to create a new function with 'this' bound to person
-const greetPerson = person.greet.bind(person);
-greetPerson(); // Output: Hello, my name is Alice
-
-// Using .bind() to create a new function with 'this' bound to friend
-const greetFriend = person.greet.bind(friend);
-greetFriend(); // Output: Hello, my name is Bob
-
-let c1 = {
-  x: 5, 
-  y: 10
-}
-
-let c2 = {
-  x: 3, 
-  y: 4
-}
-
-function printCoordinates(){
-  console.log(this.x + "," + this.y); 
-}
-
-let c1_func = printCoordinates.bind(c1); // this creates a new function, that binds c1 to the new method.
-
-c1_func();
-
+// Now using .bind to lock in "person" as "this"
+const boundGreet = person.greet.bind(person);
+boundGreet();
 
 /*
-When you use bind in JavaScript, it's like giving the chef a magical toolbox that they carry with them to any kitchen they go to. This toolbox contains the specific tools you want the chef to use, no matter where they are.
+A common reason to use .bind() is when passing functions as arguments. 
+Without .bind(), JavaScript might lose track of what this is supposed to be.
 
-Here's a breakdown:
-
-Chef (Function): The function you want to run.
-Kitchen (Context): The this value inside the function.
-Tools (Arguments): The arguments the function uses.
-By using bind, you're giving the chef a specific set of tools (the this value and any predefined arguments) that they will always use, no matter where they end up cooking (no matter where the function gets called).
-
-
+For example, if you want to use greet later on with a button click, 
+this might get confusing without .bind():
 */
 
-function chef(dish) {
-  console.log(this.tool + " used to cook " + dish);
-}
+button.onclick = person.greet.bind(person); // this will always be person
 
-const magicalToolbox = { tool: "magic spatula" };
+/*
+Summary:
+.bind(someValue) locks in someValue as this for the function.
+Useful when you want a function to always refer to the same object (or context) as this, no matter how it’s called later.
+*/
 
-const boundChef = chef.bind(magicalToolbox);
-
-boundChef("pasta"); // Output: magic spatula used to cook pasta
+// say you are a delivery driver and you have a GPS, without the GPS you might end up at wrong location, but with the GPS locked in, no matter what road you take you can always go to the right place.

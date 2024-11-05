@@ -8,7 +8,8 @@ function sum(...args){
 sum(1,2,3);
 
 /*
-The rest parameter is indicated by three dots (...) followed by a parameter name. It collects all remaining arguments into an array.
+The rest parameter is indicated by three dots (...) followed by a parameter name. 
+It collects all remaining arguments into an array.
 */
 function sum(...args){
     return args.reduce((acc, val) => acc + val, 0);
@@ -32,3 +33,5 @@ logArguments("one", "two", "three");
 // Output:
 // First argument: one
 // Remaining arguments: [ 'two', 'three' ]
+
+// A way to remember, rest - "collect the rest" and gather the remaining items into an array

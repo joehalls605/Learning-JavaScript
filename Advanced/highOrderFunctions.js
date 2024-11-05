@@ -1,16 +1,12 @@
 /*
-A higher-order function is a function that does at least one of the following:
+High-order functions in JavaScript (or any programming language) are simply functions that do one of two things:
 
-Takes one or more functions as arguments (input).
-Returns a function as its result (output).
-
+Take other functions as arguments
+Return a function as their result
 Why Use Higher-Order Functions?
-Reusability: They allow you to write more reusable and modular code.
-Abstraction: They help abstract away common patterns, making your code cleaner and more readable.
-
-Example of Higher-Order Function:
-A Function that Takes Another Function as an Argument
-Example: an array map method
+They’re useful because they let us write more flexible and reusable code. 
+Instead of hard-coding everything, you can use high-order functions to create "templates" of behavior, 
+then customise that behavior by passing in specific functions.
 */
 
 const numbers = [2,3,5,6];

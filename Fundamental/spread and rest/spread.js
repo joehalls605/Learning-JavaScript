@@ -22,9 +22,12 @@ let nums = [1, 3, 4, 5];
 let maximum = Math.max(...nums); // by using the spread, you're opening the box and unpacking the array.
 console.log(maximum); // Outputs: 5
 
-let username = "Joseph";
-let letters = [...username]; // ["J", "o", "s", "e", "p", "h"]
-console.log(letters);
+let usernameFirst = "Joseph";
+let usernameSurname = "Joseph";
+
+let lettersforFirstAndSurname = [...usernameFirst, ...usernameSurname]; // ["J", "o", "s", "e", "p", "h"]
+console.log(lettersforFirstAndSurname);
+
 
 // Creating a shallow copy
 
@@ -75,3 +78,6 @@ const details = { job: "Software Dev", city: "London" };
 
 const combinedDetails = { ...person, ...details };
 console.log(combinedDetails); // Outputs: { name: "John", age: 30, job: "Software Dev", city: "London" }
+
+
+// Remeber spread as "spread out", expanding the the array or object into individual elements

@@ -103,3 +103,16 @@ const arrowAdd = (x, y) => x + y;
 // It's essentially an identity function that returns its input as output.
 
 const isPositive = number => number > 0;
+
+
+const arrowFunction4 = () => {
+    console.log("I'm an arrow function");
+}
+
+const arrowFunction5 = () => console.log("Hello");
+
+const num1 = 1;
+const num2 = 2;
+
+const arrowFunction6 = () => num1 + num2;
+
