@@ -1,5 +1,5 @@
 /*
-.shift remvoes the first item from the array.
+.shift remvoes the first item from the array. Think of it as shiftin the first person out of the line.
 */
 
 let fruits = ['apple', 'banana', 'cherry'];
