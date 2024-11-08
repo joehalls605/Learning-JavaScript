@@ -1,9 +1,9 @@
-/* A callback is a function that is passed as an argument to another function and is executed after some operation has been completed. 
-Callbacks are a way to ensure that certain code runs only after a specific task has finished, 
-which is especially useful in asynchronous operations like reading files, making network requests, or handling events.
+/* 
+A callback is a function that you give to another function to run later, after a task is finished.
+Callbacks are especially helpful for tasks that take time, like loading data, making network requests, or waiting for user actions. They make sure that some code runs only when the task is complete.
 
-
-Let's say we want to greet a user after getting their name. We'll create a function that gets the user's name and another function that displays a greeting. 
+Let's say we want to greet a user after getting their name. 
+We'll create a function that gets the user's name and another function that displays a greeting. 
 We'll use a callback to ensure the greeting function runs after we get the user's name.
 */
 
@@ -20,24 +20,20 @@ function greet(name) {
 
 getName(greet);
 
-// Function with a callback parameter
+
+// Function to greet and then call another function
 function greet(name, callback) {
-    // Print a greeting message with the provided name
     console.log(`Hello, ${name}!`);
-    
-    // Call the provided callback function
-    callback(); // This line executes the callback function
+    callback(); // Run the callback after the greeting
 }
 
-// Callback function
+// Callback function to say goodbye
 function sayGoodbye() {
-    // Print a goodbye message
     console.log("Goodbye!");
 }
 
-// Using the greet function with a callback
+// Use greet, and pass sayGoodbye as the callback
 greet("John", sayGoodbye);
-
 
 function speakToJohn(){
     greet("John", sayGoodbye);

@@ -1,57 +1,43 @@
-
-// PROMISE AND ASYNC
-
 /*
-A promise is an object representing the eventual completion or failure of an asynchronous operation.
-Promises are used to handle asynchronous operations and provide a more readable and manageable way to write asynchronous code.
-They have three states:
-- pending
-- fulfilled
-- rejected
+A promise in JavaScript is a way to handle things that take time, like downloading a file or making a network request. 
+Instead of waiting for the task to finish, a promise lets you handle the result later. 
+It represents something that will either succeed (complete) or fail (error) at some point in the future.
+
+Here’s a simple breakdown:
+
+Pending: The promise is still in progress. It hasn’t been completed or failed yet.
+Fulfilled: The operation was successful, and the promise is completed.
+Rejected: The operation failed, and the promise cannot be completed.
+
+
+Imagine you want to order a pizza online. The promise is like a receipt for your order:
+
+Pending: Your pizza is still being prepared.
+Fulfilled: Your pizza is ready and delivered.
+Rejected: Something went wrong, and the pizza wasn’t delivered.
+
+Promises help make asynchronous (delayed) code more understandable and manageable by allowing you to handle the "success" or "failure" of tasks when they are done. 
+This way, your code doesn’t get stuck waiting, and you can write cleaner, easier-to-read programs.
 */
 
 // Creating a simple promise
+let pizzaOrder = new Promise((resolve, reject) => {
+    let pizzaIsReady = true;
 
-const myPromise = new Promise((resolve, reject) => {
-    // Simulating an asynchronous operation.
-    setTimeout(()=> {
-        const success = true;
-
-        if(success){
-            resolve("operation sucessful!");
-        }
-        else{
-            reject("operation failed")
-        }
-    }, 2000)
+    if(pizzaIsReady){
+        resolve("Your pizza is ready!");
+    }
+    else{
+        reject("Oops we ran out of pizza!");
+    }
 });
 
-myPromise.then((result) =>{
-    
-    console.log(result) // Output: Operation successful!
 
-}).catch((error) => {
-    console.error(); // Output: Operation failed!
-})
+// Then and catch are used to handle the result
+// The message is the result which is output
 
-const myPromiseTwo = new Promise((resolve, reject) =>{
-    // Simulating an asynchronous operation.
-    setTimeout(()=>{
-        const sucess = true;
-
-        if(sucess){
-            resolve("operation sucessful")
-        }else{
-            reject("operation failed");
-        }
-    }, 2000)
-
-    myPromiseTwo.then((result) =>{
-        console.log(result)
-    })
-    .catch((error) =>{
-        console.error(error);
-    })
-
-
+pizzaOrder.then(message => { // then runs if the pizzaIsReady is true
+    console.log(message);
+}).catch(error => { // runs if pizzaIsReady is false
+    console.log(error);
 })
