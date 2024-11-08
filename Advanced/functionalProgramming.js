@@ -1,5 +1,9 @@
 /*
-Functional programming is a way to write software by using functions. Here are the key ideas:
+Functional programming is a way to write software by using functions. 
+Functional programming focusses on the what, not the how. It is a paradigm within declarative programming.
+
+
+Here are the key ideas:
 
 Pure Functions:
 A pure function always gives the same output if you give it the same input.
@@ -7,6 +11,7 @@ It doesn’t change anything outside itself (no side effects).
 
 Immutability:
 Data doesn’t change. Instead of changing existing data, you create new data with the changes.
+Repeat - instead of changing EXISTING data, you create new data with the changes.
 
 First-Class Functions:
 Functions are treated like any other value. You can pass them as arguments to other functions, return them from functions, and assign them to variables.

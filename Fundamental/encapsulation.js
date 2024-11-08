@@ -1,5 +1,8 @@
 /*
-Encapsulation in JavaScript is a fundamental concept of object-oriented programming that involves bundling the data (properties) and methods (functions) that operate on the data into a single unit, usually an object. Encapsulation also helps to restrict direct access to some of an object's components, which is a way to protect the internal state of the object and to hide the implementation details.
+Encapsulation in JavaScript is a fundamental concept of object-oriented programming that involves -
+bundling the data (properties) and methods (functions) that operate on the data into a single unit, usually an object. 
+Encapsulation also helps to restrict direct access to some of an object's components, 
+which is a way to protect the internal state of the object and to hide the implementation details.
 
 Key Concepts of Encapsulation
 Data Hiding: Only expose necessary parts of an object, while keeping the rest hidden from the outside world.

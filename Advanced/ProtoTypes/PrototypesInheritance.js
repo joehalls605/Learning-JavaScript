@@ -15,7 +15,7 @@ Animal.prototype.walk = function() {
 // Creating a Subclass Rabbit with ProtoType Inheritance
 
 function Rabbit(name) {
-    Animal.call(this, name); // Inherit properties from Animal
+    Animal.call(this, name); // Inherit properties from Animal and name
     this.jumps = true; // Additional property specific to rabbits
 }
 
