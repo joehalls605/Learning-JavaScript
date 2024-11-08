@@ -1,11 +1,15 @@
 /*
-DOMContentLoaded is an event that fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. This means it triggers as soon as the browser has constructed the DOM (Document Object Model) for the page.
+DOMContentLoaded is an event that fires when the initial HTML document has been completely loaded and parsed, 
+without waiting for stylesheets, images, and subframes to finish loading. 
+
+This means it triggers as soon as the browser has constructed the DOM (Document Object Model) for the page.
 
 Handling DOMContentLoaded:
 
-Why it's useful: It allows JavaScript to interact with the HTML document as soon as it's ready, even if other resources like images or stylesheets are still loading.
+Why it's useful: 
+It allows JavaScript to interact with the HTML document as soon as it's ready, even if other resources like images or stylesheets are still loading.
 
-How to use it: You can attach event listeners to the DOMContentLoaded event using JavaScript. Here's a simple example:
+How to use it: You can attach event listeners to the DOMContentLoaded event using JavaScript. 
 */
 
 document.addEventListener("DOMContentLoaded", function(){

@@ -1,7 +1,8 @@
 // CLOSURES
 
 /*
-A closure is a javascript feature that allows a function to remember and access its lexical scope, even when the function is executed outside that scope.
+A closure is a javascript feature that allows a function to remember and access its lexical scope, 
+even when the function is executed outside that scope.
 
 Simply, a closure is created when a function is defined inside another funciton, and the inner function retains
 access to variables and parameters of the outer function. Even after the outer function has finished.
