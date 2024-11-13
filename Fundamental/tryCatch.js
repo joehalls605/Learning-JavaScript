@@ -24,3 +24,24 @@ try {
     console.log("An error occurred:", error.message); // Output: An error occurred: division by zero
 }
 
+/*
+When Try catches are used:
+
+
+In professional software projects, try...catch is used selectively to handle errors where they’re most likely and critical. Wrapping everything in try...catch is discouraged since it clutters code and can hide real issues. Here’s when try...catch is commonly used:
+
+Unpredictable Inputs: For handling things like network requests, file operations, or user input that could fail due to issues outside the program’s control.
+
+Application Boundaries: At key entry points (like server requests or controllers) to catch and log errors centrally without crashing the app.
+
+Risky Code: Around inherently unstable code, like parsing JSON or using third-party libraries.
+
+Critical Processes: When processing important tasks (e.g., saving data or payments), ensuring errors can trigger a safe fallback or recovery action.
+
+Asynchronous Code: With async/await to catch errors in asynchronous workflows.
+
+User Experience: To show friendly error messages or retries, improving the user experience when something goes wrong.
+
+In practice, teams use try...catch strategically at key points and rely on centralized logging, avoiding overuse to keep the code clean and maintainable.
+
+*/
