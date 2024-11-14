@@ -1,4 +1,4 @@
-/* Asynchronous operation is a task or process that operates independtly of the main program flow.
+/* Asynchronous operation is a task or process that operates independently of the main program flow.
 This enables other tasks to execute concurrently. In programming, operations can be broadly categorised into two types.
 
 synchronous and asynchronous.
@@ -34,14 +34,18 @@ or performing other non blocking tasks.
 The async keyword is used to define asynchronous functions, and await is used within these functions to pause execution until a promise is resolved.
 This allows for readable and consise asynchronous code.
 
-Example:
-*/
+fetch - is a function used in JavaScript to make HTTP requests to servers, typically to retrieve or send data.
+It returns a promise that resolves to the response object representing the HTTP rresponse to the request.
 
+await - pauses the execution of the function until a promise is resolved.
+
+*/
 
 // Example asynchronous function using async/await
 async function fetchData() {
     try {
         // Simulating an asynchronous operation, like fetching data from an API
+        // await pauses until the fetch request is completed and returns a response
         const response = await fetch('https://api.example.com/data');
         
         // Check if the request was successful
@@ -50,6 +54,7 @@ async function fetchData() {
         }
 
         // Parse the JSON data
+        // Again await pauses and waits until the response.hson parses the response into a JSON object.
         const data = await response.json();
 
         // Process the data or return it
