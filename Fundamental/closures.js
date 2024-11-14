@@ -1,7 +1,7 @@
 // CLOSURES
 
 /*
-A closure is a javascript feature that allows a function to remember and access its lexical scope, 
+A closure is a javascript feature that allows a function to remember and access its lexical scope (retains access to variables and parameters in the enviroment where it was created), 
 even when the function is executed outside that scope.
 
 Simply, a closure is created when a function is defined inside another funciton, and the inner function retains
@@ -43,21 +43,8 @@ When working with asynchronous code, like event handlers or setTimeout/setInterv
 Example: Storing the value of a variable when setting a delay for an operation.
 */
 
-
-// More practice
-// This is one giant closure
-let myName = "Joe";
-
-function printName(){
-    console.log("myName");
-}
-
-myName = "John"; // printname would actually be John, even though it's assigned below. Most recent value of the variable.
-
-printName();
-
-
 function outerFunction(outerVariable){
+
     return function innerFunction(innerVariable){
         console.log("Outer variable", outerVariable);
         console.log("Inner variable", innerVariable);
@@ -66,3 +53,14 @@ function outerFunction(outerVariable){
 
 const newFunction = outerFunction("outside");
 newFunction("inside");
+
+
+function multiplier(factor){
+    return function(number){
+        return number * factor; // factor is remembered by the inner function
+    };
+}
+
+// The returned function from the multiplier is a closure because it remembers the value of factor whe it is invoked
+
+const multiplyByTwo = multiplier(2);
