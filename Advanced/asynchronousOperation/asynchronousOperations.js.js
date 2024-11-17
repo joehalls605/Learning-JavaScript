@@ -1,6 +1,7 @@
 /* Asynchronous operation is a task or process that operates independently of the main program flow.
-This enables other tasks to execute concurrently. In programming, operations can be broadly categorised into two types.
+This enables other tasks to execute concurrently. 
 
+In programming, operations can be broadly categorised into two types.
 synchronous and asynchronous.
 
 In synchronous operations, tasks are executed in sequence, one after the other.
@@ -18,7 +19,7 @@ Callback functions, Promises, and async/await are common mechanisms used to hand
 console.log("Start")
 
 setTimeout(()=>{
-    console.loog("Async operation completed after 2000 milliseconds")
+    console.log("Async operation completed after 2000 milliseconds")
 },2000)
 
 console.log("End");

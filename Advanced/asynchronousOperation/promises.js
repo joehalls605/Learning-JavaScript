@@ -3,6 +3,9 @@ A promise in JavaScript is a way to handle things that take time, like downloadi
 Instead of waiting for the task to finish, a promise lets you handle the result later. 
 It represents something that will either succeed (complete) or fail (error) at some point in the future.
 
+A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. 
+Promises provide a cleaner and more manageable way to work with asynchronous code, avoiding "callback hell" (the nested callbacks that can make code harder to read and maintain).
+
 Here’s a simple breakdown:
 
 Pending: The promise is still in progress. It hasn’t been completed or failed yet.

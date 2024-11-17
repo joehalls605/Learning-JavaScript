@@ -4,27 +4,22 @@ When an event (like a click) happens on a webpage, it doesn’t just stop at the
 
 It actually moves through three phases:
 
-1. Event Capturing: 
-   - The capturing phase, also called the "trickling" phase, is when the event starts at the top of the document (the window) and moves down the DOM tree through each element until it reaches the one you clicked on (the target).
-   - For example, if you click on an `inner div` nested inside two other divs, the event travels from the `window` down through the `outer div`, then `middle div`, until it reaches the `inner div`.
 
-2. Target Phase:
-   - This is the point where the event has reached the target element—the one that was actually clicked. 
-   The event will be processed here if there are any listeners attached to the target element.
+1. Capturing Phase: The event starts at the root of the DOM (often the window or document) and travels down the DOM tree toward the target element.
+2. Target Phase: The event reaches the actual target element, the one that initiated the event (for example, a button that was clicked).
+3. Bubbling Phase: The event then travels back up the DOM tree to the root, retracing its path in reverse.
+Default Behavior of Event Flow
+In most cases, when you add an event listener to an element, the default behavior is to listen during the bubbling phase only, unless explicitly set otherwise. 
 
-3. Event Bubbling: 
-   - In the bubbling phase, the event then moves back up the DOM tree from the target element toward the root (window), passing through each ancestor element it traveled down through.
-   - For instance, after reaching the `inner div`, it will travel up through `middle div`, then `outer div`, and finally back to the `window`.
+Here's a breakdown of the key points in default behavior:
 
-Default Event Phase Behavior
-- By default, event listeners listen during the bubbling phase. This means that when an event is triggered, listeners attached to elements in the DOM will catch the event as it moves back up the DOM tree.
-- However, you can specify which phase you want to listen on by adding a third argument to the event listener: 
-  - `true` for capturing phase
-  - `false` for bubbling phase (this is the default)
+By default, event listeners and callbacks with these, are triggered during the bubbling phase (moving from the target element back up to the root).
+Capturing is optional and can be enabled by setting the capture option to true when adding an event listener:
+Capturing phase (root to target): The event "captures" down from the root (window or document) to the target element. By default, listeners on this path don’t trigger, unless { capture: true } is set.
 
-When to Use Each Phase
-- Bubbling (default) is useful for handling events after they reach the target element, which is helpful for event delegation or handling multiple events at once.
-- Capturing is useful if you want to intercept events before they reach the target element, like intercepting clicks before they trigger the target’s default behavior.
+The event flows down the DOM tree in the capturing phase without triggering any handlers unless { capture: true } is specified.
+Then, it triggers handlers on the target.
+Finally, it bubbles back up the DOM tree in the bubbling phase, where most handlers are triggered by default.
 
 HTML Structure:
 <!DOCTYPE html>

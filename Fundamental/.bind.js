@@ -29,7 +29,7 @@ This happens because 'this' inside 'barkFunction' no longer refers to the dog ob
 which doesn't have a 'name' property.
 */
 
-// To fix this, use .bind(). It allows you to explicitly set what 'this' refers to when the function is called.
+// To fix this, use bind(). It allows you to explicitly set what 'this' refers to when the function is called.
 const barkFunctionBind = dog.bark.bind(dog);
 barkFunctionBind(); // Output: Buddy says woof!
 
