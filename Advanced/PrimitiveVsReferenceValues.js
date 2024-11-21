@@ -1,27 +1,26 @@
 /* 
 Primitive vs reference values.
 
-Primitive values are simple data types that store their values in memory.
-Most primitive values are immutable - number, string, boolean etc.
+Primitive values are basic data types like number, string, and boolean, which store their values directly in memory. 
+They are immutable, meaning their values cannot be changed once created.
 
-These valuesa are stored directly in memory locations and when you assign one primitive to another, you create a copy of the value.
-Changing one value does not affect the other.
-
-Reference values are more complex data types that store references or addresses to the location memory where the the data is stored.
-When you assign a reference value to a variable, you are not copying the actual data but instead creating a refrence to that data.
-
-Objects, Arrays, Functions
+When you assign a primitive value to another variable, a copy of the value is made. 
+Any changes to one variable do not affect the other.
 */
 
-
-// Primitive Value
-
 var x = 10;
-var y = x;
+var y = x; // y gets a copy of x's value
 x = 20;
-console.log(y); // y = 10;
+console.log(y); // Output: 10
 
-// Reference Value
+
+/* 
+Reference values include complex data types like Objects, Arrays, and Functions. 
+Instead of storing the actual data in memory, they store a reference (or address) to the location in memory where the data is stored.
+
+When you assign a reference value to a variable, you’re copying the reference, not the actual data. 
+Changes made to one variable affect the other because they point to the same memory location.
+*/
 
 var obj1 = {name: "John"};
 var obj2 = obj1;
