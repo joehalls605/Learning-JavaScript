@@ -15,9 +15,11 @@ buttons.forEach((button) => {
 })
 
 function selectArrayMethod(button){
-    // I NEED TO CHECK WHAT METHOD CLICKED, DEPENDING ON THIS, CALL RELEVANT FUNCTION AND RENDER DATA
     if(button.textContent === "charAt"){
         charAtFunction(sampleData);
+    }
+    if(button.textContent === "filter"){
+        filterFunction(sampleData);
     }
 }
 
@@ -29,6 +31,12 @@ function charAtFunction(sampleData){
     console.log(`charAt: ${character}`);
     return character;
     });
+}
+
+function filterFunction(sampleData){
+  const filteredByAge = sampleData.filter(person => person.age > 25);
+  console.log(filteredByAge);
+  return filteredByAge;
 }
 
 
