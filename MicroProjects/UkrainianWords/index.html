@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ukrainian Words for Beginners</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #word-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .word-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    .button-container {
+      margin-top: 15px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Ukrainian Words for Beginners</h1>
+
+<div id="word-container">
+  <!-- Word cards will be dynamically inserted here -->
+</div>
+
+<div class="button-container">
+  <input type="text" id="search-input" placeholder="Search by Ukrainian or English word..." />
+  <button onclick="findFunction()">Find</button>
+  <button onclick="filterFunction()">Filter Words Starting with 'П'</button>
+  <button onclick="sortFunction()">Sort Alphabetically</button>
+  <button onclick="translateFunction()">Show English Words</button>
+  <button onclick="resetWords()">Reset</button>
+</div>
+
+<div id="output"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
