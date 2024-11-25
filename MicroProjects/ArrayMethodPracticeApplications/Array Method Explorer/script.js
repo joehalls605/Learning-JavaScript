@@ -52,6 +52,9 @@ function selectArrayMethod(button){
     if(button.textContent === "slice"){
         sliceFunction(sampleData);
     }
+    if(button.textContent === "sort"){
+        sortFunction(sampleData);
+    }
     if(button.textContent === "unshift"){
         unshiftFunction(sampleData);
     }
@@ -153,6 +156,17 @@ function sliceFunction(){
     render(output);
 }
 
+function sortFunction(){
+
+    // Sorting by age in ascending order
+    const sortByAge = sampleData.sort((a,b) => a.age - b.age);
+
+    // Extracting the names for display
+    const output = sortByAge.map((person) => person.name).join(",");
+
+    render(output);
+}
+
 function unshiftFunction(){
     // Unshift is about adding items to beginning
 
@@ -179,3 +193,20 @@ function render(value){
     const outputElement = document.getElementById("output");
     outputElement.append(value);
 }
+
+/*
+Learnings from this micro project
+
+- If I want to create a new array, where each element is transformed in some way, I want to use .map
+- If I need a specific property from every object, .map is great for generate a new array of those values
+- .map is often used with .filter, .reduce, .sort to perform some complex operation. As shown below.
+*/
+
+const filteredNames = sampleData.filter(person => person.age > 25).map(person => person.name);
+
+/*
+When not to use .map:
+- if you're just looping through the array to perform side effects (like logging or modifying a dom elenet) use foreach instead.
+*/
+
+sampleData.forEach(person => console.log(person.name));
