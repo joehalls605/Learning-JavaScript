@@ -48,3 +48,17 @@ May produce different results depending on external factors.
 Can modify external state or interact with systems.
 Harder to debug due to external dependencies.
 */
+
+
+// Examples With .map and .forEach
+
+// When using .map (pure), it creates a new array without modifying anything outside.
+
+const numbers = [1,2,3,4,5];
+const squares = numbers.map( num => num * num); // Pure: transforms the data
+// Original array remains unchanged
+
+// Using forEach (side effects)
+// When you use .forEach, it often performs side effects like logging or updating external state:
+
+numbers.forEach(num => console.log(num * num)); // Side effect: logs to the console

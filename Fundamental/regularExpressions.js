@@ -1,121 +1,103 @@
 /*
-Regular expressions (often abbreviated as "regex" or "regexp") are patterns used to match character combinations in strings. 
-In JavaScript, regular expressions are used to perform pattern-matching and search-and-replace functions.
-
-A regular expression can be created in two ways:
-
-Using a regular expression literal, which consists of a pattern enclosed between slashes.
-Using the RegExp constructor function.
+Regular expressions (regex) are patterns used for matching character combinations in strings.
+They provide a powerful and flexible way to search, match, and manipulate text.
 */
-
-// Regular Expression Literal
-let regex = /abc/;
-
-// Regular Expression with RegExp Constructor
-let regex2 = new RegExp('abc');
 
 /*
-Common Methods for Using Regular Expressions in JavaScript
-
-test Method: 
-   - Tests if a pattern exists in a string.
-   - Returns `true` if a match is found, `false` otherwise.
-exec Method:
-   - Executes a search for a match in a string.
-   - Returns an array with detailed match information if a match is found; returns `null` if no match is found.
-match Method:
-   - Retrieves all matches when matching a string against a regular expression.
-   - Returns an array of all matches if `g` (global) flag is set in the regex; otherwise, returns an array with details of the first match only.
-replace Method:
-   - Replaces matched substrings within a string based on the regular expression.
-search Method:
-   - Searches for the first match of a regular expression in a string.
-   - Returns the index of the first match, or `-1` if no match is found.
-split Method:
-   - Splits a string into an array of substrings based on a regular expression or delimiter.
-   - If the regex matches, it defines the points at which the string is split.
+Pattern matching: A regular expression is like a search pattern that you define.
+It is made from characters and special symbols that represent a set of possible text combinations.
 */
 
-// Test method 
-
-let regex3 = /hello/;
-let str = "hello world";
-
-console.log(regex3.test(str)); // Output: true
-
-// Exec method
-
-let regex4 = /hello/;
-let str1 = "hello world";
-
-let result = regex4.exec(str1);
-console.log(result); // Output: ['hello']
-
-// Match method
-
-let str2 = "hello world";
-let result5 = str2.match(/hello/);
-
-console.log(result); // Output: ['hello']
-
-// Replace method
-
-let str3 = "hello world";
-let newStr = str3.replace(/world/, "there");
-
-console.log(newStr); // Output: "hello there"
-
+var pattern = /^h.llo$/i;
+var result = pattern.test("Hello"); // true
+result = pattern.test("Hola"); // false
 
 /*
-Global flag is a special flag that changes the way a regular expression behaves when it searches for matches within a string.
+In this example, the pattern ^h.llo$ matches a string that starts with "h," 
+followed by any character, then "llo," and the i flag makes it case-insensitive.
 
-Without the g flag: A regular expression will only match the first occurrence in the string.
-With the g flag: The regular expression will search through the entire string and match all occurrences.
-
-Why Use the Global Flag?
-It allows you to find all matches in a string, rather than just stopping at the first match.
-It is particularly useful when you want to iterate over all occurrences of a pattern in a string.
+The regular expression pattern ^h.llo$:
+- ^ asserts the start of the string.
+- h matches the literal character "h".
+- . matches any single character (except for newline characters).
+- llo matches the literal characters "llo".
+- $ asserts the end of the string.
+The i flag makes the pattern case-insensitive.
+So, this pattern will match strings that:
+- Start with "h"
+- Followed by any character
+- Followed by "llo"
+- And nothing else comes after "llo" until the end of the string.
 */
-
-const text = "I have a cat, a dog, and another cat.";
-const regexG = /cat/g; // With 'g' flag
-
-const resultG = text.match(regex);
-console.log(resultG); // Output: ["cat", "cat"]
 
 /*
-Special Characters in Regular Expressions (Simplified)
-
-.   - Matches any single character except for a newline.
-^   - Matches the start of a string.
-$   - Matches the end of a string.
-*   - Matches zero or more of the previous character.
-+   - Matches one or more of the previous character.
-?   - Matches zero or one of the previous character (makes it optional).
-[]  - Matches any one of the characters listed inside the brackets.
-|   - Acts like "OR" (matches one pattern or another).
-\d  - Matches any digit (0-9).
-\w  - Matches any "word" character (letters, numbers, or underscore).
-\s  - Matches any whitespace (spaces, tabs, or newlines).
-
+Creation: You create a regular expression using the RegExp object or by 
+enclosing the pattern between forward slashes (/). For example:
 */
 
+var pattern = /hello/;
 
-let regex7 = /\d+/; // \d matches the digit equivalent 0 -9
-let str4 = "There are 123 apples";
+//or
 
-console.log(str4.match(regex7)); // Output: ['123']
+var pattern = new RegExp("hello");
+console.log(pattern.test("Say hello!")); // true
 
+/*
+Metacharacters: Special characters in regex are called metacharacters, and they have special meanings. For example:
+- . (dot) matches any single character.
+- * matches zero or more occurrences of the preceding character.
+- + matches one or more occurrences of the preceding character.
+- ? matches zero or one occurrence of the preceding character.
 
-let regex8 = /\w+/; // Matches word character (alphanumeric + underscore).
-let str5 = "Hello world!";
+Character Classes: Square brackets ([]) are used to define character classes. For example, [aeiou] matches any vowel.
 
-console.log(str5.match(regex8)); // Output: ['Hello'] - first sequence found.
+Quantifiers: These define the number of occurrences of a character or group. For example:
+- {n} matches exactly n occurrences.
+- {n,} matches n or more occurrences.
+- {n,m} matches between n and m occurrences.
 
+Anchors: ^ (caret) represents the start of a line, and $ represents the end. For example, ^hello matches "hello" only if it appears at the start of a line.
 
-// More practice
+Modifiers: You can add flags after the closing slash to modify how the pattern is matched. Common ones include:
+- i: Case-insensitive matching.
+- g: Global matching (find all matches, not just the first).
+- m: Multiline matching.
 
-let helloRegex = /hello/;
-let string = "Hi";
+Meta characters:
+*/
 
-console.log(helloRegex.test(str));
+var pattern = /h.llo/;
+console.log(pattern.test("hello")); // true
+console.log(pattern.test("hillo")); // true
+console.log(pattern.test("hallo")); // false
+
+/*
+Character classes:
+*/
+
+var pattern = /[aeiou]/;
+console.log(pattern.test("apple")); // true
+console.log(pattern.test("banana")); // false
+
+/*
+Quantifiers:
+*/
+
+var pattern = /o{2}/;
+console.log(pattern.test("food")); // true
+console.log(pattern.test("cookie")); // false
+
+/*
+Anchors:
+*/
+
+var pattern = /^hello/;
+console.log(pattern.test("hello world")); // true
+console.log(pattern.test("say hello")); // false
+
+/*
+Modifiers:
+*/
+
+var pattern = /hello/gi;
+console.log("Hello Hello Hello".match(pattern)); // ["Hello", "Hello", "Hello"]
