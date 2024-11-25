@@ -34,6 +34,15 @@ function selectArrayMethod(button){
     if(button.textContent === "map"){
         mapFunction(sampleData);
     }
+    if(button.textContent === "pop"){
+        popFunction(sampleData);
+    }
+    if(button.textContent === "reduce"){
+        reduceFunction(sampleData);
+    }
+    if(button.textContent === "reduceV2"){
+        reduceFunctionV2(sampleData);
+    }
 }
 
 
@@ -85,6 +94,27 @@ function mapFunction(){
     });
     render(objectsAgeIncrease);
 }
+
+function popFunction(){
+    const removedPerson = sampleData.pop();
+    const output = `Removed person: Name:${removedPerson.name}, Age: ${removedPerson.age}`;
+    render(output);
+}
+
+function reduceFunction(){
+    const totaledAges = sampleData.reduce((total, currentValue) => total + currentValue.age, 0);
+    console.log(totaledAges);
+    render(totaledAges);
+}
+
+function reduceFunctionV2(){
+    const totaledAgesMultiplied = sampleData.reduce((total, currentValue) => (total + currentValue.age) * 2, 0);
+    render(totaledAgesMultiplied);
+}
+
+
+
+
 
 // ARRAY RENDERING METHOD
 function render(value){
