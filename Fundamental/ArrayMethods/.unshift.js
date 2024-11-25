@@ -1,5 +1,6 @@
 /*
-.unshift adds one or more items to the beginning of an array and returns the new length of the array. Unshifting someone into the line.
+.unshift adds one or more items to the beginning of an array and returns the new length of the array. 
+Unshifting someone into the line.
 */
 
 let fruits = ['banana', 'cherry'];

@@ -43,6 +43,21 @@ function selectArrayMethod(button){
     if(button.textContent === "reduceV2"){
         reduceFunctionV2(sampleData);
     }
+    if(button.textContent === "reverse"){
+        reverseFunction(sampleData);
+    }
+    if(button.textContent === "shift"){
+        shiftFunction(sampleData);
+    }
+    if(button.textContent === "slice"){
+        sliceFunction(sampleData);
+    }
+    if(button.textContent === "unshift"){
+        unshiftFunction(sampleData);
+    }
+    if(button.textContent === "some"){
+        someFunction(sampleData);
+    }
 }
 
 
@@ -112,7 +127,50 @@ function reduceFunctionV2(){
     render(totaledAgesMultiplied);
 }
 
+function reverseFunction(){
+    
+    // by using the spread operator, it creates a copy of the array.
+    const reversedData = [...sampleData].reverse(); 
 
+    // using .map to extract the name property I want to display.
+    const output = reversedData.map(person => person.name).join(",");
+
+    render(output);
+}
+
+function shiftFunction(){
+    const removedFirstItem = sampleData.shift();
+    const output = removedFirstItem.name;
+    render(output);
+}
+
+function sliceFunction(){
+    // Slicing the first two elements of the aray
+    const slicedFirstName = sampleData.slice(0,2);
+
+    // Map the sliced data to extract the names
+    const output = slicedFirstName.map((person) => person.name);
+    render(output);
+}
+
+function unshiftFunction(){
+    // Unshift is about adding items to beginning
+
+    person = {
+        id: 0, 
+        name: "Phil", 
+        age: 27, 
+        isStudent: true
+    }
+
+    // Adding the new person to start of the ORIGINAL array
+    sampleData.unshift(person);
+
+    // Extract the names from the update array
+    const output = sampleData.map(person => person.name).join(",");
+
+    render(output);
+}
 
 
 
