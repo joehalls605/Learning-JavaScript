@@ -1,0 +1,31 @@
+Interpreted Languages
+How it works: In interpreted languages, the code is executed line by line, and the interpreter translates the code into machine code as the program runs.
+Key Point: The code is translated on the fly during execution, without creating an intermediate file.
+
+JavaScript is an interpreted language.
+When you run a JavaScript program in a browser, the browser's JavaScript engine reads the code line by line, interprets it, and executes it directly.
+
+Advantages:
+Easier to debug because you can see the result of each line immediately.
+More flexibility as it doesn't require a separate compilation step.
+
+Disadvantages:
+Slower execution since the code is being interpreted line by line during runtime.
+
+let sum = 2 + 3;  // This gets interpreted and executed immediately.
+console.log(sum);  // Output: 5
+
+
+Compiled Languages
+How it works: In compiled languages, the entire code is translated into machine code (binary code) all at once before execution. This translation is done by a compiler, which creates an executable file (e.g., .exe, .out).
+
+Key Point: The code is translated into a machine-readable format before running, and then you run the precompiled program.
+
+C and C++ are compiled languages.
+
+Advantages:
+Faster execution because the code is already fully compiled into machine code.
+Typically more efficient in terms of performance.
+Disadvantages:
+Compilation step is required before execution, so you need to recompile the code every time you make changes.
+Harder to debug because errors are typically caught during compilation, not during execution.

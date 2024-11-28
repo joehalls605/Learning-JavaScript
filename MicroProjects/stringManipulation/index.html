@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+        .input-box {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>String Manipulation Practice</h1>
+    
+    <div class="input-box">
+        <label for="stringInput">Enter a String: </label>
+        <input type="text" id="stringInput" value="Hello World">
+    </div>
+
+    <div>
+        <button onclick="manipulateString()">Manipulate String</button>
+    </div>
+
+    <div class="result">
+        <h2>Results:</h2>
+        <p><strong>Original String:</strong> <span id="originalString">Hello World</span></p>
+        <p><strong>Length:</strong> <span id="lengthResult"></span></p>
+        <p><strong>Uppercase:</strong> <span id="uppercaseResult"></span></p>
+        <p><strong>Lowercase:</strong> <span id="lowercaseResult"></span></p>
+        <p><strong>First Character:</strong> <span id="firstCharResult"></span></p>
+        <p><strong>Substring (0-4):</strong> <span id="sliceResult"></span></p>
+        <p><strong>Replaced Text:</strong> <span id="replaceResult"></span></p>
+        <p><strong>Trimmed Text:</strong> <span id="trimResult"></span></p>
+        <p><strong>Splitted Text (by space):</strong> <span id="splitResult"></span></p>
+    </div>
+
+    <script src="app.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>
+ 
