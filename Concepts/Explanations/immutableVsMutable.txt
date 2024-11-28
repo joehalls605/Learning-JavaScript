@@ -1,0 +1,20 @@
+Immutable vs Mutable refers to whether an object or value can be changed after it is created.
+
+Immutable means it cannot be changed after creation. Any change creates a new value instead of altering the original.
+
+Mutable means an object or value can be changed without creating a new value.
+
+
+Immutable data types are primitive data types:
+Strings
+Numbers
+Boolean
+Undefined
+Null
+Symbol
+
+Mutable data types:
+Objects
+Arrays
+Functions
+

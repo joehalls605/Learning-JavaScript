@@ -1,0 +1,9 @@
+Primitive data types are the basic building blocks of JS.
+
+They represent single values and are immutable. These are primitve types:
+
+Strings
+Number
+Boolean
+Undefined
+Null

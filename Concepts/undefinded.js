@@ -1,4 +1,6 @@
 /*
-undefined is a primitive value that is automatically assigned to variables that have been declared but have not been assigned a value. 
-It also represents the return value of functions that do not explicitly return anything.
+Undefined is a variable that has been declared but not assigned a value.
 */
+
+let x;
+console.log(x); // Output: undefined

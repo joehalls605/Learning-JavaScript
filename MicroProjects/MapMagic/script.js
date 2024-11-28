@@ -2,10 +2,6 @@
 function transformArray(){
     const numbers = [1,2,3,4,5];
     const doubled = numbers.map(num => num * 2);
-    const doubledV2 = numbers.map(function(num){
-        const output = num * 2;
-        return output;
-    })
     document.getElementById('array-result').innerText = `Original: ${numbers.join(', ')}\nDoubled: ${doubled.join(', ')}`;
 }
 
