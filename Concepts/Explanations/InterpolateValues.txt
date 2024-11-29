@@ -1,0 +1,11 @@
+Interpolate values refers to the process of embedding or inserting values (such as variables or expressions) directly into a string, typically to make the string more dynamic or personalized.
+
+In JavaScript, interpolation is most commonly done using template literals (backticks `) which allow you to include variables or expressions inside a string without concatenating them manually.
+
+let name = "Alice";
+let age = 25;
+
+// Interpolating values inside a template literal
+let message = `Hello, my name is ${name} and I am ${age} years old.`;
+
+console.log(message);  // Output: "Hello, my name is Alice and I am 25 years old."

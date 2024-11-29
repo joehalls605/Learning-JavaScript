@@ -75,6 +75,13 @@ function charAtFunction(sampleData){
     });
 }
 
+// function charAtFunct(){
+//     sampleData.forEach(element => {
+//         const character = element.name.charAt(0);
+//         return character;
+//     })
+// }
+
 // filter()
 function filterFunction(sampleData){
   const filteredByAge = sampleData.filter(person => person.age > 25);
@@ -88,15 +95,32 @@ function filterFunction(sampleData){
   return filteredByAge;
 }
 
+// function filterFunction(sampleData){
+//     const filteredByAge = sampleData.filter(person => person.age > 25);
+//     let output = "";
+//     filteredByAge.forEach(person => {
+//         output += person.name;
+//     })
+
+//     render(output);
+//     return filteredByAge;
+// }
+
 
 // find()
 function findFunction(){
-    const nameToFind = "Eve"
+    const nameToFind = "Eve";
     const foundName = sampleData.find(function(person){
         return person.name === nameToFind;
     });
     render(foundName.name);
 }
+
+// function findFunction(){
+//     const nameToFind = "Eve";
+//     const foundName = sampleData.find(person => person.name === nameToFind);
+//     render(foundName.name);
+// }
 
 // includes()
 function includesFunction(){
@@ -105,7 +129,12 @@ function includesFunction(){
     render(includesOutput);
 }
 
-// map()
+function includesFunction(){
+    const ages = sampleData.map(person => person.age);
+
+}
+
+// map() - creates a new array by applying a provided function to each element of the original array, without modifying the original.
 function mapFunction(){
     const objectsAgeIncrease = sampleData.map(function(person){
         return person.age + 1; 
@@ -113,11 +142,25 @@ function mapFunction(){
     render(objectsAgeIncrease);
 }
 
+// function mapFunction(){
+//     const objectsAgeIncrease = sampleData.map(person => person.age + 1);
+//     render(objectsAgeIncrease);
+// }
+
 function popFunction(){
     const removedPerson = sampleData.pop();
     const output = `Removed person: Name:${removedPerson.name}, Age: ${removedPerson.age}`;
     render(output);
 }
+
+// function popFunction(){
+//     const removedPerson = sampleData.pop();
+//     const output = `Removed person: Name${removedPerson.name}, Age: ${removedPerson.age}`;
+//     render(output);
+// }
+
+// Reduce - processes an array by applying a callback function to accumulate a single output valued based on its elements starting with an initial value.
+// (accumulator, currentValue) accumulator is an acculated result from previous iterations of the callback. currentValue represents the current element of the array being processed.
 
 function reduceFunction(){
     const totaledAges = sampleData.reduce((total, currentValue) => total + currentValue.age, 0);
@@ -125,27 +168,49 @@ function reduceFunction(){
     render(totaledAges);
 }
 
-function reduceFunctionV2(){
-    const totaledAgesMultiplied = sampleData.reduce((total, currentValue) => (total + currentValue.age) * 2, 0);
-    render(totaledAgesMultiplied);
-}
+// function reduceFunctionV1(){
+//     const totaledAges = sampleData.reduce((total, currentValue) => total + currentValue.age, 0);
+// }
+
+// function reduceFunctionV2(){
+//     const totaledAgesMultiplied = sampleData.reduce((total, currentValue) => (total + currentValue.age) * 2, 0);
+//     render(totaledAgesMultiplied);
+// }
 
 function reverseFunction(){
     
     // by using the spread operator, it creates a copy of the array.
     const reversedData = [...sampleData].reverse(); 
 
-    // using .map to extract the name property I want to display.
+    // using .map() to create a new array with the name property from each object in the array
     const output = reversedData.map(person => person.name).join(",");
 
     render(output);
 }
+
+function reverseFunction(){
+    // the spread operator creates a shallow copy of the array
+    const reversedData = [...sampleData].reverse();
+
+       // using .map() to create a new array with the name property from each object in the array
+       const output = reversedData.map(person => person.name).join("");;
+
+       render(output);
+}
+
+// shift removes the first element from an array and returns that element
 
 function shiftFunction(){
     const removedFirstItem = sampleData.shift();
     const output = removedFirstItem.name;
     render(output);
 }
+
+// function shiftFunction(){
+//     const removedFirstItem = sampleData.shift();
+//     const output = removedFirstItem.name;
+//     render(output);
+// }
 
 function sliceFunction(){
     // Slicing the first two elements of the aray
@@ -156,9 +221,20 @@ function sliceFunction(){
     render(output);
 }
 
-function sortFunction(){
+function sliceFunction(){
+    
+    // Slicing the first two elements of an array
+    const slicedFirstName = sampleData.slice(0,2);
 
+    // Map the sliced data to extract the names
+    const output = slicedFirstName.map((person) => person.name);
+    render(output);
+}
+
+function sortFunction(){
     // Sorting by age in ascending order
+    // I'm using the callback function to compare pairs of elements a and b in the array.
+    // If the result is negative (a < b), a will come before b, if the result is positive  (a > b), b will come before a
     const sortByAge = sampleData.sort((a,b) => a.age - b.age);
 
     // Extracting the names for display
@@ -166,6 +242,15 @@ function sortFunction(){
 
     render(output);
 }
+
+// function sortFunction(){
+//     // Sorting by age in ascending order
+//     // I'm using the callback function to compare pairs of elements a and b in the array.
+//     // If the result is negative (a < b), a will come before b, if the result is positive  (a > b), b will come before a
+//     const sortByAge = sampleData.sort((a, b) => a.age - b.age);
+//     const output = sortByAge.map((person) => person.name).join(",");
+//     render(output);
+// }
 
 function unshiftFunction(){
     // Unshift is about adding items to beginning
