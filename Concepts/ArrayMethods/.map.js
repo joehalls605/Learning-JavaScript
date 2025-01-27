@@ -75,3 +75,46 @@ const evenNumbers = numbers2.map(function(number){
 const oddNumbers = numbers2.map(function(number){
     return number % 2 !== 0;
 })
+
+// MORE PRACTICE
+
+const numbers = [1, 2, 3, 4, 5,];
+const doubled = numbers.map(num => num * 2);
+
+
+const users = [
+    {id: 1, name: "Alice"},
+    {id: 2, name: "Joe"},
+    {id: 3, name: "Jeff"}
+]
+const names = users.map(user => user.name);
+
+// or could do it in this way:
+
+const names2 = users.map(function(user){
+    return user.name;
+})
+
+const products = [
+    {name: "Laptop", price: 1000},
+    {name: "Phone", price: 500}
+];
+
+const updatedProducts = products.map(product => ({
+    ...product, // Spread operator copy exisitng properties
+    inStock: true // Adding this new boolean property.
+}))
+
+const fruits = ["apple", "banana", "cherry"];
+
+const withIndex = fruits.map((fruit, index) =>
+    `${index + 1}:${fruit}`);
+
+const nestedArray = [[1, 2], [3,4], [5,6]];
+const flattened = nestedArray.map(arr => arr.join(","));
+
+const numbers = [1,2,3,4,5];
+
+const result = numbers.map(num => num * 2).filter(num => num > 5 );
+
+
