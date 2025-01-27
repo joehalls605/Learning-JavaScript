@@ -118,3 +118,39 @@ const numbers = [1,2,3,4,5];
 const result = numbers.map(num => num * 2).filter(num => num > 5 );
 
 
+// Task practice:
+
+// 1.
+const numbers5 = [1,4,6,4,2];
+const increased = numbers5.map(num => num + 1);
+console.log(increased);
+
+
+// 2.
+const strings = ["peter", "gerald", "olivia"];
+const uppercased = strings.map(string => string.toUpperCase());
+console.log(uppercased);
+
+// 3.
+const arrayObjects = [
+    {name: "Alice"},
+    {name: "Peter"},
+    {name: "Armando"}
+]
+const extractedNames = arrayObjects.map(person => person.name);
+console.log(extractedNames);
+
+// 4.
+const squared = numbers5.map(number => number * number);
+console.log(squared);
+
+// 5.
+const prefixAdded = strings.map((string, index) =>{
+    return `${index}:  ${string}`
+});
+
+// 6.
+const convertedToString = numbers5.map(num => String(num));
+console.log(convertedToString);
+
+
