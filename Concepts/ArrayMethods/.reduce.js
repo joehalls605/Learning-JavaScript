@@ -81,3 +81,69 @@ Use Bracket Notation when:
 
 Here I'm using bracket notation because sale.product is a dynamic value and changes with each iteration based on the current sale.
 */
+
+// More practice
+
+array.reduce((accumulator, currentValue, currentIndex, array) => {
+  // logic that accumulate values
+}, initalValue)
+
+/*
+- `accumulator`: The accumulated value, which is updated with each iteration.
+- `currentValue`: The current array element being processed.
+- `currentIndex` (optional): The index of the current element.
+- `array` (optional): The original array on which `.reduce()` is called.
+- `initialValue` (optional): The initial value to start the accumulation. If not provided, it will use the first element of the array as the initial value.
+*/
+
+const numbers = [1,2,3,4,5];
+const sum = numbers.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 0)
+console.log(sum);
+
+/* Counting occurrences of items in an array*/
+
+const fruits = ["apple", "orange", "pear", "mango"]
+const count = fruits.reduce((acc, cur) => {
+  if(acc[cur]){
+    acc[cur] += 1;
+  }
+  else{
+    acc[cur] = 1;
+  }
+  return acc;
+},{})
+
+// Practice tasks:
+
+// 1.
+const numbersSum = numbers.reduce((acc, cur) => {
+    return acc + cur;
+}, 0);
+
+// 2.
+const numbers = [3, 5, 2, 8, 1]; // Example array
+const maximumValue = numbers.reduce((acc, cur) => {
+  return (cur > acc) ? cur : acc; // If current value is greater, it becomes the new accumulator
+}, -Infinity);
+
+// 3.
+const lions = ["Rolo", "Acse", "Oreon", "Sufao"]
+const totalLengthOfStrings = lions.reduce((acc, cur) => {
+  return acc + cur.length;
+}, 0)
+
+//4.
+
+const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+const createObject = fruits.reduce((acc, cur) => {
+  if (acc[cur]) {
+    acc[cur] += 1; // If the fruit is already in the accumulator, increment the count
+  } else {
+    acc[cur] = 1; // If the fruit is not in the accumulator, set the count to 1
+  }
+  return acc;
+}, {}); // Initial value is an empty object
+
+console.log(createObject); // Should print { apple: 3, banana: 2, orange: 1 }
