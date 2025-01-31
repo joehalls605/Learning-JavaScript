@@ -147,3 +147,11 @@ const createObject = fruits.reduce((acc, cur) => {
 }, {}); // Initial value is an empty object
 
 console.log(createObject); // Should print { apple: 3, banana: 2, orange: 1 }
+
+
+
+// Reduce with strings
+
+const words = ["Hello", "world", "this", "is", "JavaScript"];
+
+const sentence = words.reduce((acc, curr) => acc + "" + curr);
