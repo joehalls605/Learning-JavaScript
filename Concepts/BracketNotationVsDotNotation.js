@@ -1,5 +1,6 @@
 /*
-In JavaScript, dynamic property access refers to accessing an object’s properties using variable values (such as keys stored in a variable), instead of hard-coding the property name directly.
+In JavaScript, dynamic property access refers to accessing an object’s properties using variable values (such as keys stored in a variable),
+instead of hard-coding the property name directly.
 
 This can be useful when you need to access object properties dynamically (e.g., user input, iterating over objects, etc.).
 
