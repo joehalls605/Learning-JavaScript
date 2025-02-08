@@ -44,7 +44,49 @@ Fahrenheit = Celsius × 5 / 9 +32
 
 const celsiusTemperatures = [0, 20, 30, 100];
 
-const fahrenheit = celsiusTemperatures.map(temperature => temperature * ( 9 / 5 + 32))
+const fahrenheit = celsiusTemperatures.map(temperature => temperature * 9 / 5 + 32);
 console.log(fahrenheit);
 
+/*
+You have an array of arrays (nested arrays). Use .map() to flatten this array so that it becomes a single array containing all the elements from the nested arrays.
+*/
+
+const nestedArrays = [[1, 2], [3, 4], [5, 6]];
+
+const flattenedArray = nestedArrays.flat(); // example of not needing to use .map
+
+/*
+Given an array of objects where each object contains firstName and lastName properties, use .map() to create a new array with each person's full name (concatenate firstName and lastName).
+*/
+
+const people = [
+    { firstName: 'John', lastName: 'Doe' },
+    { firstName: 'Jane', lastName: 'Smith' },
+    { firstName: 'Sam', lastName: 'Green' }
+];
+
+const fullnames = people.map(person => `${person.firstName}${person.lastName}`);
+
+/*
+You have an array of objects representing people, each with an age property. Use .map() to create a new array containing the unique ages (no duplicates) of the people in the original array.
+ */
+
+const people = [
+    { name: 'John', age: 25 },
+    { name: 'Jane', age: 30 },
+    { name: 'Bob', age: 25 },
+    { name: 'Alice', age: 30 },
+    { name: 'Tom', age: 40 }
+];
+
+// Use .map() to extract the ages, then use Set to remove duplicates
+const uniqueAges = [...new Set(people.map(person => person.age))];
+
+/*
+Given an array of strings, use .map() to create a new array that contains the length of each string.
+ */
+
+const words = ['apple', 'banana', 'cherry', 'date'];
+
+lengthOfStrings = words.map(word => word.length);
 
