@@ -37,3 +37,24 @@ const user = {
 const nameKey = "firstName";
 console.log(user[nameKey]);
 
+
+// More practice
+
+let student = {
+    "first name": "John",
+    age: 20,
+    grade: "A",
+    subject: "Maths"
+};
+
+console.log(student["first name"]); // "John"
+console.log(student["grade"]) // "A";
+let key = "A"; // So instead of the above I have created a dynamic key instead.
+console.log(student[key]); // I still get "A"
+
+let colours = ["Blue", "Green", "Red"];
+console.log(colours[1]); // "Green"
+
+
+
+
