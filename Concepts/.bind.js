@@ -51,3 +51,22 @@ const boundCodingFunction = joe.coding.bind(joe); // binding coding function to 
 boundCodingFunction();
 
 
+
+const phil = {
+    name: "Phil",
+    walking: function(){
+        console.log("I'm Phil, I'm walking");
+    }
+}
+
+phil.walking(); // Output: I'm Phil, I'm walking - all good.
+
+const codingFunction = phil.walking // But if I try this, the Function is copied, but `this` is lost
+codingFunction(); // Call from undefined
+
+const walkingPhil = phil.walking.bind(phil);
+walkingPhil(); // Output: I'm Phil, I'm walking
+
+
+
+
