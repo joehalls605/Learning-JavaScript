@@ -74,3 +74,7 @@ let sqrtNumber = Math.sqrt(num2);
 let base = 2;
 let exponent = 3;
 let powerNumber = Math.pow(base, exponent); 2^3;
+
+function randomNumber(min, max){
+    let randomNum = Math.floor(Math.random() * (max - min + 1));
+}
