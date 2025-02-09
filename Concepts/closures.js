@@ -64,3 +64,57 @@ function multiplier(factor){
 // The returned function from the multiplier is a closure because it remembers the value of factor whe it is invoked
 
 const multiplyByTwo = multiplier(2);
+
+
+// More practice
+
+function greet(name){
+    return function(){
+        console.log("Hello" + name + "!");
+    };
+}
+const sayHelloToJohn = greet("John");
+sayHelloToJohn();
+// Even when greet is done, the returned function still knows name
+
+
+function createCounter(){
+    let count = 0;
+
+    return function(){
+        count++;
+        console.log(count);
+    }
+}
+
+
+const counter = createCounter();
+counter();
+counter();
+counter();
+
+function secretMessage(msg){
+    return function(){
+        console.log("The secret is" + msg);
+    };
+}
+
+const revealSecret = secretMessage(" I love JavaScript");
+revealSecret();
+revealSecret();
+
+// A tricky one to note:
+
+function outer() {
+    let message = "Hello, world!";
+
+    return function inner() {
+        console.log(message);
+    };
+}
+
+const innerFunc = outer();
+outer();  // What will this print?
+
+// Nothing gets printed! this is because the inner function is returned, not invoked!
+
