@@ -119,8 +119,51 @@ function findFirstNegativeNumber(numbers){
 }
 findFirstNegativeNumber(numbers);
 
+// Question 11
 
+function reverseArray(arr){
+    const reversed = arr.reverse();
+    return reversed;
+}
+reverseArray(numbers);
 
+// Question 12
+
+function sortArray(arr){
+    const sorted = arr.sort((a,b) => a - b);
+    return sorted;
+}
+sortArray(numbers);
+
+// Question 13
+
+function removeFirstAndLast(arr){
+    const removedFirst = arr.shift();
+    const removedLast = arr.pop();
+    return arr;
+}
+removeFirstAndLast(numbers);
+
+// Question 14
+
+function addToBeginning(numbers, num){
+    const newArray = numbers.unshift(num);
+    return newArray;
+}
+addToBeginning(numbers, 4);
+
+// Question 15
+
+const arrayOne = [1,2,3];
+const arrayTwo = [4,5,6];
+
+function mergeArrays(arrayOne, arrayTwo){
+    const mergedArrays = [...arrayOne, ...arrayTwo];
+    return mergedArrays;
+}
+mergeArrays(arrayOne, arrayTwo);
+
+// Question 16
 
 
 
