@@ -224,13 +224,28 @@ combineArrays(x,y);
 
 // Question 21
 
-function findMaxNumber(arr){
+const nums = [1,2,3,4,5, null];
+
+function findMaxNumber(arr) {
+    return Math.max(...arr);
+}
+findMaxNumber(nums);
+
+// Question 22
+
+function removeFalsyValues(nums){
+    const cleanArray = nums.filter(value => !!value) // Keep only truthy values
+    return cleanArray;
+}
+removeFalsyValues(nums);
+
+// Question 23
+
+function doubleArrayValues(arr){
+    return arr.map(item => item * 2)
 
 }
-
-
-
-
+doubleArrayValues(nums);
 
 
 
