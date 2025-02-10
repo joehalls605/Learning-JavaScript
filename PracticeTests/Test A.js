@@ -165,6 +165,73 @@ mergeArrays(arrayOne, arrayTwo);
 
 // Question 16
 
+const nums = [1,2,3,3,4,5,5,4];
+
+function removeDuplicates(nums){
+    const arrayWithoutDuplicates = new Set(nums);
+    return arrayWithoutDuplicates;
+}
+removeDuplicates(nums);
+
+// Question 17
+
+function multiplyArray(arr){
+    const product = arr.reduce((total, current) => total * current);
+    return product;
+}
+multiplyArray(nums);
+
+// Question 18
+
+function countOccurrences(arr, target){
+    let count = 0;
+    arr.forEach(item => {
+       if(item === item){
+           count++;
+       }
+    })
+    return count;
+}
+countOccurrences(nums, 3);
+
+// Question 19
+
+const numsForSplice = [1,2,3,4,5,6,7];
+const items = [8,9,10];
+
+function spliceArray(numsForSplice, start, deleteCount, ...items){
+   numsForSplice.splice(start, deleteCount, ...items);
+   return numsForSplice;
+
+}
+spliceArray(numsForSplice, 0, 3, ...items);
+
+
+// Question 20
+
+const x = [1,2,3,4,5];
+const y = [2,3,4,5,2];
+
+function combineArrays(x,y){
+    let result = [];
+    for(let i = 0; i < x.length; i++){
+        result.push(x[i] + y[i]);
+    }
+    return result;
+}
+combineArrays(x,y);
+
+
+// Question 21
+
+function findMaxNumber(arr){
+
+}
+
+
+
+
+
 
 
 /* Topics to revise more:
