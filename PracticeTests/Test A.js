@@ -247,6 +247,19 @@ function doubleArrayValues(arr){
 }
 doubleArrayValues(nums);
 
+// Question 24
+
+function findFirstEven(arr){
+    return arr.find(item => item % 2 === 0);
+}
+findFirstEven(nums);
+
+// Question 25
+function countPositiveNumbers(arr){
+    return arr.filter(item => item > 0).length;
+}
+countPositiveNumbers(nums);
+
 
 
 /* Topics to revise more:
