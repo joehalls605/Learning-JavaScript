@@ -4,7 +4,7 @@ function checkNumberType(num){
     if(num > 0){
         return "Positive";
     }
-    else if(number < 0){
+    else if(num < 0){
         return "Negative";
     }
     else{
@@ -33,10 +33,10 @@ const person = {
 
 function getPersonInfo(obj){
     if(obj.isStudent){
-        return `John is 25 years old and is a student`;
+        return `${obj.name} is ${obj.age} years old and is a student`;
     }
     if(obj.isStudent === false){
-        return `John is 25 years old and is not a student`
+        return `${obj.name} is ${obj.age} years old and is not a student`
     }
 }
 getPersonInfo(person);
@@ -67,17 +67,18 @@ getDayName(5);
 // Question 5
 
 function checkEvenOdd(num){
-    let isOdd =  num % 2 === 0 ? "Even" : "Odd";
-    return isOdd;
+    return num % 2 === 0 ? "Even" : "Odd";
 }
-checkEvenOdd();
+checkEvenOdd(3);
 
 // Question 6
 
 function sumNumbers(n){
+    let sum = 0;
     for(i = 0; i <= n; i++){
-        console.log(i);
+        sum += i;
     }
+    return sum;
 }
 sumNumbers(10);
 
@@ -147,8 +148,8 @@ removeFirstAndLast(numbers);
 // Question 14
 
 function addToBeginning(numbers, num){
-    const newArray = numbers.unshift(num);
-    return newArray;
+    numbers.unshift(num);
+    return numbers;
 }
 addToBeginning(numbers, 4);
 
@@ -168,16 +169,14 @@ mergeArrays(arrayOne, arrayTwo);
 const nums = [1,2,3,3,4,5,5,4];
 
 function removeDuplicates(nums){
-    const arrayWithoutDuplicates = new Set(nums);
-    return arrayWithoutDuplicates;
+    return [...new Set(nums)]
 }
 removeDuplicates(nums);
 
 // Question 17
 
 function multiplyArray(arr){
-    const product = arr.reduce((total, current) => total * current);
-    return product;
+    return arr.reduce((total, current) => total * current, 1);
 }
 multiplyArray(nums);
 
@@ -186,10 +185,10 @@ multiplyArray(nums);
 function countOccurrences(arr, target){
     let count = 0;
     arr.forEach(item => {
-       if(item === item){
+       if(item === target){
            count++;
        }
-    })
+    });
     return count;
 }
 countOccurrences(nums, 3);
@@ -222,14 +221,15 @@ function combineArrays(x,y){
 combineArrays(x,y);
 
 
-// Question 21
+// // Question 21
+//
+//
+// function findMaxNumber(arr) {
+//     return Math.max(...arr);
+// }
+// findMaxNumber(nums);
 
 const nums = [1,2,3,4,5, null];
-
-function findMaxNumber(arr) {
-    return Math.max(...arr);
-}
-findMaxNumber(nums);
 
 // Question 22
 
