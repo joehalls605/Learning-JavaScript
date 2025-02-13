@@ -9,51 +9,31 @@ expression1 - this is the value or expression returned if true
 expression2 - this is the value or expression returned if the condition is false
 */
 
-let age = 20;
-let message = (age >= 18) ? "You are an adult" : "You are not an adult";
+let num = 7;
+let result = num % 2 === 0 ? "Even" : "Odd";
 
-let name = "Joe";
-let message2 = (name === "Joe") ? "You are Joe!" : "You are not Joe!";
 
-name = "Elena";
-let message3 = (name === "Elena") ? "You are Elena" : "You are not Elena";
+let age = 22;
+letIsAdult = age => 18 ? "Adult" : "Minor";
 
-name = "Phil";
-let message4 = (name === "Phil") ? "You are Phil" : "You are not Phil";
+let number = 3;
+let IsPositive = number > -1 ? "Positive" : "Not Positive";
 
-name = "Joe";
-let isJoe = (name === "Joe") ? "You are Joe!" : "You are not Joe!";
+let temperature = 30;
+let climate = temperature => 30 ? "Hot" : "Cold";
 
-age = 20;
-let canVote = (age >= 18) ? "You can vote!" : "You cannot vote!";
+let score = 45;
+let result2 = score > 50 ? "Pass" : "Fail";
 
-let number = 7;
-let isEven = (number % 2 === 0) ? "The number is even" : "The number is odd";
+let isLoggedIn = false;
+let userName = isLoggedIn ? "John Doe" : "Guest";
 
-let planet = "Earth";
-let isPlanet = (planet === "Earth") ? "The planet is Earth" : "The planet is not Earth";
+let isAuthenticated = true;
+let buttonText = isAuthenticated ? "Logout" : "Login";
 
-age = 17;
-let drinkMessage = (age >= 18) ? "You can drink" : "You are too young to drink";
+let stock = 0;
+let availability = stock > 0 ? "In Stock" : "Out of Stock";
 
-age = 45;
-let retireMessage = (age > 65) ? "You can retire" : "You cannot retire yet";
-
-// Setting a default value
-let input = "";
-let defaultText = input ? input : "Default text";
-
-let num = -5;
-let checkNumber = (num > 0) ? "Positive" : (num < 0) ? "Negative" : "Zero";
-
-let isActive = true;
-let className = isActive ? "active" : "inactive";
-
-name = "Boris";
-isJoe = (name === "Joe") ? "It's Joe!" : "You have not found Joe";
-
-let dayOfWeek = "Saturday";
-let isSaturday = (dayOfWeek === "Saturday") ? "Yes, it's Saturday" : "It's not Saturday!";
-
-let dayOfTheWeek2 = "Sunday";
-let isSunday = (dayOfTheWeek2 === "Sunday") ? "Yes, it's Sunday" : "It's not Sunday!";
+let isPremiumUser = false;
+let discount = isPremiumUser ? 0.20 : 0.05;
+console.log(`Discount: ${discount & 100}%`);
