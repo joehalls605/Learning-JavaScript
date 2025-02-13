@@ -71,3 +71,28 @@ Avoid using switch statements when your conditions involve ranges, logical opera
 Few Conditions: Avoid switch statements for a small number of conditions, as if-else might be simpler and more straightforward.
 Polymorphic Behavior: Avoid using switch statements when different object types need to execute different behavior, as using polymorphism is more appropriate in object-oriented programming.
 */
+
+let day = "Monday";
+
+switch(day){
+    case "Monday":
+        console.log("It is monday");
+        break;
+    case "Friday":
+        console.log("It is almost the weekend");
+        break;
+    default:
+        console.log("Just another day");
+}
+
+let role = "admin";
+
+switch(role){
+    case "editor":
+        console.log("I'm editor");
+        break;
+    case "admin":
+        console.log("I'm an admin");
+    default:
+        console.log("I don'work here.");
+}

@@ -58,3 +58,19 @@ switch (typeof variable) {
     default:
         console.log("It's some other type.");
 }
+
+let temperature = 15;
+
+if(temperature > 30){
+    // Hot
+}
+else if(temperature > 20){
+    // Nice weather
+}
+else if(temperature >= 10){
+    // Average
+}
+else{
+    // it's cold
+}
+
