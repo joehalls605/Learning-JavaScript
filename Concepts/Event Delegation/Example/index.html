@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="button-container">
+    <button class="btn">Button 1</button>
+    <button class="btn">Button 2</button>
+    <button class="btn">Button 3</button>
+</div>
+
+<script>
+    const buttons = document.querySelectorAll(".btn");
+
+    // BAD APPROACH BELOW
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            console.log("Button clicked!");
+        });
+    })
+
+    // GOOD APPROACH
+
+    document.getElementById("button-container").addEventListener("click", (event) => {
+        if(event.target.classList.contains("btn")){
+            console.log("Button clicked:", event.target.textContent);
+        }
+    });
+
+</script>
+</body>
+</html>
