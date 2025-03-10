@@ -1,0 +1,42 @@
+#filterBySlider{
+    margin-top:18px;
+    background-color:pink;
+}
+
+.price-slider{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.slider{
+    position:relative;
+    width:100%;
+    max-width:400px;
+    background-color:yellow;
+}
+
+.slider-endpoints{
+    position:absolute;
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    top:-5px;
+    background-color:grey;
+}
+
+.progress{
+    position: absolute;
+    height: 5px;
+    background: #007bff;
+    border-radius: 5px;
+    z-index: 1;
+    left: 0;
+    right: 0;
+}
+
+.range-input{
+    position: relative;
+    width: 100%;
+    margin-top:15px;
+}
