@@ -15,6 +15,7 @@ const copyQuoteBtn = document.getElementById("copy-quote-btn");
 function displayRandomQuote(){
     const randomIndex = Math.floor(Math.random() * quotes.length);
     quoteText.textContent = quotes[randomIndex].text;
+    quoteAuthor.textContent = `${quotes[randomIndex].author}`;
 }
 
 // Function to copy quote to clipboard
