@@ -118,3 +118,31 @@ outer();  // What will this print?
 
 // Nothing gets printed! this is because the inner function is returned, not invoked!
 
+
+
+// More practice
+
+function createCounter(start){
+    let count = start;
+
+    return function(){
+        count++;
+        console.log(count);
+    }
+}
+
+const myCounter = createCounter();
+myCounter(); //1
+myCounter(); //2
+myCounter(); //3
+
+function outer(){
+    let secret = "I'm a secret";
+
+    return function inner(){
+        console.log(secret);
+    }
+}
+
+const myFunc = outer();
+myFunc();
