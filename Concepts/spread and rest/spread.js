@@ -1,15 +1,13 @@
-/* The spread syntax in JavaScript is a way to work with arrays and objects more flexibly. 
-It lets you take an array and break it into individual elements, or merge multiple arrays or objects together. 
-You can use it to pass multiple values as separate arguments to a function, 
-which is handy because functions usually expect arguments one by one. So, instead of passing an entire array to a function, 
-you can use spread syntax to pass each element of the array as a separate argument. 
-This makes your code more concise and easier to work with. 
+/*
+The spread syntax (...) in JavaScript spreads and expands an array or object into individual elements.
+It’s useful for passing array elements as separate arguments to functions, combining arrays/objects, or cloning them.
 
-Essentially, it allows an iterable to be expanded into separate elements / unpack the elements.
+Key Difference:
+Spread Operator (...): Expands elements of an iterable into individual items (used in function calls, array/object literals).
+Rest Operator (...): Collects and gets the rest of multiple elements into an array (used in function parameters).
 
-Note, difference between Rest and Spread:
-Rest Operator (...): Gathers multiple elements into an array. Used in function parameter lists to collect remaining arguments.
-Spread Operator (...): Spreads the elements of an iterable (like an array or object) into individual elements. Used in array literals, object literals, and function calls.
+Spread - is unpacking elements of an iterable into individual items
+Rest is packing and collecting up elements into a single array (used in paramaters)
 */
 
 
@@ -23,9 +21,9 @@ let maximum = Math.max(...nums); // by using the spread, you're opening the box 
 console.log(maximum); // Outputs: 5
 
 let usernameFirst = "Joseph";
-let usernameSurname = "Joseph";
+let usernameSurname = "Halls";
 
-let lettersforFirstAndSurname = [...usernameFirst, ...usernameSurname]; // ["J", "o", "s", "e", "p", "h"]
+let lettersforFirstAndSurname = [...usernameFirst, ...usernameSurname]; // ["J", "o", "s", "e", "p", "h" "h" "a" "l" "l" "s"]
 console.log(lettersforFirstAndSurname);
 
 
@@ -78,6 +76,3 @@ const details = { job: "Software Dev", city: "London" };
 
 const combinedDetails = { ...person, ...details };
 console.log(combinedDetails); // Outputs: { name: "John", age: 30, job: "Software Dev", city: "London" }
-
-
-// Remeber spread as "spread out", expanding the the array or object into individual elements

@@ -1,5 +1,5 @@
 /*
-The rest operator allows you to represent an indefinite number of arguments as an array.
+The rest syntax (`...`) in JavaScript allows you to group the remaining items into a single array or object.
 */
 
 function sum(...args){

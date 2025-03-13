@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rest & Spread Demo</title>
+</head>
+<body>
+<h1>Calculator with Rest & Spread</h1>
+<input type="text" id="numbers" placeholder="Enter numbers separated by commas">
+<button onclick="calculateSum()">Calculate Sum</button>
+<p id="result"></p>
+
+<script>
+  // Using REST to gather arguments
+  function sum(...numbers){
+    return numbers.reduce((total, num) => {
+      return total + num;
+    }, );
+  }
+  // Using SPREAD to combine arrays
+  function calculateSum(){
+    const input = document.getElementById("numbers").value;
+    const numberArray = input.split(",").map(Number); // Convert input to an array of numbers
+
+    const extraNumbers = [10,20]
+    const combinedNumbers = [...numberArray, ...extraNumbers];
+
+    const total = sum(...combinedNumbers);
+    document.getElementById("result").innerText = `Sum:${total}`;
+  }
+</script>
+</body>
+</html>
