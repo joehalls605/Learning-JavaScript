@@ -56,3 +56,14 @@ const fruits = ['apple', 'banana'];
 const moreFruits = ['cherry', 'date'];
 const allFruits = [...fruits, ...moreFruits];  // Combines both arrays
 console.log(allFruits);  // ["apple", "banana", "cherry", "date"]
+
+
+function App(){
+  function makeArray(){
+    return [1,5,6,2,19]
+  }
+  const myArray = makeArray();
+  const numberOne = myArray[0];
+  const numberTwo = myArray[1]
+}
+
