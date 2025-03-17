@@ -62,8 +62,12 @@ function App(){
   function makeArray(){
     return [1,5,6,2,19]
   }
+  // This is a long-winded way to do it.
   const myArray = makeArray();
-  const numberOne = myArray[0];
-  const numberTwo = myArray[1]
+  // const numberOne = myArray[0];
+  // const numberTwo = myArray[1]
+
+  // Instead with array destructuring
+  const [numberOne, numberTwo] = makeArray();
 }
 
