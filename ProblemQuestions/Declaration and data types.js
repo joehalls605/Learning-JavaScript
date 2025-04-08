@@ -38,3 +38,14 @@ function checkTypes(){
         d: { value: d, type: typeof d }
     }
 }
+
+
+function calculateTotalPrice() {
+    let basePrice = 100;
+    const taxRate = 0.1; // 10%
+    const total = basePrice * (1 + taxRate);
+
+    return total;
+}
+
+calculateTotalPrice();
