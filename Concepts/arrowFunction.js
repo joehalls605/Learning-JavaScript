@@ -1,11 +1,13 @@
 /*
 Arrow Functions in JavaScript
---------------------------------
-Arrow functions provide a shorthand syntax for writing functions. They are especially useful for concise code when the function body contains a single expression.
+------------------------------
+Arrow functions provide a shorter syntax for writing functions.
+They are useful when you want concise code, especially for single expressions.
+
 Benefits:
-- More concise and readable.
-- No need for boilerplate code like `function` keyword.
-- Lexical scoping of `this` (inherits `this` from the surrounding context).
+- Shorter and more readable.
+- No need for the `function` keyword.
+- Lexical `this`: inherits `this` from surrounding context.
 */
 
 // Regular function
@@ -17,19 +19,21 @@ function add(a, b) {
 const addArrow = (a, b) => a + b;
 
 /*
-Arrow functions do not have their own `this` context. Instead, they inherit `this` from the surrounding scope.
-Example:
+Lexical Scoping of `this`
+---------------------------
+Arrow functions inherit `this` from the surrounding scope.
+Regular functions do not.
 */
 
 function Person() {
     this.age = 0;
 
     setInterval(() => {
-        this.age++; // 'this' refers to the Person instance
+        this.age++; // Arrow function keeps `this` context
     }, 1000);
 }
 
-const personInstance = new Person(); // Creates a new Person and increments `age` every second
+const personInstance = new Person();
 
 /*
 Examples of Arrow Function Usage
@@ -41,32 +45,31 @@ const regularFunction = function () {
     return 42;
 };
 
-// Arrow function (single-line implicit return)
+// Arrow function (implicit return)
 const arrowFunction = () => 42;
 
-// Arrow function with a function body (explicit return)
+// Arrow function with block body (explicit return)
 const arrowFunctionWithBody = () => {
     const number = 42;
     return number;
 };
 
-// Using an arrow function as a callback
+// Arrow function as a callback
 const numbers = [1, 2, 3, 4, 5, 6];
 
-// Regular function with `filter`
+// Regular function
 const evenNumbersWithRegular = numbers.filter(function (number) {
     return number % 2 === 0;
 });
 console.log(evenNumbersWithRegular); // [2, 4, 6]
 
-// Arrow function with `filter`
+// Arrow function
 const evenNumbersWithArrow = numbers.filter(number => number % 2 === 0);
 console.log(evenNumbersWithArrow); // [2, 4, 6]
 
 /*
-Lexical Scoping with Arrow Functions
--------------------------------------
-Arrow functions capture the `this` value of the surrounding context, while regular functions have a dynamic `this` that depends on how they are called.
+Regular vs Arrow in setTimeout
+-------------------------------
 */
 
 function RegularFunction() {
@@ -86,40 +89,74 @@ function RegularFunction() {
 const regularInstance = new RegularFunction();
 
 /*
-Implicit Return with Arrow Functions
--------------------------------------
-If an arrow function has a single statement, the result of that statement is implicitly returned without the `return` keyword.
+Implicit Returns
+-----------------
+Arrow functions can return values implicitly for single-line expressions.
 */
 
-// Regular function
 const regularAdd = function (x, y) {
     return x + y;
 };
 
-// Arrow function with implicit return
 const arrowAdd = (x, y) => x + y;
 
-// Single-line arrow function with a single parameter
 const isPositive = number => number > 0;
 console.log(isPositive(3)); // true
 
 /*
-More Examples of Arrow Functions
----------------------------------
+More Arrow Function Examples
+-----------------------------
 */
 
-// Arrow function with a single statement
-const arrowFunction4 = () => console.log("I'm an arrow function");
+const arrowFunction1 = () => console.log("I'm an arrow function");
+const arrowFunction2 = () => console.log("Hello");
 
-// Arrow function with a concise body
-const arrowFunction5 = () => console.log("Hello");
-
-// Arrow function with external variables
 const num1 = 1;
 const num2 = 2;
-const arrowFunction6 = () => num1 + num2;
-console.log(arrowFunction6()); // 3
+const arrowFunction3 = () => num1 + num2;
+console.log(arrowFunction3()); // 3
 
-// Single parameter arrow function
 const double = x => x * 2;
 console.log(double(3)); // 6
+
+/*
+When to Use Arrow Functions
+----------------------------
+- Array methods: map, filter, reduce
+- Event listeners
+- Callbacks and asynchronous code
+*/
+
+document.querySelector("button")?.addEventListener("click", () => {
+    console.log("Button clicked!");
+});
+
+setTimeout(() => console.log("Time is up!"), 1000);
+
+/*
+When NOT to Use Arrow Functions
+--------------------------------
+1. When `this` matters (e.g., in object methods)
+2. In class constructors
+*/
+
+// `this` issue in object method
+const person = {
+    name: "Alice",
+    greet: () => {
+        console.log(`Hello, my name is ${this.name}`); // undefined
+    }
+};
+person.greet(); // Hello, my name is undefined
+
+// Arrow function in class constructor (not ideal)
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    // Not recommended: use regular method
+    speak = () => {
+        console.log(`${this.name} makes a noise!`);
+    }
+}

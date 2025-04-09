@@ -24,6 +24,22 @@ try {
     console.log("An error occurred:", error.message); // Output: An error occurred: division by zero
 }
 
+
+function divideNumbers(a, b){
+    try{
+        if(b === 0){
+            throw new Error("Cannot divide by zero");
+        }
+        let result = a / b;
+        console.log("The result is: " + result);
+    }catch(error){
+        console.log("Error" + error.message);
+    }
+}
+
+divideNumbers(10, 0);
+divideNumbers(10, 2);
+
 /*
 When Try catches are used:
 
