@@ -15,3 +15,15 @@ const checkAgeCategory = (age) => {
     }
 }
 checkAgeCategory(10);
+
+// Converting functions to arrow functions
+const sayHello = (name) => "Hello" + name + "!";
+
+const square = (num) => num * num;
+
+const isEven = (n) => n % 2 === 0;
+
+const add = (a,b) => a + b;
+
+const getPositiveNumbers = (arr) => arr.filter( num => num > 0);
+

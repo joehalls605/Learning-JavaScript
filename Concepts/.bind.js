@@ -1,72 +1,60 @@
-// .bind()
+// .bind() in JavaScript
+// ---------------------
 
 /*
-In JavaScript, the .bind() method creates a new function with a specific 'this' value and optional preset arguments.
-This is useful for controlling the context (the value of 'this') in which a function is invoked.
+The .bind() method allows you to permanently set the value of `this` in a function.
+Useful when a method is passed around and loses its original context.
 */
 
-// 1. The Teacher (Alex) Object
+// Example 1: Using bind() with the 'alex' object
 const alex = {
     name: 'Alex',
-    teach: function() {
+    teach: function () {
         console.log(this.name + ' is teaching!');
     }
 };
 
-// Calling teach directly works fine because 'this' refers to 'alex'
-alex.teach(); // Output: Alex is teaching!
+alex.teach(); // ✅ Alex is teaching!
 
-// 2. But if we pass the teach method around to a variable:
 const teachFunction = alex.teach;
+teachFunction(); // ❌ undefined is teaching! - `this` is lost
 
-// Now calling teachFunction will result in 'this' being undefined
-teachFunction(); // Output: undefined is teaching!
+const boundTeach = alex.teach.bind(alex);
+boundTeach(); // ✅ Alex is teaching! - context restored
 
-// Why does this happen? Because 'this' inside teachFunction now refers to the global object, not Alex.
+// ---------------------------------------------
 
-///////////////////////////////////////////////
-
-// 3. To fix this, we can use .bind() to ensure 'this' always refers to 'alex'
-const boundTeachFunction = alex.teach.bind(alex);
-
-// Now calling the new function will always refer to Alex, no matter where it's called
-boundTeachFunction(); // Output: Alex is teaching!
-
-
+// Example 2: Using bind() with the 'joe' object
 const joe = {
-    name: "joe",
-    coding: function(){
-        console.log(this.name + "is coding");
+    name: 'Joe',
+    coding: function () {
+        console.log(this.name + ' is coding');
     }
-}
+};
 
-joe.coding(); // Output: joe is coding
+joe.coding(); // ✅ Joe is coding
 
-const codingFunction = joe.coding;
-codingFunction(); // Output undefined!
+const codeFn = joe.coding;
+codeFn(); // ❌ undefined is coding - lost context
 
-// To fix this
+const boundCode = joe.coding.bind(joe);
+boundCode(); // ✅ Joe is coding
 
-const boundCodingFunction = joe.coding.bind(joe); // binding coding function to joe object so they are always connected
-boundCodingFunction();
+// ---------------------------------------------
 
-
-
+// Example 3: Using bind() with the 'phil' object
 const phil = {
-    name: "Phil",
-    walking: function(){
+    name: 'Phil',
+    walking: function () {
         console.log("I'm Phil, I'm walking");
     }
-}
+};
 
-phil.walking(); // Output: I'm Phil, I'm walking - all good.
+phil.walking(); // ✅ I'm Phil, I'm walking
 
-const codingFunction = phil.walking // But if I try this, the Function is copied, but `this` is lost
-codingFunction(); // Call from undefined
+const walkFn = phil.walking;
+walkFn(); // ❌ I'm undefined, I'm walking - lost `this`
 
-const walkingPhil = phil.walking.bind(phil);
-walkingPhil(); // Output: I'm Phil, I'm walking
-
-
-
+const boundWalk = phil.walking.bind(phil);
+boundWalk(); // ✅ I'm Phil, I'm walking
 
