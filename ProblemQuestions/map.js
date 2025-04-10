@@ -58,3 +58,4 @@ function reverseAndCapitalise(words){
     return reversedWord.charAt(0).toUpperCase() + reversedWord.slice(1).toLowerCase();
 }
 reverseAndCapitalise(words);
+
