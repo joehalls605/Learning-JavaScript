@@ -37,3 +37,4 @@ function processArray(nums){
     return sum;
 }
 processArray(nums);
+
