@@ -1,43 +1,58 @@
 /*
-The `.forEach()` method in JavaScript is used to **loop through an array** and perform an operation on each element.
-
-**It doesn't return a new array** (unlike `.map()`). It simply **iterates** through the array and executes a function on each element.
-
-The function you provide to `.forEach()` will be called once for each element in the array.
-You can use that function to do something (like logging, modifying variables, etc.) with each element.
-
-It's not chainable, meaning you can't call other array methods (like `.filter()`) directly after `.forEach()` on the same line, because `.forEach()` always returns `undefined`.
-
+ The forEach method in JavaScript is a built-in array method that allows you to iterate over each element in an array and execute a function for each element.
  */
 
-array.forEach((element, index, array) => {
+array.forEach(function(element, index, array) {
     // code here
 });
 
-/*
-`element`: The current item being processed in the array.
-`index` (optional): The index of the current item in the array.
-`array` (optional): The entire array that `.forEach()` is being called on.
- */
+const numbers = [1, 2, 3, 4, 5];
 
-const numbers = [1,3,4,5,6];
-numbers.forEach(num => {
-    console.log(num);
-})
-
-// Using index
-
-const fruits = ["apple", "banana", "cherry"];
-fruits.forEach((fruit, index) => {
-    console.log(`${index + 1} + ${fruit}`)
+numbers.forEach(function(number) {
+    console.log(number * 2);
 });
 
-// Modifying a variable
+/*
+Here, the forEach method also logs the index of each element (which starts at 0), and we add 1 to it to start the numbering at 1.
+ */
 
-const numbers = [1,2,3];
-let sum = 0;
-
-numbers.forEach(num => {
- sum += num;
+const fruits = ["apple", "banana", "cherry"];
+fruits.forEach(function(fruit, index){
+    console.log(index + 1 + "." + fruit);
 })
 
+/*
+Real Project Example -  You have a list of items to display on a webpage. You can use forEach to loop through the array of items and generate HTML dynamically.
+ */
+const shoppingList = ["Milk", "Eggs", "Bread", "Butter"];
+shoppingList.forEach(function(item){
+    const li = document.createElement("li");
+    li.textContent = item;
+    document.getElementById("shopping-list").appendChild(li);
+});
+
+/*
+Real Project Example - Handling a form with checkboxes
+ */
+const checkboxes = document.querySelectorAll('input[type="checkbox"]'); // ?
+checkboxes.forEach(function(checkbox){
+    checkbox.addEventListener("change", function(){
+        if(checkbox.checked){
+            console.log(checkbox.value + "is checked");
+        }
+        else{
+            console.log(checkbox.value + "is unchecked");
+        }
+    })
+});
+
+// Real Project Example - processing data
+const users = [
+    { name: 'John', age: 28 },
+    { name: 'Jane', age: 22 },
+    { name: 'Alice', age: 30 }
+];
+
+users.forEach(function(user){
+    user.isAdult = user.age >= 18;
+});
