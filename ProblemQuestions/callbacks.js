@@ -30,3 +30,48 @@ function printDouble(n){
     console.log(n * 2);
 }
 forEachNumber([1,2,3], printDouble)
+
+//
+const users = [
+    { name: "Alice" },
+    { name: "Bob" },
+    { name: "Charlie" }
+];
+
+function processUsers(users, callback){
+    for(const user of users){
+        callback(user);
+    }
+}
+
+function greetUser(user){
+    console.log(`Welcome, ${user.name}!`);
+}
+
+processUsers(users, greetUser);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
