@@ -44,3 +44,21 @@ pizzaOrder.then(message => { // then runs if the pizzaIsReady is true
 }).catch(error => { // runs if pizzaIsReady is false
     console.log(error);
 })
+
+
+let pieOrder = new Promise((resolve, reject) => {
+    let pieIsReady = true;
+
+    if(pieIsReady){
+        resolve("Your pie is ready!");
+    }
+    else{
+        reject("We ran out of pie!");
+    }
+})
+
+pieOrder.then(message => {
+    console.log(message); // handles the resolve of the promise
+}).catch(error => { // handles the rejection of the promise
+    console.log(error);
+})
