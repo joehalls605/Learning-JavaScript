@@ -97,3 +97,59 @@ for(const number of nums){
     }
 }
 console.log(total);
+
+//
+function countVowels(string){
+    const vowels = ["a", "e", "i", "o", "u"];
+    let count = 0;
+    for(let i = 0; i < string.length; i++){
+        if(vowels.includes(string[i].toLowerCase())){
+            count++;
+        }
+    }
+    return count;
+}
+countVowels("boris");
+
+//
+function fizzBuzzLite(n){
+    for(let i = 1; i < n; i++){
+        if(i % 3 === 0 && i % 5 === 0){
+            console.log("FizzBuzz");
+        }
+        else if(i % 3 === 0){
+            console.log("Fizz");
+        }
+        else if(i % 5 === 0){
+            console.log("Buzz");
+        }else{
+            console.log(i);
+        }
+    }
+}
+fizzBuzzLite(10);
+
+const numbers = [2,3,4,5,65,32]
+function sumPositive(numbers){
+    let sum = 0;
+    for(const number of numbers){
+        if(number > 0){
+            sum += number;
+        }
+    }
+    return sum;
+}
+sumPositive(numbers);
+
+// regular for version:
+const numbers = [2,3,4,5,65,32]
+function sumPositiveReg(numbers){
+    let sum = 0;
+    for(let i = 0; i < numbers.length; i++){
+        if(numbers[i] > 0){
+            sum += numbers[i];
+        }
+    }
+    return sum;
+}
+sumPositiveReg(numbers);

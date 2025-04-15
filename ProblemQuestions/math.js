@@ -47,3 +47,54 @@ function diceDuel(){
     };
 }
 console.log(diceDuel);
+
+function iceCreamMachine(){
+    const randomNumber = Math.round((Math.random() * 100) + 1);
+    let scoops = Math.ceil(Math.random() * 3);
+    const scoopsNeeded = Math.round(((randomNumber * scoops) / scoops) * 100) / 100
+
+    return{
+        customers: randomNumber,
+        averageScoops: scoopsNeeded,
+        maxScoopsVs300: Math.max(scoopsNeeded, 300),
+        scoopRoot: Math.sqrt(scoopsNeeded)
+
+    }
+}
+console.log(iceCreamMachine());
+
+// FIXED VERSION BELOW:
+
+function iceCreamMachine() {
+    const customers = Math.round(Math.random() * 100); // 0 to 100
+    let totalScoops = 0;
+
+    // Each customer gets between 1 and 3 scoops
+    for (let i = 0; i < customers; i++) {
+        totalScoops += Math.ceil(Math.random() * 3);
+    }
+
+    const averageScoops = customers === 0 ? 0 : Math.round((totalScoops / customers) * 100) / 100;
+    const scoopRoot = Math.round(Math.sqrt(totalScoops) * 100) / 100;
+
+    return {
+        customers: customers,
+        averageScoops: averageScoops,
+        maxScoopsVs300: Math.max(totalScoops, 300),
+        scoopRoot: scoopRoot
+    };
+}
+
+console.log(iceCreamMachine());
+
+
+
+
+
+
+
+
+
+
+
+
