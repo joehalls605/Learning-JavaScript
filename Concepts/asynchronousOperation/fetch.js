@@ -68,3 +68,57 @@ fetch('https://api.example.com/data', {
     .then(data => console.log(data))
     .catch(error => console.error('Fetch error:', error));
 
+
+async function getData(){
+    const url = "https://example.org/products.json";
+
+    try{
+        const response = await fetch(url);
+        if(!response.ok){
+            throw new Error(`Response status: ${response.status}`);
+        }
+        const json = await response.json();
+        console.log(json);
+    }catch(error){
+        console.log(error.message);
+    }
+}
+getData();
+
+// POST REQUEST
+
+const url = "https://example.com/api";
+const data = {
+    username:"testuser",
+    password:"password"
+};
+fetch("https://example.com/api", {
+    method:"POST",
+    headers:{
+        "Content-Type": "application/json" // Tells the server you're sending JSON
+    },
+    body: JSON.stringify(data) // Converts JS object to JSON string
+}).then(response => response.json()) // Turns json into JS object I can work with.
+
+// Simplified using await:
+// await pauses the execution of the async function until the promise settles (either it resolves or rejects) and returns the resolved value.
+
+async function postData(){
+    try{
+        const response = await fetch("https://example.com/api", {
+            method:"POST",
+            headers:{
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify({
+                username:"testuser",
+                password:"mypassword"
+            })
+        });
+        const data = await response.json(); // Parse JSON to JS object
+        console.log("success", data);
+    }catch(error){
+        console.log("Error", error);
+    }
+    postData();
+}

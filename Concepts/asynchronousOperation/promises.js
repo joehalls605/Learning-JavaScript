@@ -23,6 +23,37 @@ Promises help make asynchronous (delayed) code more understandable and manageabl
 This way, your code doesn’t get stuck waiting, and you can write cleaner, easier-to-read programs.
 */
 
+// Promise outline
+let myPromise = new Promise(function(resolve, reject) {
+    let success = true;
+    if(success){
+        resolve("The task worked!");
+    }
+    else{
+        reject("The task failed");
+    }
+})
+
+// Handling promises
+// then() can be used for success and catch for failure
+
+// This creates the promise and sets up the rules for whether it passes or fails.
+let pieOrder = new Promise((resolve, reject) => {
+    if(pieIsReady){
+        resolve("Your pie is ready!");
+    }
+    else{
+        reject("We ran out of pie");
+    }
+});
+// Now you define what to do when the promise finishes
+pieOrder.then(message => {
+    console.log(message); // matches up with resolve
+}).catch(error => {
+    console.log(error); // matches up with reject
+})
+
+
 // Creating a simple promise
 let pizzaOrder = new Promise((resolve, reject) => {
     let pizzaIsReady = true;
