@@ -120,5 +120,5 @@ async function postData(){
     }catch(error){
         console.log("Error", error);
     }
-    postData();
 }
+postData();
