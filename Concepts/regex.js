@@ -43,3 +43,31 @@ console.log(result); // My pin is XXXX
 let str = "The cat sat on the mat.";
 let regex = /c.t/;
 str.match(regex); // ["cat"]
+
+// Challenge 1: Match a Phone Number (Format: 123-456-7890)
+
+let str = "123-456-7890";
+let regex = /\d{3}-\d{3}\d{4}/;
+console.log(str.match(regex));
+
+//  Challenge 2: Match a Valid Email Address
+
+let email = "user@example.com";
+let regex = /\w+@w+\.\w+/;
+console.log(str.match(regex));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
