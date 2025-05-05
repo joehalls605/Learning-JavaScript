@@ -1,106 +1,129 @@
-/*
-Creating new elements: You can create entirely new HTML elements using JavaScript and insert them into the DOM.
-*/
+// Dynamically create and add an element
 
-// creating an element
-const newDiv = document.createElement("div");
-newDiv.textContent = "Hello world!";
+let newDiv = document.createElement("div");
+newDiv.classList.add("box");
+newDiv.textContent = "I am a new box";
 document.body.appendChild(newDiv);
 
-// adding a class to element.
-const element = document.getElementById("myElement");
-element.classList.add("highlight");
+// Remove an element from the DOM
 
-// traversing and modifying the DOM tree.
-const parent = document.getElementById("parentElement");
-const child = document.getElementById("childElement");
-parent.removeChild(child);
+let boxToRemove = document.querySelector(".box");
+if(boxToRemove){
+    boxToRemove.remove();
+}
 
-// Event handling
+// Insert a new element before another element
+let newP = document.createElement("p")
+newP.textContent = "This is a paragraph";
+let firstDiv = document.querySelector("div");
+if(firstDiv){
+    document.body.insertBefore(newP, firstDiv)
+}
 
-const button = document.getElementById("myButton");
+let newSpan = document.createElement("span");
+newSpan.textContent = "This is a span";
+let firstDiv = document.querySelector("div");
+if(firstDiv){
+    firstDiv.insertAdjacentElement("afterend", newSpan);  // Insert the span after the div
+}
+
+// Create list of items dynamically
+let items = ["Item 1", "Item 2", "Item 3", "Item 4"];
+let ul = document.createElement("ul");
+
+items.forEach(item => {
+    let li = document.createElement("li");
+    li.textContent = item;
+    ul.appendChild(li);
+})
+
+document.body.appendChild(ul);
+
+// Event delegation for dynamic content
+let button = document.getElementById("addItemButton");
+let itemList = document.getElementById("itemList");
+
 button.addEventListener("click", function(){
-    alert("button clicked");
+    let li = document.createElement("li");
+    li.textContent = "New Item";
+    itemList.appendChild(li);
 });
-
-// Appending a child
-
-document.addEventListener("DOMContentLoaded", ()=>{
-    const newDiv = document.createElement("div");
-    newDiv.textContent = "Hello! I'm a new div";
-    newDiv.classList.add("highlight");
-
-    document.body.appendChild(newDiv);
-});
-
-// Modifying multiple elements at once
-
-document.querySelectorAll(".item").forEach(item =>{
-    item.style.color = "blue";
-    item.classList.add("styled-item");
-});
-
-// Event delegation
-document.querySelector("#parent").addEventListener("click", event => {
-    if (event.target.classList.contains("child")) {
-        console.log("A child element was clicked:", event.target);
+// Use event delegation for handling clicks on dynamically added items
+itemList.addEventListener("click", function(e){
+    if(e.target && e.target.nodeName == "LI"){
+        alert("You clicked on" + e.target.textContent);
     }
 });
 
-/*
-Here, only clicks on elements with the class child within #parent will trigger the event, making it efficient to handle many items or dynamically created children.
-*/
+// Modify a form input dynamically
 
-// Toggling Classes for Styling Transitions
+let input = document.getElementById("myInput");
+let button = document.getElementById("changePlaceholderButton");
 
-const box = document.getElementById("box");
-box.addEventListener("click", ()=>{
-    box.classList.toggle("expanded"); // toggles the expanded class on and off
+button.addEventListener("click", function(){
+    input.placeholder = "New placeholder text!"
 });
 
-/* Building interactive dropdown menu
-<button id="dropdownButton">Toggle Menu</button>
-<ul id="dropdownMenu" class="hidden">
-     <li>Option 1</li>
-    <li>Option 2</li>
-    <li>Option 3</li>
-</ul>
-*/
 
-const button2 = document.getElementById("dropdownButton");
-const menu = document.getElementById("dropdownMenu");
+// Add or edit table row
+/*
+HTML:
+<table id="myTable">
+  <tr><th>Name</th><th>Age</th></tr>
+  <tr><td>John</td><td>30</td></tr>
+  <tr><td>Jane</td><td>25</td></tr>
+</table>
+<button id="addRowButton">Add Row</button>
+<button id="removeFirstRowButton">Remove First Row</button>
+<button id="editSecondRowButton">Edit Second Row</button>
+ */
+let addRowButton = document.getElementById("addRowButton");
+let removeFirstRowButton = document.getElementById("removeFirstRowButton");
+let editSecondRowButton = document.getElementById("editSecondRowButton");
+let table = document.getElementById("myTable");
 
-button2.addEventListener("click", () => {
-    menu.classList.toggle("hidden");    // Toggle visibility
+addRowButton.addEventListener("click", function(){
+    let newRow = table.insertRow();
+    let cell1 = newRow.insertCell(0);
+    let cell2 = newRow.insertCell(1);
+    cell1.textContent = "New Name";
+    cell2.textContent = "New Age";
 });
 
-// Using Template Literals for Dynamic HTML
+removeFirstRowButton.addEventListener("click", function() {
+    table.deleteRow(1);
+});
 
-const container = document.getElementById("container");
-const items = ["Item 1", "Item 2", "Item 3"];
-
-container.innerHTML = items.map(item => `<p>${item}</p>`).join("");
-
+// Smooth scroll to a section on button click
 /*
-This code dynamically generates a list of <p> elements based on an array of items and injects them into #container.
-*/
+<button id="scrollButton">Scroll to Section</button>
+<div style="height: 1000px;">Scroll down</div>
+<section id="targetSection">This is the target section.</section>
+ */
 
-// Animating Elements with JavaScript
+let scrollButton = document.getElementById("scrollButton");
+let targetSection = document.getElementById("targetSection");
 
-const box2 = document.getElementById("box");
+scrollButton.addEventListener("click", function(){
+    targetSection.scrollIntoView({behavior:"smooth"});
+});
 
-function animateBox(){
-    let position = 0;
-    const interval = setInterval(()=>{
-        if(position >= 200){
-            clearInterval(interval); // stop the animation at 200px
-        }
-        else{
-            position++;
-            box.style.left = position + "px";
-        }
-    }, 5)
-}
 
-animateBox();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
