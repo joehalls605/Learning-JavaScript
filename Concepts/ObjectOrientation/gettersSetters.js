@@ -54,10 +54,10 @@ console.log(person.name); // Output: "Bob"
 
 /*
 Benefits of Encapsulation (Getters and Setters):
-Data Protection: Getters and setters allow you to control access to object properties. You can enforce validation rules or perform operations (like logging or updating related properties) when getting or setting values.
+Data Protection: Getters and setters allow you to control access to object properties.
+You can enforce validation rules or perform operations (like logging or updating related properties) when getting or setting values.
 
 Flexibility: You can change the internal implementation of a class (e.g., how a property is stored or calculated) without affecting external code that uses the class.
-
 Security: Encapsulation helps protect the internal state of an object from unintended direct manipulation, reducing potential bugs and making the code more robust.
 
 

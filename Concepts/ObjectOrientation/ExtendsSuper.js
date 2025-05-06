@@ -1,10 +1,8 @@
-/*
-In object-oriented programming (OOP), extends and super are keywords used in languages like Java and JavaScript for inheritance. They help in creating a new class (a child class) that inherits properties and methods from an existing class (a parent class).
+// In JavaScript, 'extends' and 'super' are used for inheritance.
 
-Key Concepts
-extends: Used to create a subclass that inherits from a superclass (parent class).
-super: Used to call the constructor and methods of the parent class within the child class.
-*/
+// 'extends' lets a class (child) inherit from another class (parent).
+// 'super' calls the parent’s constructor or methods inside the child class.
+
 
 class Animal {
     constructor(name){
@@ -18,9 +16,8 @@ class Animal {
 
 class Dog extends Animal{
     constructor(name, breed){
-
-        // Call the parent class (Animal) constructor with 'super'
-        super(name);
+        // Call the parent class (Animal) constructor with 'super', saves having to write
+        super(name); // Calls Animal's constructor and sets this.name
         this.breed = breed;
     }
 
