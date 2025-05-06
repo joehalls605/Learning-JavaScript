@@ -63,6 +63,58 @@ function countVotes(strings){
 }
 countVotes(strings);
 
+const nums = [4,5,3,2,5];
+function sumNumbers(arr){
+    return arr.reduce((acc, current) => {
+        return acc += current;
+    })
+}
+sumNumbers(nums);
+
+function findMax(arr){
+    let largestNumber = 0;
+    arr.reduce((acc, current) => {
+        if(current > acc){
+            largestNumber = current;
+        }
+    })
+    return largestNumber;
+}
+findMax(nums);
+
+function countOccurrences(arr, target){
+    let appearances = 0;
+    arr.reduce((acc, current) => {
+        if(current === target){
+            appearances++;
+        }
+    })
+    return appearances;
+}
+countOccurrences(nums, 5);
+
+// 4.?
+
+function flattenArray(arr){
+    return arr.reduce((acc, curr) => {
+        return acc.concat(curr); // goes through each sub array and uses concat to build one big array
+    }, []) // initial empty array
+}
+flattenArray([[1, 2], [3, 4], [5]]);
+
+
+// 5.
+function frequencyMap(arr){
+    return arr.reduce((acc, curr) => {
+        // if acc[curr] exists or is zero, add one to it, otherwise add one.
+        acc[curr] = (acc[curr] || 0) + 1;
+        return acc;
+    }, {}) // start with an empty object
+}
+frequencyMap(['a', 'b', 'a', 'c', 'b', 'a']);
+
+
+
 
 
 
