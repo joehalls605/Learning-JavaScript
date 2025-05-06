@@ -23,3 +23,91 @@ function getFirstAndLast(array){
     return [...first, ...last];
 }
 getFirstAndLast(array);
+
+const numbers = [12,3,45,3,2,1];
+
+function extractSubarray(arr, start, end){
+    return arr.slice(start,end);
+}
+extractSubarray(numbers, 5, 8);
+
+function getFirstNElements(arr, n){
+    return arr.slice(0, n);
+}
+getFirstNElements(numbers, 5);
+
+function removeFirstNElements(arr, n){
+    return arr.slice(n);
+}
+removeFirstNElements(numbers, 4);
+
+function cloneArray(arr){
+    return arr.slice();
+}
+cloneArray(numbers);
+
+function getLastNElements(arr, n){
+    return arr.slice(arr.length - n);
+}
+getLastNElements(numbers, 2);
+
+function getMiddleElements(arr){
+    const mid = Math.floor(arr.length / 2); // Find middle index
+    if(arr.length % 2 === 0){
+        return arr.slice(mid - 1, mid + 1);  // Even length: two middle elements
+    }
+    else{
+        return arr.slice(mid, mid + 1);// Odd length: single middle element
+    }
+}
+getMiddleElements(numbers);
+
+// Mini practice
+
+const numbers = [1,2,3,4,5,6];
+console.log(numbers.slice(1,3));
+console.log(numbers.slice());
+console.log(numbers.length - 1);
+
+
+// Working backward from the array
+
+function lastThreeElements(arr){
+    return arr.slice(-3);
+}
+lastThreeElements(numbers);
+
+function allButLastTwo(arr){
+    return arr.slice(0, -2);
+}
+allButLastTwo(numbers);
+
+function thirdAndSecondFromEnd(arr){
+    return arr.slice(-3, -1);
+}
+thirdAndSecondFromEnd(numbers);
+
+function removeFirstAndLast(arr){
+    return arr.slice(1, arr.length -1);
+}
+removeFirstAndLast(numbers);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
