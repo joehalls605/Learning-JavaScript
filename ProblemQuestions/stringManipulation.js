@@ -143,9 +143,52 @@ toTitleCase("Good morning mr jones");
 
 
 
+// 1.
+function reverseString(string){
+    return string.split("").reverse().join("");
+}
+reverseString("Jack");
+
+//2.
+function capitaliseFirstLetter(word){
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+capitaliseFirstLetter("orange");
+
+//3.
+function checkForPalindrome(){
+    const reversed = word.split("").reverse().join("");
+    return word === reversed;
+}
+checkForPalindrome("racecar");
+
+//4.
+function countVowels(word){
+    const vowels = "aeiou"
+    let count = 0;
+    for(let i = 0; i < word.length; i++){
+        if(vowels.includes(word[i])){
+            count++;
+        }
+    }
+    return count;
+}
+countVowels("Joseph");
 
 
+// 5.
+function longestWord(str){
+   let words = str.split(" ");
+   let longestWord = "";
 
+   for(let word of words){
+       if(word.length > longestWord.length){
+           longestWord = word;
+       }
+   }
+   return longestWord;
+}
+longestWord("The car runs over the hill into texas");
 
 
 
