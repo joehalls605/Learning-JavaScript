@@ -33,3 +33,22 @@ function greet(){
 
 const boundGreet = greet.bind(person);
 boundGreet();
+
+// 1.
+const person = {
+    name: "Liam",
+    greet: function() {
+        console.log("Hello, " + this.name);
+    }
+};
+
+const greetLiam = person.greet.bind(person);
+
+// 2.
+function greet() {
+    console.log("Hello, " + this.name);
+}
+
+const user = { name: "Sophie" };
+
+const newGreet = greet.bind(user);

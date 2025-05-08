@@ -3,6 +3,9 @@ The this keyword in JavaScript can be a bit confusing because its value depends 
 
 this refers to the object that is currently executing the code where this is used.
 It helps to access properties and methods of the object in that context.
+
+method -> obj
+function -> global (window, global)
 */
 
 
