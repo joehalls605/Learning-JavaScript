@@ -87,6 +87,65 @@ function iceCreamMachine() {
 
 console.log(iceCreamMachine());
 
+// 1.
+let num = 8.6;
+const rounded = Math.round(num);
+
+// 2.
+num = 5.9;
+const roundedDown = Math.floor(num);
+
+// 3.
+const roundedUp = Math.ceil(num);
+
+// 4.
+const randomNumber = Math.round(Math.random() * 100) + 1;
+
+// 5.
+num = 121;
+const sqrt = Math.sqrt(num);
+
+// 6.
+const numbers = [12,44,3,19];
+const largestNumber = Math.max(...numbers);
+console.log(largestNumber);
+
+// 7.
+const smallestNumber = Math.min(...numbers);
+
+// 8.
+const positiveNumber = Math.abs(-87);
+
+// 9.
+const pets = ["dog", "cat", "parrot", "hamster"];
+const randomIndex = Math.floor(Math.random() * pets.length);
+console.log(pets[randomIndex]);
+
+// 10.
+num = 2;
+const pow = 5;
+const pwr = Math.pow(num, pow);
+
+// Math.random() returns a decimal between 0 (inclusive) and 1 (exclusive) 0 - 0.999
+
+const randomNumber = Math.floor(Math.random() * 100) + 1;
+// Math.random() - gives a decimal like 0.728
+// * 100 - scales it up to 72.8
+// Math.floor() - removes decimal: 72
+// + 1 - shifts 0-99 - 1 - 100
+
+const randomNumberBetweenOneAndSix = Math.floor(Math.random() * 6) + 1;
+console.log(randomNumberBetweenOneAndSix);
+
+
+const randomNumberBetweenTenAndTwenty = Math.floor(Math.random() * 11) + 10;
+console.log(randomNumberBetweenTenAndTwenty);
+
+const randomNumberBetweenMinusAndPositive = Math.floor(Math.random() * 21) - 10;
+console.log(randomNumberBetweenMinusAndPositive);
+
+
+
 
 
 
