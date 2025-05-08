@@ -72,10 +72,3 @@ console.log(multiplyBy2(5));
 
 
 
-
-
-
-
-
-
-
