@@ -72,3 +72,9 @@ let book = {
 book.getSummary();
 book.updateYear(2023);
 book.changeAuthor("Phil barnes");
+
+
+
+
+
+

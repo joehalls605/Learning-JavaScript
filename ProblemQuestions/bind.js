@@ -52,3 +52,37 @@ function greet() {
 const user = { name: "Sophie" };
 
 const newGreet = greet.bind(user);
+
+
+const person = {
+    name: "Joe"
+};
+
+// 1.
+function greet(){
+    console.log(`Hello my names ${this.name}`);
+}
+const boundFunction = greet.bind(person);
+boundFunction();
+
+// 2.
+//  Task: Use .bind() to create a new function called double that always multiplies by 2
+
+function multiply(a,b){
+    return a * b;
+}
+const double = multiply.bind(null, 2);
+console.log(double(4));
+
+
+const Rabbit = {
+    name: "bambi"
+};
+function hop(){
+    console.log(`I hop, I'm a rabbit! I'm ${this.name}!`);
+}
+/* .bind helps avoid losing the value of this inside a function
+* .bind creates a new function,
+* */
+const boundHopFunction = hop.bind(Rabbit);
+boundHopFunction(); // I hop, I'm Bambi!
