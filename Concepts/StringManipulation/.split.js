@@ -6,3 +6,6 @@ console.log(fruits); // ["Apple", "Cherry", "Mango"]
 
 let fruits2 = text.split(" "); // This will split when a space occurs
 
+let people = "Joseph, Peter, Ricky";
+let peopleSplit = people.split(", ");
+console.log(peopleSplit);
