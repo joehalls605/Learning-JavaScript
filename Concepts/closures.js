@@ -146,3 +146,19 @@ function outer(){
 
 const myFunc = outer();
 myFunc();
+
+
+function createNumber(){
+    let total = 0;
+
+    function inner(){
+        return total += 1;
+    }
+    return inner;
+}
+
+const number  = createNumber();
+number();
+number();
+number();
+

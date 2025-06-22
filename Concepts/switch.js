@@ -59,3 +59,19 @@ switch(number){
     default: 
     console.log("Haven't found the number!");
 }
+
+const day = "Wednesday";
+
+switch(day){
+    case "Monday":
+        console.log("Start of the week");
+        break;
+    case "Wednesday":
+        console.log("Midweek!");
+        break;
+    case "Friday":
+        console.log("Weekend here!");
+        break;
+    default:
+        console.log("Just another day");
+}

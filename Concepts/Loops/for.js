@@ -30,3 +30,12 @@ for(let i = numbers.length - 1; i >= 0; i--){
     console.log(numbers[i]);
 }
 // since counting in code starts at 0, we have to do length - 1;
+
+const nums = [12,3,4,5,6];
+for(let i = 0; i < nums.length; i++){
+    console.log(i);
+}
+
+for(let i = nums.length - 1; i >= 0; i--){
+    console.log(i);
+}
