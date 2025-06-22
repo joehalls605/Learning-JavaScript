@@ -14,3 +14,7 @@ for(const char of stri){
     console.log(char);
 }
 
+const numbers = [1,2,3,4,5,6,6];
+for(const value of numbers){
+ console.log(value);
+}
