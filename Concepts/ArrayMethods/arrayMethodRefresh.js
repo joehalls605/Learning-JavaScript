@@ -21,7 +21,7 @@ let total = prices.reduce((acc, price) => {
     return acc + price;
 }, 0);
 
-// slice - returns a portion of the array without changing the original
+// slice - returns a portion of the array without changing the original. Creates a new array.
 let animals = ["cat", "dog", "rabbit", "horse"];
 let someAnimals = animals.slice(1,3); // up to but not including 3.
 
@@ -69,13 +69,57 @@ cities.shift();
 // unshift - adds one or more items to the start of the array
 cities.unshift("Paris");
 
+// splice - used to change the contents of an array by removing elements, replacing elements, adding new elements
+let people = ["Bruce", "Phil", "James"];
+people.splice(0, 2);// Just ends with ["Bruce"] because I start at 0, then remove two items
 
 
 
+/* Practice questions */
 
+//1.
+let people = ["Alice", "Bob", "Charlie"];
+people.forEach(person => console.log(`Hello ${person}`));
 
+//2.
+let numbers = [1,2,3];
+numbers.push(4);
+numbers.pop();
 
+//3.
+let fruits = ["apple", "banana", "cherry", "orange", "grape"];
+let firstThree = fruits.slice(0,3);
 
+//4.
+let prices = [10,20,30];
+const taxPrices = prices.map(price => {
+    return price += 0.15;
+});
+
+//5.
+let ages = [5, 12, 18, 25, 30];
+let older = ages.filter(age => age >= 18);
+
+//6.
+let users = ["Tom", "Jerry", "Sarah", "Jane"];
+let sName = users.find(name => name.startsWith("S"));
+
+//7.
+let tools = ["hammer", "wrench", "screwdriver"];
+tools.splice(1, 1, "drill");
+
+//8.
+let numbers = [5, 10, 15];
+let summed = numbers.reduce((acc, curr) => acc + curr);
+
+//9.
+let scores = [88, 42, 100, 67];
+let highToLow = scores.sort((a,b) => b - a);
+
+//10.
+let queue = ["person1", "person2"];
+queue.unshift("person0");
+queue.shift();
 
 
 
