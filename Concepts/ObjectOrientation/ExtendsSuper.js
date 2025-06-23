@@ -25,3 +25,27 @@ class Dog extends Animal{
         console.log(`${this.name} barks`);
     }
 }
+
+
+class Bird {
+    constructor(age){
+        this.age = age;
+    }
+    speak(){
+        console.log(`Sqwark sqawrk`);
+    }
+}
+
+class Pigeon extends Bird{
+    constructor(name, age){
+        super(age);
+        this.name = name;
+    }
+    story(){
+        console.log(`the ${this.age} years old ${this.name} flew from the tree`);
+    }
+}
+
+const pigeon = new Pigeon("Gerald", 3);
+pigeon.story();
+pigeon.speak();

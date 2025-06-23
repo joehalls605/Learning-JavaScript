@@ -58,3 +58,20 @@ walkFn(); // ❌ I'm undefined, I'm walking - lost `this`
 const boundWalk = phil.walking.bind(phil);
 boundWalk(); // ✅ I'm Phil, I'm walking
 
+// practice
+
+const bruce = {
+    name: "Bruce",
+    speak: function(){
+        console.log("My name is" + this.name);
+    }
+}
+
+bruce.speak(); //  My name is Bruce
+
+const bruceSpeak = bruce.speak;
+bruceSpeak(); // my name is undefined
+// because `this` is now undefined — it lost its original context (`bruce`)
+
+const boundSpeak = bruce.speak.bind(bruce);
+boundSpeak();
