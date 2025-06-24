@@ -93,3 +93,26 @@ pieOrder.then(message => {
 }).catch(error => { // handles the rejection of the promise
     console.log(error);
 })
+
+// practice
+function makeTea(){
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Your tea is ready!")
+        }, 2000)
+    })
+}
+makeTea().then(message => {
+    console.log(message);
+}).catch(error => {
+    console.log("Error", error);
+});
+
+
+
+
+
+
+
+
+

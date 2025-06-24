@@ -14,7 +14,7 @@ console.log(twoDArray[0][1]); // Outputs: 2 (first row, second column)
 console.log(twoDArray[2][0]); // Outputs: 7 (third row, first column)
 
 /*
-A 3D array in JavaScript is an array of arrays of arrays. You can think of it as a stack of 2D grids.
+A 3D array in JavaScript is an array of arrays. You can think of it as a stack of 2D grids.
 */
 
 let threeDArray = [
