@@ -169,6 +169,37 @@ function shoppingCartCalculator(cartItems){
 shoppingCartCalculator(cartItems);
 
 
+// Rendering data
+
+// 1.
+const fruits = ["apple", "banana", "cherry"];
+for(const fruit of fruits){
+    console.log(fruit);
+}
+
+// 2.
+const people = [
+    { name: "Alice", age: 30 },
+    { name: "Bob", age: 25 },
+    { name: "Charlie", age: 35 }
+];
+for(const person of people){
+    console.log(`Name:${person.name}, Age:${person.age}`);
+}
+
+// 3.
+const classroom = {
+    teacher: "Mrs. Smith",
+    students: ["Tom", "Jerry", "Lisa"]
+};
+function printClassroom(classroom){
+    console.log(`Teacher: ${classroom.teacher}`);
+    console.log("Students:");
+    for(const student of classroom.students){
+        console.log(`- ${student}`);
+    }
+}
+printClassroom(classroom);
 
 
 
