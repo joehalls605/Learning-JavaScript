@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="tasks"></div>
+
+<script>
+    const tasks = [
+        { title: "Buy groceries", completed: false },
+        { title: "Clean the house", completed: true },
+        { title: "Finish homework", completed: false }
+    ];
+
+    function renderActiveTasks(tasks){
+        const filteredTasks = tasks.filter(task => task.completed === false)
+        if(filteredTasks === 0){
+            alert("All tasks are complete!");
+        }
+        else{
+            const taskElement = document.getElementById("tasks");
+
+            filteredTasks.forEach(task => {
+            const liElement = document.createElement("li");
+            liElement.textContent = task.title;
+            taskElement.appendChild(liElement);
+        })}
+
+    }
+    renderActiveTasks(tasks);
+</script>
+</body>
+</html>
