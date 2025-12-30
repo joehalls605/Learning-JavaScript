@@ -45,3 +45,7 @@ let stockAvailability = stock > 0 ? "In stock" : "Out of stock";
 let loggedIn = true;
 let userLoggedIn = loggedIn ? "Is logged in" : "Is not logged in";
 console.log(userLoggedIn);
+
+
+let number = 1;
+let isNumberOne = number === 1 ? "Yes I am number one" : "No i am not number 1"

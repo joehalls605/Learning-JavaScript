@@ -90,3 +90,10 @@ const words = ['apple', 'banana', 'cherry', 'date'];
 
 lengthOfStrings = words.map(word => word.length);
 
+
+const numbers = [1,2,3,4,5,6];
+const multipliedNumbers = numbers.map(number => number * 2);
+
+
+
+
