@@ -109,6 +109,19 @@ makeTea().then(message => {
 });
 
 
+// FO type example
+
+async function fetchCruises(destination, date){
+    try {
+        const response = await (fetch(`/api/cruises?dest=${destination}&date=${date}`));
+        const cruises = response.json();
+        displayCruises(cruises);
+    } catch(error){
+        console.error("Could not fetch cruises:", error);
+    }
+}
+
+fetchCruises("Carribean", "2025-06-01");
 
 
 

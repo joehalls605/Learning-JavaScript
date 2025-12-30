@@ -1,38 +1,27 @@
-// getting data with async and fetch
+/*
+* Fetch() is a built-in JavaScript function for making HTTP requests (network requests)
+* It returns a Promise that resolves to a Response object when the server responds
+* You can use it to request data from APIs, HTML pages, images, etc.
+* ? start of query parameters
+* */
 
-async function getUserData(){
-    console.log("Fetching user data...");
-    const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
-    const data = await response.json(); // convert response to usable JSON
+// Basic usage:
 
-    /* before converting to json that can be worked with, the response object looks like this:
-    body: ReadableStream,
-    headers: {...},
-    status: 200,
-    ok: true,
-    json: function, // a method to parse the body as JSON
-     */
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error("Error:", error));
 
+// Using fetch with async await
+
+const getPost = async () => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        const data = await response.json();
+        console.log(data);
+    } catch (error){
+        console.error("Error", error);
+    }
 }
-getUserData();
 
-// using POST
-
-async function createUser(){
-    const user = {
-        name: "Alice",
-        email: "alice@example.com"
-    };
-
-    const response = await fetch("https://jsonplaceholder.typicode.com/users", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(user) // converts the object to a JSON string to send
-    });
-
-    const data = await response.json();
-    console.log("User created:", data);
-}
-createUser();
+getPost();

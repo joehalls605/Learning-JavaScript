@@ -206,13 +206,43 @@ function sayGoodbye(){
 greet("Joe", sayGoodbye);
 
 
+// let - can be reassigned
+// const - cannot be reassigned
+// js is dynamically typed which means variables do not have a fixed type.
+
+// Ternary
+
+const age = 20;
+const canVote = age >= 18 ? "Yes can vote" : "No, too young";
 
 
+// More fetch await practice
 
+const fetchPost = async () => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+        const data = await response.json();
+        console.log(data);
+    } catch (error){
+        console.error("Error fetching post", error);
+    }
+}
 
+fetchPost();
 
+/*
+1. fetch returns a promise
+2. await pauses untill that response is ready
+3. .json also returns a promise so we await that too
+4. try catch for handling any errors
 
-
+Function	Returns Promise?	Notes
+fetch(url)	✅ Yes	Always returns a Promise that resolves to a Response object
+response.json()	✅ Yes	Also returns a Promise that resolves to parsed JSON
+setTimeout(fn, ms)	❌ No	It just schedules a callback; does not return a Promise by default
+console.log()	❌ No	Synchronous
+async function foo() {}	✅ Yes	Every async function always returns a Promise, even if you return a normal value
+ */
 
 
 
